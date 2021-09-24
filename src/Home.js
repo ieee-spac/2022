@@ -1,7 +1,7 @@
-import {Box, Button, Container, Typography} from "@mui/material";
+import {Box} from "@mui/material";
 import animatedBackground from './assets/technology.mp4';
 import styled from "@emotion/styled";
-import {appBarHeight, StandardButton} from "./util";
+import {appBarHeight, StandardButton, theme, TypographyWhite} from "./util";
 import IEEE from './assets/ieee.png';
 
 const Video = styled('video')(() => ({
@@ -19,7 +19,7 @@ const VideoOverlay = styled(Box)(() => ({
   minWidth: '100%',
   maxWidth: '100%',
   minHeight: '100vh',
-  background: 'linear-gradient(180deg, rgba(3, 14, 38, 0.5) 0%, rgba(3, 14, 38, 1) 100%)',
+  background: `linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(19, 19, 40, 0.5) 90%, ${theme.palette.primary['variant4']} 100%)`,
   zIndex: -1
 }));
 
@@ -33,9 +33,9 @@ export default function Home() {
       <Box sx={{paddingTop: appBarHeight}}/>
       <Box sx={{alignItems: 'center', display: 'flex', flexDirection: 'column', paddingTop: '10em'}}>
         <img src={IEEE} style={{width: '20em'}} alt='IEEE Logo'/>
-        <Typography variant='h4' sx={{marginBottom: '3em', textAlign: 'center'}}>Student Professional Awareness Conference</Typography>
-        <Typography sx={{fontSize: '40px', fontWeight: 300}}>January ?, 2022</Typography>
-        <Typography sx={{textAlign: 'center'}}>Insert detail about where event is held</Typography>
+        <TypographyWhite variant='h1' sx={{marginBottom: '3em', textAlign: 'center'}}>Student Professional Awareness Conference</TypographyWhite>
+        <TypographyWhite variant='h2'>January ?, 2022</TypographyWhite>
+        <TypographyWhite sx={{textAlign: 'center'}}>Insert detail about where event is held</TypographyWhite>
         <Box sx={{marginTop: '5em'}}>
           <StandardButton variant='contained' color='secondary' sx={{marginRight: '2em'}}>Register Now</StandardButton>
           <StandardButton className='GreenButton' variant='contained' sx={{marginLeft: '2em'}}>Sponsor Us</StandardButton>

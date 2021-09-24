@@ -3,18 +3,19 @@
     color: cadetblue;
 }
 
-.MuiFilledInput-root {
-    background-color: #2a6a85;
-}
-
-.MuiFilledInput-root:hover {
-    background-color: #26617a;
-}
-
 .GreenButton {
     background: green;
 }
 
 .GreenButton:hover {
     background: rgb(0, 115, 0);
+}
+
+.vertical-timeline::before {
+    background: rgb(19, 19, 40);
+}
+
+.TimelineDate {
+    color: black;
+    font-family: Roboto, Arial, sans-serif;
 }

@@ -6,7 +6,7 @@ import {ThemeProvider, StyledEngineProvider} from '@mui/material/styles';
 import {theme} from "./util";
 import About from "./About";
 import Home from "./Home";
-import Schedule from "./Schedule";
+import Schedule from "./schedule/Schedule";
 import Patronage from "./Patronage";
 import Register from "./Register";
 import Contact from "./Contact";
@@ -16,8 +16,8 @@ import {Element} from 'react-scroll'
 import {Box} from "@mui/material";
 import './css/App.css';
 import {isMobile, withOrientationChange} from "react-device-detect";
-import Wave from './assets/wave.svg';
 import styled from "@emotion/styled";
+import Footer from "./Footer";
 
 const Section = styled(Element)(() => ({
   paddingBottom: '5em'
@@ -41,31 +41,29 @@ const App = props => {
         <ThemeProvider theme={theme}>
           <Navigation/>
           <Home/>
-          <Box sx={{
-            backgroundImage: `url(${Wave}), linear-gradient(180deg, rgba(3, 14, 38, 1) 0%, rgba(0, 81, 97, 1) 100%)`,
-            backgroundRepeat: 'no-repeat', backgroundPosition: 'bottom', padding: `0 ${margin} 0 ${margin}`
-          }}>
-            <Section name='about'>
+          <Box>
+            <Section name='about' style={{padding: `0 ${margin} 0 ${margin}`, backgroundColor: theme.palette.primary['variant4']}}>
               <About/>
             </Section>
-            <Section name='register'>
+            <Section name='register' style={{padding: `0 ${margin} 0 ${margin}`}}>
               <Register/>
             </Section>
-            <Section name='schedule'>
+            <Section name='schedule' style={{padding: `0 ${margin} 0 ${margin}`}}>
               <Schedule/>
             </Section>
-            <Section name='patronage'>
+            <Section name='patronage' style={{padding: `0 ${margin} 0 ${margin}`}}>
               <Patronage/>
             </Section>
-            <Section name='gallery'>
+            <Section name='gallery' style={{padding: `0 ${margin} 0 ${margin}`}}>
               <Gallery/>
             </Section>
-            <Section name='faq'>
+            <Section name='faq' style={{padding: `0 ${margin} 0 ${margin}`}}>
               <FAQ/>
             </Section>
-            <Element name='contact'>
+            <Element name='contact' style={{padding: `0 ${margin} 0 ${margin}`}}>
               <Contact/>
             </Element>
+            <Footer/>
           </Box>
         </ThemeProvider>
       </StyledEngineProvider>

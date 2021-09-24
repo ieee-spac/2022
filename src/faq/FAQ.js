@@ -18,7 +18,7 @@ function QuestionAnswer({questionData, id, expanded, handleChange}) {
                         aria-controls={"question " + id}
                         id={id}
       >
-        <Typography variant='h6'>
+        <Typography variant='h5'>
           {questionData.q}
         </Typography>
       </AccordionSummary>
@@ -39,7 +39,7 @@ export default function FAQ() {
 
   return (
     <Box>
-      <Typography variant='h3'>FAQ</Typography>
+      <Typography variant='h4'>FAQ</Typography>
       {
         questionData.map((question, index) => {
           return <QuestionAnswer key={index} questionData={question} id={index} expanded={expanded}

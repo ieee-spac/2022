@@ -34,7 +34,7 @@ export default function DesktopNav() {
 
   return (
     <Slide disabled={isMobile} appear={false} direction="down" in={showAppBar}>
-      <AppBar sx={{backgroundColor: 'rgb(20, 20, 20, 0.5)'}}>
+      <AppBar sx={{backgroundColor: 'rgb(20, 20, 20, 0.7)'}}>
         <Toolbar /*style used for higher specificity*/
           style={{minHeight: appBarHeight, height: appBarHeight, justifyContent: 'space-evenly'}}>
           <img src={SPAC} style={{width: '10em', cursor: 'pointer'}} onClick={() => window.scrollTo(0, 0)}/>

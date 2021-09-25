@@ -15,10 +15,10 @@ import Gallery from "./gallery/Gallery";
 import FAQ from "./faq/FAQ";
 import {Element} from 'react-scroll'
 import {Box, styled} from "@mui/material";
-//App.css contains any styles that could not be done inline or via emotion
+//Contains any styles that could not be done via MUI or inline
 import './App.css';
-//Imports styling for timeline components
-import 'react-vertical-timeline-component/style.min.css';
+//Imports styling for lightbox
+import 'react-image-lightbox/style.css';
 import {isMobile, withOrientationChange} from "react-device-detect";
 import Footer from "./Footer";
 
@@ -33,7 +33,6 @@ function getContentMargin(isPortrait) {
   return '15%';
 }
 
-//TODO make better layered steps wave here https://app.haikei.app/
 const App = props => {
   const {isPortrait} = props;
   const margin = getContentMargin(isPortrait);

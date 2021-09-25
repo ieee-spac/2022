@@ -11,3 +11,13 @@
     color: black;
     font-family: Roboto, Arial, sans-serif;
 }
+
+/*Image lightbox styling*/
+.ReactModal__Overlay, .ReactModalPortal {
+    z-index: 2000 !important;
+}
+
+/*Image lightbox styling*/
+.ril-toolbar {
+    background-color: rgba(0, 0, 0, 0) !important
+}

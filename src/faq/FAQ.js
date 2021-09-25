@@ -7,13 +7,17 @@ import {theme} from "../util";
 
 const QuestionAccordion = styled(Accordion)(() => ({
   backgroundColor: 'unset',
-  marginBottom: '1em'
+  marginBottom: '1em',
+  borderRadius: '3px',
+  '&:hover': {
+    background: 'rgb(240, 240, 240)'
+  }
 }));
 
 function QuestionAnswer({questionData, id, expanded, handleChange}) {
   return (
     <QuestionAccordion expanded={expanded === id} onChange={handleChange(id)}>
-      <AccordionSummary sx={{borderLeft: `6px solid ${theme.palette.secondary.main}`}}
+      <AccordionSummary sx={{borderLeft: `6px solid ${theme.palette.secondary.main}`, borderTopLeftRadius: '3px', borderBottomLeftRadius: expanded === id ? '0px' : '3px'}}
                         expandIcon={<ExpandMoreIcon color='secondary'/>}
                         aria-controls={"question " + id}
                         id={id}
@@ -22,7 +26,7 @@ function QuestionAnswer({questionData, id, expanded, handleChange}) {
           {questionData.q}
         </Typography>
       </AccordionSummary>
-      <AccordionDetails sx={{borderLeft: `6px solid ${theme.palette['tertiary'].main}`}}>
+      <AccordionDetails sx={{borderLeft: `6px solid ${theme.palette['tertiary'].main}`, borderBottomLeftRadius: '3px'}}>
         <Typography>
           {questionData.a}
         </Typography>
@@ -38,7 +42,7 @@ export default function FAQ() {
   };
 
   return (
-    <Box>
+    <Box sx={{paddingTop: '5em'}}>
       <Typography variant='h4'>FAQ</Typography>
       {
         questionData.map((question, index) => {

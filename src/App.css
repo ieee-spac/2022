@@ -3,14 +3,6 @@
     color: cadetblue;
 }
 
-.GreenButton {
-    background: green;
-}
-
-.GreenButton:hover {
-    background: rgb(0, 115, 0);
-}
-
 .vertical-timeline::before {
     background: rgb(19, 19, 40);
 }

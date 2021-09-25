@@ -9,7 +9,7 @@ const IconImage = styled('img')(() => ({
   width: '2em',
   height: '2em',
   zIndex: 1,
-  marginLeft: '1em'
+  marginLeft: '2em'
 }));
 
 export default function Footer() {
@@ -24,9 +24,15 @@ export default function Footer() {
         justifyContent: 'center'
       }}>
         <TypographyWhite variant='h6' sx={{zIndex: 1}}>Follow us on social media:</TypographyWhite>
-        <IconImage src={LinkedIn}/>
-        <IconImage src={Facebook}/>
-        <IconImage src={Instagram}/>
+        <a href='https://www.linkedin.com/company/spacottawa/'  target='_blank' rel='noreferrer'>
+          <IconImage src={LinkedIn}/>
+        </a>
+        <a href='https://www.facebook.com/ieeespacottawa/' target='_blank' rel='noreferrer'>
+          <IconImage src={Facebook}/>
+        </a>
+        <a href='https://www.instagram.com/ieeespac/' target='_blank' rel='noreferrer'>
+          <IconImage src={Instagram}/>
+        </a>
       </Container>
     </Box>
   );

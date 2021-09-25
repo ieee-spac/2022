@@ -2,7 +2,7 @@ import {Box, Typography} from "@mui/material";
 import {VerticalTimeline, VerticalTimelineElement} from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import {events} from "./events";
-import {theme} from "../util";
+import {TypographySchedule} from "../util";
 
 export default function Schedule() {
   return (
@@ -12,7 +12,7 @@ export default function Schedule() {
         <VerticalTimeline>
           {
             events.map((event, index) => {
-              const borderWidth = index % 2 === 0 ? '0 0 0 5px' : '0 5px 0 0';
+              const borderWidth = index % 2 === 0 ? '0 0 0 6px' : '0 6px 0 0';
               return (
                 <VerticalTimelineElement key={index}
                                          contentStyle={{background: 'rgb(230, 230, 230)', color: 'black', border: `solid ${event.iconColor}`, borderWidth: borderWidth, borderRadius: '3px', boxShadow: 'none'}}
@@ -23,7 +23,9 @@ export default function Schedule() {
                                          icon={event.icon}
                 >
                   <Typography variant='h6'>{event.title}</Typography>
-                  <Typography>{event.description}</Typography>
+                  {
+                    event.description.length > 0 && <TypographySchedule>{event.description}</TypographySchedule>
+                  }
                 </VerticalTimelineElement>
               );
             })

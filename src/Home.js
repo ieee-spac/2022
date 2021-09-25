@@ -1,8 +1,9 @@
 import {Box} from "@mui/material";
 import animatedBackground from './assets/technology.mp4';
 import styled from "@emotion/styled";
-import {appBarHeight, StandardButton, theme, TypographyWhite} from "./util";
+import {appBarHeight, GreenButton, StandardButton, theme, TypographyWhite} from "./util";
 import IEEE from './assets/ieee.png';
+import {Link} from "react-scroll";
 
 const Video = styled('video')(() => ({
   position: 'absolute',
@@ -37,10 +38,14 @@ export default function Home() {
         <TypographyWhite variant='h2'>January ?, 2022</TypographyWhite>
         <TypographyWhite sx={{textAlign: 'center'}}>Insert detail about where event is held</TypographyWhite>
         <Box sx={{marginTop: '5em'}}>
-          <StandardButton variant='contained' color='secondary' sx={{marginRight: '2em'}}>Register Now</StandardButton>
-          <StandardButton className='GreenButton' variant='contained' sx={{marginLeft: '2em'}}>Sponsor Us</StandardButton>
+          <Link to='register' spy={true} smooth={true}>
+            <StandardButton variant='contained' color='secondary' sx={{marginRight: '2em'}}>Register Now</StandardButton>
+          </Link>
+          <GreenButton variant='contained' sx={{marginLeft: '2em'}}>Sponsor Us</GreenButton>
         </Box>
-        <StandardButton sx={{marginTop: '1em'}} variant='contained'>Read More</StandardButton>
+        <Link to='about' spy={true} smooth={true}>
+          <StandardButton sx={{marginTop: '2em'}} variant='contained'>Read More</StandardButton>
+        </Link>
       </Box>
     </Box>
   )

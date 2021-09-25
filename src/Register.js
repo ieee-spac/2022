@@ -16,13 +16,15 @@ const DropZone = styled(StyledDropZone)(() => ({
 
 export default function Register() {
   return (
-    <Box sx={{paddingTop: '5em'}}>
-      <Typography variant='h4'>Register</Typography>
-      <Typography variant='h5'>Tickets are free!</Typography>
-      <Box sx={{justifyContent: 'center', display: 'flex'}}>
-            <Box sx={{width: 'fit-content'}}>
-              <Box sx={{marginTop: '0.5em', display: 'flex', flexDirection: 'column'}}>
-                <Typography variant='h6' sx={{textAlign: 'center'}}>Please fill out your profile:</Typography>
+    <Box sx={{paddingTop: '2em', display: 'flex'}}>
+      <Box sx={{height: '40em'}}>
+        <Typography variant='h4'>Register</Typography>
+        <Typography variant='h5'>Tickets are free!</Typography>
+      </Box>
+      <Box sx={{display: 'flex', position: 'absolute', left: '50%', transform: 'translateX(-50%)'}}>
+            <Card sx={{width: 'fit-content'}}>
+              <CardContent sx={{marginTop: '0.5em', display: 'flex', flexDirection: 'column'}}>
+                <Typography variant='h6' sx={{textAlign: 'center', marginBottom: '1em'}}>Please fill out your profile:</Typography>
                 <Box sx={{marginBottom: '1em'}}>
                   <TextField variant='outlined' id='registerFirstNameInput' label='First Name' sx={{marginRight: '1em'}}/>
                   <TextField id='registerLastNameInput' label='Last Name'/>
@@ -36,10 +38,9 @@ export default function Register() {
                 <Box sx={{justifyContent: 'center', display: 'flex', marginTop: '1em'}}>
                   <StandardButton variant='contained' sx={{width: 'fit-content'}}>Submit</StandardButton>
                 </Box>
-              </Box>
-            </Box>
+              </CardContent>
+            </Card>
       </Box>
-
     </Box>
   )
 }

@@ -37,7 +37,7 @@ export default function DesktopNav() {
       <AppBar sx={{backgroundColor: 'rgb(20, 20, 20, 0.7)'}}>
         <Toolbar /*style used for higher specificity*/
           style={{minHeight: appBarHeight, height: appBarHeight, justifyContent: 'space-evenly'}}>
-          <img src={SPAC} style={{width: '10em', cursor: 'pointer'}} onClick={() => window.scrollTo(0, 0)}/>
+          <img src={SPAC} alt='SPAC logo' style={{width: '10em', cursor: 'pointer'}} onClick={() => window.scrollTo(0, 0)}/>
           <Box>
             <DesktopMenuButton to='about' spy={true} smooth={true}
                                onClick={() => blockScrollTrigger()}>About</DesktopMenuButton>

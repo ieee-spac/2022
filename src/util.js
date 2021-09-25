@@ -43,7 +43,6 @@ export const theme = createTheme({
     primary: {
       main: '#0165ad',
       dark: '#015b9b',
-      variant1: '#18225A',
       variant2: '#004068',
       variant3: '#00CAFF',
       variant4: 'rgb(19, 19, 40)'
@@ -70,4 +69,16 @@ export const StandardButton = styled(Button)(() => ({
 
 export const TypographyWhite = styled(Typography)(() => ({
   color: 'white'
+}));
+
+export const TypographySchedule = styled(Typography)(() => ({
+  margin: '0 !important',
+  fontWeight: 'normal !important'
+}));
+
+export const GreenButton = styled(StandardButton)(() => ({
+  background: 'green',
+  '&:hover': {
+    background: 'rgb(0, 115, 0)'
+  }
 }));

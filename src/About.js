@@ -27,25 +27,25 @@ const EventDescriptionContainer = styled(Box)(() => ({
 export default function About() {
   return (
     <Box sx={{backgroundColor: theme.palette.primary['variant4'], paddingTop: '150px', paddingBottom: '2em'}}>
-      <Box sx={{display: 'flex', justifyContent: 'space-evenly'}}>
+      <Box sx={{display: 'flex', justifyContent: 'space-evenly', alignItems: 'center'}}>
         <Box
-          sx={{borderRadius: '50%', width: '130px', height: '130px', backgroundColor: theme.palette['tertiary'].main}}>
-          <TypographyWhite variant='h1' sx={{textAlign: 'center', paddingTop: '20px'}}>300</TypographyWhite>
+          sx={{borderRadius: '50%', width: '130px', height: '130px', backgroundColor: theme.palette['tertiary'].main, transform: 'scale(90%)'}}>
+          <TypographyWhite variant='h1' sx={{textAlign: 'center', paddingTop: '22px'}}>300</TypographyWhite>
           <TypographyWhite sx={{textAlign: 'center'}}>Attendees</TypographyWhite>
         </Box>
         <Box
-          sx={{borderRadius: '50%', width: '130px', height: '130px', backgroundColor: theme.palette['tertiary'].main}}>
-          <TypographyWhite variant='h1' sx={{textAlign: 'center', paddingTop: '20px'}}>9</TypographyWhite>
+          sx={{borderRadius: '50%', width: '130px', height: '130px', backgroundColor: theme.palette.secondary.main}}>
+          <TypographyWhite variant='h1' sx={{textAlign: 'center', paddingTop: '22px'}}>9</TypographyWhite>
           <TypographyWhite sx={{textAlign: 'center'}}>Years</TypographyWhite>
         </Box>
         <Box
-          sx={{borderRadius: '50%', width: '130px', height: '130px', backgroundColor: theme.palette['tertiary'].main}}>
-          <TypographyWhite variant='h1' sx={{textAlign: 'center', paddingTop: '20px'}}>200</TypographyWhite>
+          sx={{borderRadius: '50%', width: '130px', height: '130px', backgroundColor: 'green', transform: 'scale(110%)'}}>
+          <TypographyWhite variant='h1' sx={{textAlign: 'center', paddingTop: '22px'}}>200</TypographyWhite>
           <TypographyWhite sx={{textAlign: 'center'}}>Students</TypographyWhite>
         </Box>
         <Box
-          sx={{borderRadius: '50%', width: '130px', height: '130px', backgroundColor: theme.palette['tertiary'].main}}>
-          <TypographyWhite variant='h1' sx={{textAlign: 'center', paddingTop: '20px'}}>100</TypographyWhite>
+          sx={{borderRadius: '50%', width: '130px', height: '130px', backgroundColor: theme.palette.primary.main, transform: 'scale(120%)'}}>
+          <TypographyWhite variant='h1' sx={{textAlign: 'center', paddingTop: '22px'}}>100</TypographyWhite>
           <TypographyWhite sx={{textAlign: 'center'}}>Companies</TypographyWhite>
         </Box>
       </Box>

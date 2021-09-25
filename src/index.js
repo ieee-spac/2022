@@ -10,11 +10,11 @@ import Schedule from "./schedule/Schedule";
 import Patronage from "./Patronage";
 import Register from "./Register";
 import Contact from "./Contact";
-import Gallery from "./Gallery";
+import Gallery from "./gallery/Gallery";
 import FAQ from "./faq/FAQ";
 import {Element} from 'react-scroll'
 import {Box} from "@mui/material";
-import './css/App.css';
+import './App.css';
 import {isMobile, withOrientationChange} from "react-device-detect";
 import styled from "@emotion/styled";
 import Footer from "./Footer";

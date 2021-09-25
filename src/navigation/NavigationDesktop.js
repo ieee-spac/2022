@@ -10,7 +10,8 @@ const DesktopMenuButton = styled(Link)(({theme}) => ({
   color: theme.typography.color,
   fontFamily: theme.typography.fontFamily,
   cursor: 'pointer',
-  marginRight: '1rem'
+  marginRight: '1rem',
+  fontWeight: 450
 }));
 
 export default function DesktopNav() {

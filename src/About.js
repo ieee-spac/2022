@@ -1,4 +1,4 @@
-import {Box, Card, CardContent} from "@mui/material";
+import {Box, Card, CardContent, styled} from "@mui/material";
 import {theme, TypographyWhite} from "./util";
 import event1 from './assets/events/event1.png';
 import event2 from './assets/events/event2.png';
@@ -6,7 +6,6 @@ import event3 from './assets/events/event3.png';
 import event4 from './assets/events/event4.png';
 import event5 from './assets/events/event5.png';
 import event6 from './assets/events/event6.png';
-import styled from "@emotion/styled";
 
 const EventContainer = styled(Box)(() => ({
   display: 'flex',

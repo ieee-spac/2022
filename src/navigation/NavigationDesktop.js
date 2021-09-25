@@ -1,6 +1,5 @@
-import styled from "@emotion/styled";
 import {Link} from "react-scroll";
-import {AppBar, Box, Slide, Toolbar, useScrollTrigger} from "@mui/material";
+import {AppBar, Box, Slide, Toolbar, useScrollTrigger, styled} from "@mui/material";
 import {isMobile} from "react-device-detect";
 import {useEffect, useState} from "react";
 import {appBarHeight} from "../util";

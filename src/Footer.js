@@ -1,9 +1,8 @@
-import {Box, Container} from "@mui/material";
+import {Box, Container, styled} from "@mui/material";
 import {theme, TypographyWhite} from "./util";
 import LinkedIn from "./assets/linkedin.png";
 import Facebook from "./assets/fb.png";
 import Instagram from "./assets/insta.png";
-import styled from "@emotion/styled";
 
 const IconImage = styled('img')(() => ({
   width: '2em',

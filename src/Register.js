@@ -1,8 +1,7 @@
-import {Box, Card, CardContent, TextField, Typography} from "@mui/material";
+import {Box, Card, CardContent, styled, TextField, Typography} from "@mui/material";
 import {StyledDropZone} from 'react-drop-zone'
 import 'react-drop-zone/dist/styles.css'
 import {StandardButton, theme} from "./util";
-import styled from "@emotion/styled";
 
 const DropZone = styled(StyledDropZone)(() => ({
   fontFamily: `${theme.typography.fontFamily} !important`,

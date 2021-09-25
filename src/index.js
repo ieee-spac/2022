@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Navigation from './navigation/Navigation';
+//This imports the font
 import 'typeface-roboto'
 import {ThemeProvider, StyledEngineProvider} from '@mui/material/styles';
 import {theme} from "./util";
@@ -13,10 +14,12 @@ import Contact from "./Contact";
 import Gallery from "./gallery/Gallery";
 import FAQ from "./faq/FAQ";
 import {Element} from 'react-scroll'
-import {Box} from "@mui/material";
+import {Box, styled} from "@mui/material";
+//App.css contains any styles that could not be done inline or via emotion
 import './App.css';
+//Imports styling for timeline components
+import 'react-vertical-timeline-component/style.min.css';
 import {isMobile, withOrientationChange} from "react-device-detect";
-import styled from "@emotion/styled";
 import Footer from "./Footer";
 
 const Section = styled(Element)(() => ({

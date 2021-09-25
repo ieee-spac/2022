@@ -1,6 +1,5 @@
-import {Box} from "@mui/material";
+import {Box, styled} from "@mui/material";
 import animatedBackground from './assets/technology.mp4';
-import styled from "@emotion/styled";
 import {appBarHeight, GreenButton, StandardButton, theme, TypographyWhite} from "./util";
 import IEEE from './assets/ieee.png';
 import {Link} from "react-scroll";

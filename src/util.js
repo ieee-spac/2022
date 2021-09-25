@@ -1,7 +1,6 @@
 import {createTheme} from "@mui/material/styles";
 import {isMobile} from "react-device-detect";
-import styled from "@emotion/styled";
-import {Button, Typography} from "@mui/material";
+import {Button, styled, Typography} from "@mui/material";
 
 export const theme = createTheme({
   typography: {

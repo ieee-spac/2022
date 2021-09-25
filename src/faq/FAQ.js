@@ -1,8 +1,7 @@
-import {Accordion, AccordionDetails, AccordionSummary, Box, Typography} from "@mui/material";
+import {Accordion, AccordionDetails, AccordionSummary, Box, Typography, styled} from "@mui/material";
 import {questionData} from "./questions";
 import {useState} from "react";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import styled from "@emotion/styled";
 import {theme} from "../util";
 
 const QuestionAccordion = styled(Accordion)(() => ({

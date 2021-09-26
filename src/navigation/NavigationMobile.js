@@ -5,7 +5,6 @@ import {
   Drawer,
   IconButton,
   ListItem,
-  ListItemIcon,
   ListItemText,
   Toolbar,
   Typography
@@ -14,6 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import {appBarHeight, scrollOffsetMobile, theme} from "../util";
 import List from "@mui/material/List";
 import {scroller} from "react-scroll";
+import SPAC from "../assets/spaclogo.png";
 
 export default function MobileNav() {
   const [showDrawer, setShowDrawer] = useState(false);
@@ -40,51 +40,30 @@ export default function MobileNav() {
           <Box role="presentation" sx={{marginTop: appBarHeight}}>
             <List>
               <ListItem button onClick={() => scrollTo('about')}>
-                <ListItemIcon>
-                  <MenuIcon/>
-                </ListItemIcon>
-                <ListItemText secondary={'About'}/>
+                <ListItemText secondaryTypographyProps={{fontWeight: 'bold'}} secondary={'About'}/>
               </ListItem>
               <ListItem button onClick={() => scrollTo('register')}>
-                <ListItemIcon>
-                  <MenuIcon/>
-                </ListItemIcon>
-                <ListItemText secondary={'Register'}/>
+                <ListItemText secondaryTypographyProps={{fontWeight: 'bold'}} secondary={'Register'}/>
               </ListItem>
               <ListItem button onClick={() => scrollTo('schedule')}>
-                <ListItemIcon>
-                  <MenuIcon/>
-                </ListItemIcon>
-                <ListItemText secondary={'Schedule'}/>
+                <ListItemText secondaryTypographyProps={{fontWeight: 'bold'}} secondary={'Schedule'}/>
               </ListItem>
               <ListItem button onClick={() => scrollTo('patronage')}>
-                <ListItemIcon>
-                  <MenuIcon/>
-                </ListItemIcon>
-                <ListItemText secondary={'Patronage'}/>
+                <ListItemText secondaryTypographyProps={{fontWeight: 'bold'}} secondary={'Patronage'}/>
               </ListItem>
               <ListItem button onClick={() => scrollTo('gallery')}>
-                <ListItemIcon>
-                  <MenuIcon/>
-                </ListItemIcon>
-                <ListItemText secondary={'Gallery'}/>
+                <ListItemText secondaryTypographyProps={{fontWeight: 'bold'}} secondary={'Gallery'}/>
               </ListItem>
               <ListItem button onClick={() => scrollTo('faq')}>
-                <ListItemIcon>
-                  <MenuIcon/>
-                </ListItemIcon>
-                <ListItemText secondary={'FAQ'}/>
+                <ListItemText secondaryTypographyProps={{fontWeight: 'bold'}} secondary={'FAQ'}/>
               </ListItem>
               <ListItem button onClick={() => scrollTo('contact')}>
-                <ListItemIcon>
-                  <MenuIcon/>
-                </ListItemIcon>
-                <ListItemText secondary={'Contact Us'}/>
+                <ListItemText secondaryTypographyProps={{fontWeight: 'bold'}} secondary={'Contact Us'}/>
               </ListItem>
             </List>
           </Box>
         </Drawer>
-        <Typography>SPAC 2022</Typography>
+        <img src={SPAC} alt='SPAC Logo' style={{width: '7em'}} onClick={() => window.scrollTo(0, 0)}/>
       </Toolbar>
     </AppBar>
   );

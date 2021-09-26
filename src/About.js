@@ -9,18 +9,27 @@ import event6 from './assets/events/event6.png';
 
 const EventContainer = styled(Box)(() => ({
   display: 'flex',
+  alignItems: 'center',
   justifyContent: 'space-around',
   height: '150px',
-  marginTop: '4em'
+  marginTop: '4em',
+  '& > *': {
+    marginLeft: '1em',
+    marginRight: '1em'
+  }
 }));
 
 const EventDescriptionContainer = styled(Box)(() => ({
   display: 'flex',
   flexDirection: 'column',
   position: 'relative',
-  height: 'min-content',
-  top: '50%',
-  transform: 'translateY(-50%)'
+  height: 'min-content'
+}));
+
+const EventImage = styled('img')(() => ({
+  width: '30%',
+  maxWidth: '210px',
+  height: 'fit-content'
 }));
 
 export default function About() {
@@ -68,10 +77,10 @@ export default function About() {
           <TypographyWhite variant='h4'>Main Stage</TypographyWhite>
           <TypographyWhite>Spot for speakers and event kickoff.</TypographyWhite>
         </EventDescriptionContainer>
-        <img style={{width: 'auto', height: '150px'}} src={event4} alt='Main Stage'/>
+        <EventImage src={event4} alt='Main Stage'/>
       </EventContainer>
       <EventContainer>
-        <img style={{width: 'auto', height: '150px'}} src={event1} alt='Speed Dating'/>
+        <EventImage src={event1} alt='Speed Dating'/>
         <EventDescriptionContainer>
           <TypographyWhite variant='h4'>Speed Dating</TypographyWhite>
           <TypographyWhite>Quick private one to one convos with students in your discipline.</TypographyWhite>
@@ -82,10 +91,10 @@ export default function About() {
           <TypographyWhite variant='h4'>Exclusive Masterclass</TypographyWhite>
           <TypographyWhite>Stand alone event to reach out, showcase and finesse.</TypographyWhite>
         </EventDescriptionContainer>
-        <img style={{width: 'auto', height: '150px'}} src={event3} alt='Main Stage'/>
+        <EventImage src={event3} alt='Main Stage'/>
       </EventContainer>
       <EventContainer>
-        <img style={{width: 'auto', height: '150px'}} src={event6} alt='Speed Dating'/>
+        <EventImage src={event6} alt='Speed Dating'/>
         <EventDescriptionContainer>
           <TypographyWhite variant='h4'>Workshops</TypographyWhite>
           <TypographyWhite>Concurrently run, where you show students what you're all about.</TypographyWhite>
@@ -96,10 +105,10 @@ export default function About() {
           <TypographyWhite variant='h4'>Panel</TypographyWhite>
           <TypographyWhite>Where you can give insight on the industry and inspire.</TypographyWhite>
         </EventDescriptionContainer>
-        <img style={{width: 'auto', height: '150px'}} src={event2} alt='Main Stage'/>
+        <EventImage src={event2} alt='Main Stage'/>
       </EventContainer>
       <EventContainer>
-        <img style={{width: 'auto', height: '150px'}} src={event5} alt='Speed Dating'/>
+        <EventImage src={event5} alt='Speed Dating'/>
         <EventDescriptionContainer>
           <TypographyWhite variant='h4'>Booths</TypographyWhite>
           <TypographyWhite>Where students can drop in for a chitchat with your company.</TypographyWhite>

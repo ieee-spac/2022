@@ -1,8 +1,9 @@
 import {Alert, Box, Card, CardContent, Snackbar, TextField, Typography} from "@mui/material";
 import {StandardButton} from "./util";
 import {useState} from "react";
+import {isMobile} from "react-device-detect";
 
-export default function Contact() {
+export default function Contact({isPortrait}) {
   const [formState, setFormState] = useState({
     firstName: '',
     firstNameError: false,
@@ -15,6 +16,8 @@ export default function Contact() {
     errorSummary: ''
   });
   const [showSnackBar, setShowSnackBar] = useState(false);
+
+  const nameBoxWidthStyle = isMobile && isPortrait ? {width: '100%'} : {};
 
   async function submitContactForm() {
     const newFormState = {...formState};
@@ -72,12 +75,13 @@ export default function Contact() {
         <Card sx={{width: 'fit-content'}}>
           <CardContent sx={{marginTop: '0.5em', display: 'flex', flexDirection: 'column'}}>
             <Typography variant='h6' sx={{textAlign: 'center', marginBottom: '1em'}}>Contact Us</Typography>
-            <Box sx={{marginBottom: '1em'}}>
+            <Box>
               <TextField value={formState.firstName} onChange={event => setFormValue('firstName', event)}
                          error={formState.firstNameError} variant='outlined' id='contactFirstNameInput'
-                         label='First Name' sx={{marginRight: '1em'}}/>
+                         label='First Name' sx={{marginRight: '1em', marginBottom: '1em', ...nameBoxWidthStyle}}/>
               <TextField value={formState.lastName} onChange={event => setFormValue('lastName', event)}
-                         error={formState.lastNameError} id='contactLastNameInput' label='Last Name'/>
+                         error={formState.lastNameError} id='contactLastNameInput' label='Last Name'
+                         sx={{marginBottom: '1em', ...nameBoxWidthStyle}}/>
             </Box>
             <TextField value={formState.email} onChange={event => setFormValue('email', event)}
                        error={formState.emailError} sx={{width: '100%', marginBottom: '1em'}} id='contactEmailInput'

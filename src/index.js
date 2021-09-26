@@ -63,7 +63,7 @@ const App = props => {
               <FAQ/>
             </Section>
             <Element name='contact' style={{padding: `0 ${margin} 0 ${margin}`}}>
-              <Contact/>
+              <Contact isPortrait={isPortrait}/>
             </Element>
             <Footer/>
           </Box>

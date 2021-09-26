@@ -3,13 +3,14 @@ import {VerticalTimeline, VerticalTimelineElement} from 'react-vertical-timeline
 import {events} from "./events";
 import {TypographySchedule} from "../util";
 import 'react-vertical-timeline-component/style.min.css';
+import {isMobile} from "react-device-detect";
 
 export default function Schedule() {
   return (
     <Box>
       <Typography variant='h4'>Schedule</Typography>
       <Box sx={{display: 'flex', justifyContent: 'center'}}>
-        <VerticalTimeline>
+        <VerticalTimeline animate={!isMobile}>
           {
             events.map((event, index) => {
               let borderWidth;

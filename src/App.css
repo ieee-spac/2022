@@ -21,3 +21,12 @@
 .ril-toolbar {
     background-color: rgba(0, 0, 0, 0) !important
 }
+
+/*DropZone error styling*/
+.DropZoneError {
+    border-color: rgb(211, 47, 47);
+    color: rgb(211, 47, 47) !important;
+}
+.DropZoneError:focus {
+    border-color: rgb(211, 47, 47);
+}

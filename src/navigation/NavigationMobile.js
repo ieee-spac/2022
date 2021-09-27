@@ -6,8 +6,7 @@ import {
   IconButton,
   ListItem,
   ListItemText,
-  Toolbar,
-  Typography
+  Toolbar
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import {appBarHeight, scrollOffsetMobile, theme} from "../util";

@@ -37,11 +37,6 @@ export default function Register() {
 
   function submitRegister() {
     const newFormState = {...formState};
-    findMissingFields(newFormState);
-    setFormState(newFormState);
-  }
-
-  function findMissingFields(newFormState) {
     const missingFields = [];
     newFormState.firstNameError = formState.firstName === '';
     if (newFormState.firstNameError) {
@@ -74,14 +69,13 @@ export default function Register() {
     if (missingFields.length > 0) {
       newFormState.errorSummary = 'Missing fields: ' + missingFields.join(', ');
     }
-    return missingFields;
+    setFormState(newFormState);
   }
 
   function setFile(file, data) {
     const newFormState = {...formState};
     newFormState.file = file;
     newFormState.fileError = false;
-    findMissingFields(newFormState);
     setFormState(newFormState);
     setFileData(data);
   }

@@ -7,7 +7,7 @@ import {isMobile} from "react-device-detect";
 
 export default function Schedule() {
   return (
-    <Box>
+    <Box sx={{paddingBottom: '4em'}}>
       <Typography variant='h4'>Schedule</Typography>
       <Box sx={{display: 'flex', justifyContent: 'center'}}>
         <VerticalTimeline animate={!isMobile}>

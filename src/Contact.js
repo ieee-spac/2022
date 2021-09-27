@@ -44,7 +44,7 @@ export default function Contact({isPortrait}) {
       newFormState.errorSummary = '';
       const url = `https://docs.google.com/forms/u/0/d/e/1FAIpQLSeLxd7QRsBkv3pZrNpiXIjLCRyF_T2duSwT7AcQiaMNqnvS9g/formResponse?entry.410070190=${formState.firstName}&entry.1246663423=${formState.lastName}&entry.1530865124=${formState.email}&entry.129369525=${formState.message}`;
       const result = await fetch(url, {
-        method: 'GET',
+        method: 'POST',
         mode: 'no-cors',
         headers: {
           'Accept': 'application/json',

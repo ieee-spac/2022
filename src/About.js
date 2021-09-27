@@ -34,8 +34,8 @@ const EventImage = styled('img')(() => ({
 
 export default function About() {
   return (
-    <Box sx={{backgroundColor: theme.palette.primary['variant4'], paddingTop: '150px', paddingBottom: '2em'}}>
-      <Box sx={{display: 'flex', justifyContent: 'space-evenly', alignItems: 'center'}}>
+    <Box sx={{backgroundColor: theme.palette.primary['variant4'], paddingBottom: '2em'}}>
+      <Box sx={{display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', paddingTop: '150px'}}>
         <Box
           sx={{borderRadius: '50%', width: '130px', height: '130px', backgroundColor: theme.palette['tertiary'].main, transform: 'scale(90%)'}}>
           <TypographyWhite variant='h1' sx={{textAlign: 'center', paddingTop: '22px'}}>300</TypographyWhite>

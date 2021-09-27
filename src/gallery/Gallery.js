@@ -1,4 +1,4 @@
-import {Box, ImageList, ImageListItem} from "@mui/material";
+import {Box, ImageList, ImageListItem, Typography} from "@mui/material";
 import {galleryImages} from "./images";
 import Lightbox from 'react-image-lightbox';
 import {useState} from "react";
@@ -13,7 +13,8 @@ export default function Gallery() {
   }
 
   return (
-    <Box>
+    <Box sx={{paddingBottom: '4em'}}>
+      <Typography variant='h4'>Gallery</Typography>
       <ImageList variant="woven" cols={3} gap={8}>
         {galleryImages.map((item, index) => (
           <ImageListItem key={index} onClick={() => showPhoto(index)} sx={{cursor: 'pointer'}}>

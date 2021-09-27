@@ -41,7 +41,7 @@ export default function FAQ() {
   };
 
   return (
-    <Box sx={{paddingTop: '5em'}}>
+    <Box>
       <Typography variant='h4'>FAQ</Typography>
       {
         questionData.map((question, index) => {

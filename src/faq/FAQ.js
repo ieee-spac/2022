@@ -5,11 +5,13 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {theme} from "../util";
 
 const QuestionAccordion = styled(Accordion)(() => ({
-  backgroundColor: 'unset',
   marginBottom: '1em',
   borderRadius: '3px',
   '&:hover': {
     background: 'rgb(240, 240, 240)'
+  },
+  '&:before': {
+    backgroundColor: 'unset'
   }
 }));
 

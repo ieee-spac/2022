@@ -21,6 +21,9 @@ import './App.css';
 import 'react-image-lightbox/style.css';
 import {isMobile, withOrientationChange} from "react-device-detect";
 import Footer from "./Footer";
+import { initializeApp } from "firebase/app";
+import { getStorage } from "firebase/storage";
+
 
 const Section = styled(Element)(() => ({
   paddingBottom: '5em'
@@ -32,6 +35,19 @@ function getContentMargin(isPortrait) {
   }
   return '15%';
 }
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAdsG51usHQMVONrx9x3TzQC6gOy1Cvfj8",
+  authDomain: "ieee-spac.firebaseapp.com",
+  projectId: "ieee-spac",
+  storageBucket: "ieee-spac.appspot.com",
+  messagingSenderId: "616006840653",
+  appId: "1:616006840653:web:245f962575e995fa2e8704",
+  measurementId: "G-ZZBFTR45GR"
+};
+
+const firebaseApp = initializeApp(firebaseConfig);
+const storage = getStorage(firebaseApp);
 
 const App = props => {
   const {isPortrait} = props;
@@ -48,7 +64,7 @@ const App = props => {
               <About isPortrait={isPortrait}/>
             </Section>
             <Section name='register' style={{padding: `0 ${margin} 0 ${margin}`}}>
-              <Register isPortrait={isPortrait}/>
+              <Register isPortrait={isPortrait} storage={storage}/>
             </Section>
             <Section name='schedule' style={{padding: `0 ${margin} 0 ${margin}`}}>
               <Schedule/>

@@ -70,11 +70,6 @@ export const TypographyWhite = styled(Typography)(() => ({
   color: 'white'
 }));
 
-export const TypographySchedule = styled(Typography)(() => ({
-  margin: '0 !important',
-  fontWeight: 'normal !important'
-}));
-
 export const GreenButton = styled(StandardButton)(() => ({
   background: 'green',
   '&:hover': {

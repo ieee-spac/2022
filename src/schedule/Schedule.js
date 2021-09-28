@@ -1,9 +1,13 @@
-import {Box, Typography} from "@mui/material";
+import {Box, styled, Typography} from "@mui/material";
 import {VerticalTimeline, VerticalTimelineElement} from 'react-vertical-timeline-component';
 import {events} from "./events";
-import {TypographySchedule} from "../util";
 import 'react-vertical-timeline-component/style.min.css';
 import {isMobile} from "react-device-detect";
+
+export const TypographySchedule = styled(Typography)(() => ({
+  margin: '0 !important',
+  fontWeight: 'normal !important'
+}));
 
 export default function Schedule() {
   return (

@@ -13,18 +13,16 @@ export default function Contact({isPortrait}) {
     emailError: false,
     message: '',
     messageError: false,
-    errorSummary: '',
-    buttonEnabled: true
+    errorSummary: ''
   });
   const [showSnackBar, setShowSnackBar] = useState(false);
+  const [submitEnabled, setSubmitEnabled] = useState(true);
 
   const nameBoxWidthStyle = isMobile && isPortrait ? {width: '100%'} : {};
 
   async function submitContactForm() {
-    let newFormState = {...formState};
-    newFormState.buttonEnabled = false;
-    setFormState(newFormState);
-    newFormState = {...newFormState};
+    const newFormState = {...formState};
+    setSubmitEnabled(false);
 
     const missingFields = [];
     newFormState.firstNameError = formState.firstName === '';
@@ -45,6 +43,7 @@ export default function Contact({isPortrait}) {
     }
     if (missingFields.length > 0) {
       newFormState.errorSummary = 'Missing fields: ' + missingFields.join(', ');
+      setSubmitEnabled(true);
     } else {
       newFormState.errorSummary = '';
       const url = `https://docs.google.com/forms/u/0/d/e/1FAIpQLSeLxd7QRsBkv3pZrNpiXIjLCRyF_T2duSwT7AcQiaMNqnvS9g/formResponse?entry.410070190=${formState.firstName}&entry.1246663423=${formState.lastName}&entry.1530865124=${formState.email}&entry.129369525=${formState.message}`;
@@ -63,6 +62,7 @@ export default function Contact({isPortrait}) {
         newFormState.email = '';
         setShowSnackBar(true);
       }
+      setSubmitEnabled(true);
     }
     newFormState.buttonEnabled = true;
     setFormState(newFormState);
@@ -96,7 +96,7 @@ export default function Contact({isPortrait}) {
                        error={formState.messageError} sx={{width: '100%', marginBottom: '1em'}} id='contactMessageInput'
                        label='Message' multiline/>
             <Box sx={{justifyContent: 'center', display: 'flex', marginTop: '1em'}}>
-              <StandardButton variant='contained' sx={{width: 'fit-content'}} disabled={!formState.buttonEnabled}
+              <StandardButton variant='contained' sx={{width: 'fit-content'}} disabled={!submitEnabled}
                               onClick={() => submitContactForm()}>Submit</StandardButton>
             </Box>
             <Box sx={{maxWidth: 'fit-content'}}>

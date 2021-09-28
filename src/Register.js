@@ -76,13 +76,14 @@ export default function Register({isPortrait, storage}) {
     } else {
       newFormState.errorSummary = '';
 
-      const resumeName = `resumes/${newFormState.firstName} ${newFormState.lastName} Resume ${new Date().getTime()}`;
-      const resumeRef = ref(storage, resumeName);
+      const resumeName = `${newFormState.firstName} ${newFormState.lastName} Resume ${new Date().getTime()}`;
+      const resumePath = `resumes/${resumeName}`;
+      const resumeRef = ref(storage, resumePath);
 
       try {
         uploadBytes(resumeRef, newFormState.file);
 
-        const url = `https://docs.google.com/forms/d/e/1FAIpQLScdFwEc7scZ-HbtBrcHv9MnEHeGKwEdUCumc8oZht9dydPkyA/formResponse?entry.509145449=${formState.firstName}&entry.527675740=${formState.lastName}&entry.1088293976=${formState.phone}&entry.1396694674=${formState.email}&entry.513597798=${formState.university}&entry.1760655465=${formState.program}`;
+        const url = `https://docs.google.com/forms/d/e/1FAIpQLScdFwEc7scZ-HbtBrcHv9MnEHeGKwEdUCumc8oZht9dydPkyA/formResponse?entry.509145449=${formState.firstName}&entry.527675740=${formState.lastName}&entry.1088293976=${formState.phone}&entry.1396694674=${formState.email}&entry.513597798=${formState.university}&entry.1760655465=${formState.program}&entry.69468430=${resumeName}`;
         const result = await fetch(url, {
           method: 'POST',
           mode: 'no-cors',

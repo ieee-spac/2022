@@ -28,8 +28,7 @@ const EventDescriptionContainer = styled(Box)(() => ({
 
 const EventImage = styled('img')(() => ({
   width: '30%',
-  maxWidth: '210px',
-  height: 'fit-content'
+  maxWidth: '210px'
 }));
 
 export default function About() {

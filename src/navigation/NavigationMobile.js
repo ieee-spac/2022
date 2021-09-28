@@ -28,7 +28,8 @@ export default function MobileNav() {
   return (
     <AppBar sx={{zIndex: theme.zIndex.drawer + 1}}>
       <Toolbar /*style used for higher specificity*/ style={{minHeight: appBarHeight, height: appBarHeight}}>
-        <IconButton onClick={() => setShowDrawer(!showDrawer)} color="inherit" aria-label="open drawer">
+        <IconButton sx={{marginRight: '1rem'}} onClick={() => setShowDrawer(!showDrawer)} color="inherit"
+                    aria-label="open drawer">
           <MenuIcon/>
         </IconButton>
         <Drawer

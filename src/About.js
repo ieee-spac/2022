@@ -6,6 +6,7 @@ import event3 from './assets/events/event3.png';
 import event4 from './assets/events/event4.png';
 import event5 from './assets/events/event5.png';
 import event6 from './assets/events/event6.png';
+import {isMobile} from "react-device-detect";
 
 const EventContainer = styled(Box)(() => ({
   display: 'flex',
@@ -31,30 +32,48 @@ const EventImage = styled('img')(() => ({
   maxWidth: '210px'
 }));
 
-export default function About() {
+const Bubble = styled(Box)(() => ({
+  borderRadius: '50%',
+  width: '80px',
+  height: '80px',
+}));
+
+const BubbleHeader = styled(TypographyWhite)(() => ({
+  textAlign: 'center',
+  paddingTop: '8px',
+  fontSize: '30px',
+  fontWeight: 'bold'
+}));
+
+const BubbleWord = styled(TypographyWhite)(() => ({
+  textAlign: 'center',
+  fontSize: '11px',
+  marginTop: '-0.3rem'
+}));
+
+export default function About({isPortrait}) {
+  const baseScale = getBubbleScale(isMobile, isPortrait)
+  const increment = 14;
+
   return (
     <Box sx={{backgroundColor: theme.palette.primary['variant4'], paddingBottom: '2em'}}>
       <Box sx={{display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', paddingTop: '5rem'}}>
-        <Box
-          sx={{borderRadius: '50%', width: '130px', height: '130px', backgroundColor: theme.palette['tertiary'].main, transform: 'scale(90%)'}}>
-          <TypographyWhite variant='h1' sx={{textAlign: 'center', paddingTop: '22px'}}>300</TypographyWhite>
-          <TypographyWhite sx={{textAlign: 'center'}}>Attendees</TypographyWhite>
-        </Box>
-        <Box
-          sx={{borderRadius: '50%', width: '130px', height: '130px', backgroundColor: theme.palette.secondary.main}}>
-          <TypographyWhite variant='h1' sx={{textAlign: 'center', paddingTop: '22px'}}>9</TypographyWhite>
-          <TypographyWhite sx={{textAlign: 'center'}}>Years</TypographyWhite>
-        </Box>
-        <Box
-          sx={{borderRadius: '50%', width: '130px', height: '130px', backgroundColor: 'green', transform: 'scale(110%)'}}>
-          <TypographyWhite variant='h1' sx={{textAlign: 'center', paddingTop: '22px'}}>200</TypographyWhite>
-          <TypographyWhite sx={{textAlign: 'center'}}>Students</TypographyWhite>
-        </Box>
-        <Box
-          sx={{borderRadius: '50%', width: '130px', height: '130px', backgroundColor: theme.palette.primary.main, transform: 'scale(120%)'}}>
-          <TypographyWhite variant='h1' sx={{textAlign: 'center', paddingTop: '22px'}}>100</TypographyWhite>
-          <TypographyWhite sx={{textAlign: 'center'}}>Companies</TypographyWhite>
-        </Box>
+        <Bubble sx={{backgroundColor: theme.palette['tertiary'].main, transform: `scale(${baseScale}%)`}}>
+          <BubbleHeader>300</BubbleHeader>
+          <BubbleWord sx={{textAlign: 'center'}}>Attendees</BubbleWord>
+        </Bubble>
+        <Bubble sx={{backgroundColor: theme.palette.secondary.main, transform: `scale(${baseScale + increment}%)`}}>
+          <BubbleHeader>9</BubbleHeader>
+          <BubbleWord>Years</BubbleWord>
+        </Bubble>
+        <Bubble sx={{backgroundColor: 'green', transform: `scale(${baseScale + increment * 2}%)`}}>
+          <BubbleHeader>200</BubbleHeader>
+          <BubbleWord>Students</BubbleWord>
+        </Bubble>
+        <Bubble sx={{backgroundColor: theme.palette.primary.main, transform: `scale(${baseScale + increment * 3}%)`}}>
+          <BubbleHeader>100</BubbleHeader>
+          <BubbleWord>Companies</BubbleWord>
+        </Bubble>
       </Box>
       <Card raised sx={{boxShadow: 'none', marginTop: '5em'}}>
         <CardContent sx={{background: theme.palette.primary['variant2']}}>
@@ -115,4 +134,14 @@ export default function About() {
       </EventContainer>
     </Box>
   )
+}
+
+function getBubbleScale(isMobile, isPortrait) {
+  if (isMobile && isPortrait) {
+    return 75;
+  } else if (isMobile) {
+    return 110;
+  } else {
+    return 150;
+  }
 }

@@ -45,7 +45,7 @@ const App = props => {
           <Home isPortrait={isPortrait}/>
           <Box>
             <Section name='about' style={{padding: `0 ${margin} 0 ${margin}`, backgroundColor: theme.palette.primary['variant4']}}>
-              <About/>
+              <About isPortrait={isPortrait}/>
             </Section>
             <Section name='register' style={{padding: `0 ${margin} 0 ${margin}`}}>
               <Register isPortrait={isPortrait}/>

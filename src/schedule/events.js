@@ -16,14 +16,14 @@ export const events = [
   {
     title: 'Welcome Address',
     icon: <EmojiPeopleIcon/>,
-    iconColor: 'green',
+    iconColor: theme.palette.secondary.light,
     description: '',
     time: '6:15 PM'
   },
   {
     title: 'Tech Panel',
     icon: <DeveloperBoardIcon/>,
-    iconColor: theme.palette.primary['variant3'],
+    iconColor: theme.palette['tertiary'].light,
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
     time: '6:45 PM'
   },
@@ -37,14 +37,14 @@ export const events = [
   {
     title: 'Nokia Masterclass',
     icon: <BorderColorIcon/>,
-    iconColor: theme.palette.primary['variant3'],
+    iconColor: theme.palette.secondary.light,
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
     time: '7:20 PM'
   },
   {
     title: 'Speed Dating',
     icon: <GroupIcon/>,
-    iconColor: 'green',
+    iconColor: theme.palette['tertiary'].light,
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
     time: '7:25 PM'
   },
@@ -58,14 +58,14 @@ export const events = [
   {
     title: 'FDM Masterclass',
     icon: <BorderColorIcon/>,
-    iconColor: 'green',
+    iconColor: theme.palette.secondary.light,
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
     time: '7:40 PM'
   },
   {
     title: 'Closing Remarks',
     icon: <EmojiPeopleIcon/>,
-    iconColor: theme.palette.primary['variant3'],
+    iconColor: theme.palette['tertiary'].light,
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
     time: '7:50 PM'
   }

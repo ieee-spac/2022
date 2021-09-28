@@ -33,7 +33,9 @@ export default function Footer({isPortrait}) {
   return (
     <FooterContainer>
       <FooterContainerInner>
-        <TypographyWhite variant='h6' sx={{zIndex: 1, fontSize: fontSize}}>Follow us on social media:</TypographyWhite>
+        <TypographyWhite variant='h6' sx={{zIndex: 1, fontSize: fontSize, alignSelf: 'center'}}>
+          Follow us on social media:
+        </TypographyWhite>
         <a href='https://www.linkedin.com/company/spacottawa/' target='_blank' rel='noreferrer' style={{marginLeft: 0}}>
           <IconImage src={LinkedIn} sx={{marginLeft: iconMargin}}/>
         </a>

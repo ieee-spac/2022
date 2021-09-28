@@ -13,14 +13,19 @@ export default function Contact({isPortrait}) {
     emailError: false,
     message: '',
     messageError: false,
-    errorSummary: ''
+    errorSummary: '',
+    buttonEnabled: true
   });
   const [showSnackBar, setShowSnackBar] = useState(false);
 
   const nameBoxWidthStyle = isMobile && isPortrait ? {width: '100%'} : {};
 
   async function submitContactForm() {
-    const newFormState = {...formState};
+    let newFormState = {...formState};
+    newFormState.buttonEnabled = false;
+    setFormState(newFormState);
+    newFormState = {...newFormState};
+
     const missingFields = [];
     newFormState.firstNameError = formState.firstName === '';
     if (newFormState.firstNameError) {
@@ -59,6 +64,7 @@ export default function Contact({isPortrait}) {
         setShowSnackBar(true);
       }
     }
+    newFormState.buttonEnabled = true;
     setFormState(newFormState);
   }
 
@@ -90,7 +96,7 @@ export default function Contact({isPortrait}) {
                        error={formState.messageError} sx={{width: '100%', marginBottom: '1em'}} id='contactMessageInput'
                        label='Message' multiline/>
             <Box sx={{justifyContent: 'center', display: 'flex', marginTop: '1em'}}>
-              <StandardButton variant='contained' sx={{width: 'fit-content'}}
+              <StandardButton variant='contained' sx={{width: 'fit-content'}} disabled={!formState.buttonEnabled}
                               onClick={() => submitContactForm()}>Submit</StandardButton>
             </Box>
             <Box sx={{maxWidth: 'fit-content'}}>

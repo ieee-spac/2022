@@ -48,7 +48,7 @@ const App = props => {
               <About/>
             </Section>
             <Section name='register' style={{padding: `0 ${margin} 0 ${margin}`}}>
-              <Register/>
+              <Register isPortrait={isPortrait}/>
             </Section>
             <Section name='schedule' style={{padding: `0 ${margin} 0 ${margin}`}}>
               <Schedule/>

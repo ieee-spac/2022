@@ -4,6 +4,7 @@ import 'react-drop-zone/dist/styles.css'
 import {StandardButton, theme} from "./util";
 import {useState} from "react";
 import UploadFileIcon from '@mui/icons-material/UploadFile';
+import {isMobile} from "react-device-detect";
 
 const DropZone = styled(StyledDropZone)(() => ({
   fontFamily: `${theme.typography.fontFamily} !important`,
@@ -15,7 +16,7 @@ const DropZone = styled(StyledDropZone)(() => ({
   }
 }));
 
-export default function Register() {
+export default function Register({isPortrait}) {
   const [formState, setFormState] = useState({
     firstName: '',
     firstNameError: false,
@@ -34,6 +35,8 @@ export default function Register() {
     errorSummary: ''
   });
   const [fileData, setFileData] = useState('');
+
+  const nameBoxWidthStyle = isMobile && isPortrait ? {width: '100%'} : {};
 
   function submitRegister() {
     const newFormState = {...formState};
@@ -88,21 +91,21 @@ export default function Register() {
 
   return (
     <Box sx={{paddingTop: '2em', display: 'flex', flexDirection: 'column'}}>
-      <Box>
+      <Box sx={{marginBottom: '1em'}}>
         <Typography variant='h4'>Register</Typography>
         <Typography variant='h5'>Tickets are free!</Typography>
       </Box>
-      <Box sx={{display: 'flex', width: '100%', justifyContent: 'center'}}>
-        <Card sx={{width: 'fit-content', transform: 'translateY(-81px)'}}>
+      <Box sx={{display: 'flex', width: '100%', justifyContent: 'center', paddingBottom: '2em'}}>
+        <Card sx={{width: 'fit-content', transform: window.innerWidth >= 1200 ? 'translateY(-81px)' : ''}}>
           <CardContent sx={{marginTop: '0.5em', display: 'flex', flexDirection: 'column'}}>
             <Typography variant='h6' sx={{textAlign: 'center', marginBottom: '1em'}}>Please fill out your
               profile:</Typography>
-            <Box sx={{marginBottom: '1em'}}>
+            <Box>
               <TextField value={formState.firstName} error={formState.firstNameError} variant='outlined'
-                         id='registerFirstNameInput' label='First Name' sx={{marginRight: '1em'}}
+                         id='registerFirstNameInput' label='First Name' sx={{marginBottom: '1em', marginRight: '1em', ...nameBoxWidthStyle}}
                          onChange={event => setFormValue('firstName', event)}/>
               <TextField value={formState.lastName} error={formState.lastNameError} id='registerLastNameInput'
-                         label='Last Name' onChange={event => setFormValue('lastName', event)}/>
+                         label='Last Name' onChange={event => setFormValue('lastName', event)} sx={{marginBottom: '1em', ...nameBoxWidthStyle}}/>
             </Box>
             <TextField value={formState.phone} error={formState.phoneError} sx={{width: '100%', marginBottom: '1em'}}
                        id='registerPhoneNumberInput' type='tel' label='Phone Number' onChange={event => setFormValue('phone', event)}/>

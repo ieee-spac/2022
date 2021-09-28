@@ -42,7 +42,7 @@ const App = props => {
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={theme}>
           <Navigation/>
-          <Home/>
+          <Home isPortrait={isPortrait}/>
           <Box>
             <Section name='about' style={{padding: `0 ${margin} 0 ${margin}`, backgroundColor: theme.palette.primary['variant4']}}>
               <About/>

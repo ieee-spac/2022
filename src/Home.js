@@ -3,6 +3,7 @@ import animatedBackground from './assets/technology.mp4';
 import {appBarHeight, GreenButton, StandardButton, theme, TypographyWhite} from "./util";
 import IEEE from './assets/ieee.png';
 import {Link} from "react-scroll";
+import {isMobile} from "react-device-detect";
 
 const Video = styled('video')(() => ({
   position: 'absolute',
@@ -23,7 +24,25 @@ const VideoOverlay = styled(Box)(() => ({
   zIndex: -1
 }));
 
-export default function Home() {
+const TitleTypography = styled(TypographyWhite)(() => ({
+  textAlign: 'center',
+  fontSize: isMobile ? theme.typography.h5.fontSize : theme.typography.h1.fontSize
+}));
+
+const HomeContainer = styled(Box)(() => ({
+  display: 'flex',
+  flexDirection: 'column',
+  height: `calc(100vh - ${appBarHeight})`
+}));
+
+const HomeSection = styled(Box)(() => ({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center'
+}));
+
+export default function Home({isPortrait}) {
+  const rowButtons = isMobile && !isPortrait;
   return (
     <Box sx={{minHeight: '100vh', width: '100%'}}>
       <VideoOverlay/>
@@ -31,21 +50,33 @@ export default function Home() {
         <source src={animatedBackground} type="video/mp4"/>
       </Video>
       <Box sx={{paddingTop: appBarHeight}}/>
-      <Box sx={{alignItems: 'center', display: 'flex', flexDirection: 'column', paddingTop: '10em'}}>
-        <img src={IEEE} style={{width: '20em'}} alt='IEEE Logo'/>
-        <TypographyWhite variant='h1' sx={{marginBottom: '3em', textAlign: 'center'}}>Student Professional Awareness Conference</TypographyWhite>
-        <TypographyWhite variant='h2'>January ?, 2022</TypographyWhite>
-        <TypographyWhite sx={{textAlign: 'center'}}>Insert detail about where event is held</TypographyWhite>
-        <Box sx={{marginTop: '5em'}}>
-          <Link to='register' spy={true} smooth={true}>
-            <StandardButton variant='contained' color='secondary' sx={{marginRight: '2em'}}>Register Now</StandardButton>
-          </Link>
-          <GreenButton variant='contained' sx={{marginLeft: '2em'}}>Sponsor Us</GreenButton>
-        </Box>
-        <Link to='about' spy={true} smooth={true}>
-          <StandardButton sx={{marginTop: '2em'}} variant='contained'>Read More</StandardButton>
-        </Link>
-      </Box>
+      <HomeContainer sx={{justifyContent: rowButtons ? 'space-around' : 'space-evenly'}}>
+        <HomeSection>
+          <img src={IEEE} style={{width: isMobile ? '12rem' : '20rem'}} alt='IEEE Logo'/>
+          <TitleTypography variant='h1'>Student Professional Awareness Conference</TitleTypography>
+        </HomeSection>
+        <HomeSection>
+          <TypographyWhite variant='h2'>January ?, 2022</TypographyWhite>
+          <TypographyWhite>Insert detail about where event is held</TypographyWhite>
+        </HomeSection>
+        <HomeSection>
+          <Box sx={{display: 'flex', flexDirection: rowButtons ? 'row' : 'column'}}>
+            <Box>
+              <Link to='register' spy={true} smooth={true}>
+                <StandardButton variant='contained' color='secondary' sx={{marginRight: rowButtons ? '0.6rem' : '2rem'}}>
+                  Register Now
+                </StandardButton>
+              </Link>
+              <Link to='patronage' spy={true} smooth={true}>
+                <GreenButton variant='contained' sx={{marginLeft: rowButtons ? '0.6rem' : '2rem', marginRight: rowButtons ? '0.6rem' : 0}}>Sponsor Us</GreenButton>
+              </Link>
+            </Box>
+            <Link to='about' spy={true} smooth={true} style={{display: 'flex', justifyContent: 'center', marginTop: rowButtons ? 0 : '2rem', marginBottom: rowButtons ? '4rem' : 0}}>
+              <StandardButton sx={{marginLeft: rowButtons ? '0.6rem' : 0}} variant='contained'>Read More</StandardButton>
+            </Link>
+          </Box>
+        </HomeSection>
+      </HomeContainer>
     </Box>
   )
 }

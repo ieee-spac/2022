@@ -65,7 +65,7 @@ const App = props => {
             <Element name='contact' style={{padding: `0 ${margin} 0 ${margin}`}}>
               <Contact isPortrait={isPortrait}/>
             </Element>
-            <Footer/>
+            <Footer isPortrait={isPortrait}/>
           </Box>
         </ThemeProvider>
       </StyledEngineProvider>

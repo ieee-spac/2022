@@ -40,6 +40,7 @@ export default function Register({isPortrait, storage}) {
   const [submitEnabled, setSubmitEnabled] = useState(true);
 
   const nameBoxWidthStyle = isMobile && isPortrait ? {width: '100%'} : {};
+  const resumeUploadName = isMobile ? 'Upload your resume here' : 'Click or drop your resume here';
 
   async function submitRegister() {
     const newFormState = {...formState};
@@ -81,7 +82,7 @@ export default function Register({isPortrait, storage}) {
       const resumeRef = ref(storage, resumePath);
 
       try {
-        uploadBytes(resumeRef, newFormState.file);
+        await uploadBytes(resumeRef, newFormState.file);
 
         const url = `https://docs.google.com/forms/d/e/1FAIpQLScdFwEc7scZ-HbtBrcHv9MnEHeGKwEdUCumc8oZht9dydPkyA/formResponse?entry.509145449=${formState.firstName}&entry.527675740=${formState.lastName}&entry.1088293976=${formState.phone}&entry.1396694674=${formState.email}&entry.513597798=${formState.university}&entry.1760655465=${formState.program}&entry.69468430=${resumeName}`;
         const result = await fetch(url, {
@@ -167,7 +168,7 @@ export default function Register({isPortrait, storage}) {
             <TextField value={formState.program} error={formState.programError}
                        sx={{width: '100%', marginBottom: '1em'}} id='registerProgramInput' label='Program'
                        onChange={event => setFormValue('program', event)}/>
-            <DropZone className={formState.fileError ? 'DropZoneError' : ''} children='Click or drop your Resume here'
+            <DropZone className={formState.fileError ? 'DropZoneError' : ''} children={resumeUploadName}
                       onDrop={(file) => setFile(file)}/>
             {
               formState.file && (

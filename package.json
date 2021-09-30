@@ -2,7 +2,7 @@
   "name": "spac-2022",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://chrisvettese.github.io/website",
+  "homepage": "https://chrisvettese.github.io/website/",
   "dependencies": {
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",

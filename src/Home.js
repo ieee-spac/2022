@@ -1,8 +1,8 @@
 import {Box, styled} from "@mui/material";
 import animatedBackground from './assets/technology.mp4';
-import {appBarHeight, GreenButton, StandardButton, theme, TypographyWhite} from "./util";
+import {appBarHeight, GreenButton, scrollOffsetMobile, StandardButton, theme, TypographyWhite} from "./util";
 import IEEE from './assets/ieee.png';
-import {Link} from "react-scroll";
+import {scroller} from "react-scroll";
 import {isMobile} from "react-device-detect";
 
 const Video = styled('video')(() => ({
@@ -43,6 +43,14 @@ const HomeSection = styled(Box)(() => ({
 
 export default function Home({isPortrait}) {
   const rowButtons = isMobile && !isPortrait;
+
+  function scrollTo(elName) {
+    scroller.scrollTo(elName, {
+      smooth: true,
+      offset: scrollOffsetMobile
+    });
+  }
+
   return (
     <Box sx={{minHeight: '100vh', width: '100%'}}>
       <VideoOverlay/>
@@ -62,18 +70,24 @@ export default function Home({isPortrait}) {
         <HomeSection>
           <Box sx={{display: 'flex', flexDirection: rowButtons ? 'row' : 'column'}}>
             <Box>
-              <Link to='register' spy={true} smooth={true}>
-                <StandardButton variant='contained' color='secondary' sx={{marginRight: rowButtons ? '0.6rem' : '2rem'}}>
-                  Register Now
-                </StandardButton>
-              </Link>
-              <Link to='patronage' spy={true} smooth={true}>
-                <GreenButton variant='contained' sx={{marginLeft: rowButtons ? '0.6rem' : '2rem', marginRight: rowButtons ? '0.6rem' : 0}}>Sponsor Us</GreenButton>
-              </Link>
+              <StandardButton variant='contained' color='secondary' onClick={() => scrollTo('register')}
+                              sx={{marginRight: rowButtons ? '0.6rem' : '2rem'}}>
+                Register Now
+              </StandardButton>
+              <GreenButton variant='contained' onClick={() => scrollTo('patronage')}
+                           sx={{marginLeft: rowButtons ? '0.6rem' : '2rem', marginRight: rowButtons ? '0.6rem' : 0}}>
+                Sponsor Us
+              </GreenButton>
             </Box>
-            <Link to='about' spy={true} smooth={true} style={{display: 'flex', justifyContent: 'center', marginTop: rowButtons ? 0 : '2rem', marginBottom: rowButtons ? '4rem' : 0}}>
-              <StandardButton sx={{marginLeft: rowButtons ? '0.6rem' : 0}} variant='contained'>Read More</StandardButton>
-            </Link>
+            <Box sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              marginTop: rowButtons ? 0 : '2rem',
+              marginBottom: rowButtons ? '4rem' : 0
+            }}>
+              <StandardButton onClick={() => scrollTo('about')} sx={{marginLeft: rowButtons ? '0.6rem' : 0}}
+                              variant='contained'>Read More</StandardButton>
+            </Box>
           </Box>
         </HomeSection>
       </HomeContainer>

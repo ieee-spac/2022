@@ -11,7 +11,11 @@ const DesktopMenuButton = styled(Link)(({theme}) => ({
   fontFamily: theme.typography.fontFamily,
   cursor: 'pointer',
   marginRight: '1rem',
-  fontWeight: 450
+  fontWeight: 450,
+  //Yes, it is a class called active and not the active selector
+  '&.active': {
+    color: 'cadetblue'
+  }
 }));
 
 export default function DesktopNav() {
@@ -39,7 +43,7 @@ export default function DesktopNav() {
           style={{minHeight: appBarHeight, height: appBarHeight, justifyContent: 'space-evenly'}}>
           <img src={SPAC} alt='SPAC logo' style={{width: '10em', cursor: 'pointer'}} onClick={() => window.scrollTo(0, 0)}/>
           <Box>
-            <DesktopMenuButton to='about' spy={true} smooth={true}
+            <DesktopMenuButton className='Test' to='about' spy={true} smooth={true}
                                onClick={() => blockScrollTrigger()}>About</DesktopMenuButton>
             <DesktopMenuButton to='register' spy={true} smooth={true}
                                onClick={() => blockScrollTrigger()}>Register</DesktopMenuButton>

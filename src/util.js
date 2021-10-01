@@ -44,7 +44,7 @@ export const theme = createTheme({
       dark: '#015b9b',
       variant2: '#004068',
       variant3: '#00CAFF',
-      variant4: 'rgb(19, 19, 40)'
+      variant4: '#131328'
     },
     secondary: {
       main: '#af8812',

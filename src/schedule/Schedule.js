@@ -4,9 +4,21 @@ import {events} from "./events";
 import 'react-vertical-timeline-component/style.min.css';
 import {isMobile} from "react-device-detect";
 
-export const TypographySchedule = styled(Typography)(() => ({
+const TypographySchedule = styled(Typography)(() => ({
   margin: '0 !important',
   fontWeight: 'normal !important'
+}));
+
+const Timeline = styled(VerticalTimeline)(() => ({
+  '&.vertical-timeline::before': {
+    background: 'rgb(19, 19, 40)'
+  }
+}));
+
+const TimelineElement = styled(VerticalTimelineElement)(() => ({
+  '& .TimelineDate': {
+    fontFamily: 'Roboto, Arial, sans-serif'
+  }
 }));
 
 export default function Schedule() {
@@ -14,7 +26,7 @@ export default function Schedule() {
     <Box sx={{paddingBottom: '4em'}}>
       <Typography variant='h4'>Schedule</Typography>
       <Box sx={{display: 'flex', justifyContent: 'center'}}>
-        <VerticalTimeline animate={!isMobile}>
+        <Timeline animate={!isMobile}>
           {
             events.map((event, index) => {
               let borderWidth;
@@ -26,7 +38,7 @@ export default function Schedule() {
                 borderWidth = '0 6px 0 0';
               }
               return (
-                <VerticalTimelineElement key={index}
+                <TimelineElement key={index}
                                          contentStyle={{background: 'rgb(230, 230, 230)', color: 'black', border: `solid ${event.iconColor}`, borderWidth: borderWidth, borderRadius: '3px', boxShadow: 'none'}}
                                          contentArrowStyle={{borderRight: '7px solid  rgb(230, 230, 230)'}}
                                          date={event.time}
@@ -39,11 +51,11 @@ export default function Schedule() {
                   {
                     event.description.length > 0 && <TypographySchedule>{event.description}</TypographySchedule>
                   }
-                </VerticalTimelineElement>
+                </TimelineElement>
               );
             })
           }
-        </VerticalTimeline>
+        </Timeline>
       </Box>
     </Box>
   )

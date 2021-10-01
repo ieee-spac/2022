@@ -1,17 +1,3 @@
-/*Styling for desktop menu options when user is viewing the current (active) option*/
-.MuiBox-root > a.active {
-    color: cadetblue;
-}
-
-.vertical-timeline::before {
-    background: rgb(19, 19, 40);
-}
-
-.TimelineDate {
-    color: black;
-    font-family: Roboto, Arial, sans-serif;
-}
-
 /*Image lightbox styling*/
 .ReactModal__Overlay, .ReactModalPortal {
     z-index: 2000 !important;
@@ -20,13 +6,4 @@
 /*Image lightbox styling*/
 .ril-toolbar {
     background-color: rgba(0, 0, 0, 0) !important
-}
-
-/*DropZone error styling*/
-.DropZoneError {
-    border-color: rgb(211, 47, 47);
-    color: rgb(211, 47, 47) !important;
-}
-.DropZoneError:focus {
-    border-color: rgb(211, 47, 47);
 }

@@ -12,9 +12,16 @@ const DropZone = styled(StyledDropZone)(() => ({
   fontWeight: 'normal !important',
   fontSize: '16px !important',
   color: 'rgb(135, 135, 135) !important',
-  '&:focus': {
+  '&:focus:not(.DropZoneError)': {
     borderColor: `${theme.palette.primary.dark} !important`
-  }
+  },
+  '&.DropZoneError': {
+    borderColor: 'rgb(211, 47, 47)',
+    color: 'rgb(211, 47, 47) !important',
+  },
+  '&.DropZoneError:focus': {
+    borderColor: 'rgb(211, 47, 47)'
+  },
 }));
 
 export default function Register({isPortrait, storage}) {

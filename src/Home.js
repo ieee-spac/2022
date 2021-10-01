@@ -1,6 +1,6 @@
 import {Box, styled} from "@mui/material";
 import animatedBackground from './assets/technology.mp4';
-import {appBarHeight, GreenButton, scrollOffsetMobile, StandardButton, theme, TypographyWhite} from "./util";
+import {appBarHeight, GreenButton, scrollOffset, StandardButton, theme, TypographyWhite} from "./util";
 import IEEE from './assets/ieee.png';
 import {scroller} from "react-scroll";
 import {isMobile} from "react-device-detect";
@@ -47,7 +47,7 @@ export default function Home({isPortrait}) {
   function scrollTo(elName) {
     scroller.scrollTo(elName, {
       smooth: true,
-      offset: scrollOffsetMobile
+      offset: scrollOffset
     });
   }
 

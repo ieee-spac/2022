@@ -9,7 +9,7 @@ import {
   Toolbar
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import {appBarHeight, scrollOffsetMobile, theme} from "../util";
+import {appBarHeight, scrollOffset, theme} from "../util";
 import List from "@mui/material/List";
 import {scroller} from "react-scroll";
 import SPAC from "../assets/spaclogo.png";
@@ -20,7 +20,7 @@ export default function MobileNav() {
   function scrollTo(elName) {
     scroller.scrollTo(elName, {
       smooth: true,
-      offset: scrollOffsetMobile
+      offset: scrollOffset
     });
     setShowDrawer(false);
   }

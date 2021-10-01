@@ -60,7 +60,7 @@ export const theme = createTheme({
 });
 
 export const appBarHeight = isMobile ? '56px' : '70px';
-export const scrollOffsetMobile = -56;
+export const scrollOffset = isMobile ? -56 : 0;
 
 export const StandardButton = styled(Button)(() => ({
   textTransform: 'none'

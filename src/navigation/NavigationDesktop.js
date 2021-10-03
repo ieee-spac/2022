@@ -17,7 +17,7 @@ const DesktopMenuButton = styled(Link)(({theme}) => ({
     color: theme.palette.primary['variant3']
   },
   '&:hover': {
-    color: theme.palette.primary.light
+    textDecoration: 'underline'
   }
 }));
 

@@ -43,6 +43,7 @@ const HomeSection = styled(Box)(() => ({
 
 export default function Home({isPortrait}) {
   const rowButtons = isMobile && !isPortrait;
+  const titleFontSize = getTitleFontSize(isPortrait, isMobile);
 
   function scrollTo(elName) {
     scroller.scrollTo(elName, {
@@ -60,8 +61,10 @@ export default function Home({isPortrait}) {
       <Box sx={{paddingTop: appBarHeight}}/>
       <HomeContainer sx={{justifyContent: rowButtons ? 'space-around' : 'space-evenly'}}>
         <HomeSection>
-          <img src={IEEE} style={{width: isMobile ? '12rem' : '20rem'}} alt='IEEE Logo'/>
-          <TitleTypography variant='h1'>Student Professional Awareness Conference</TitleTypography>
+          <TitleTypography variant='h1' sx={{fontSize: titleFontSize}}>
+            Student Professional Awareness Conference
+          </TitleTypography>
+          <img src={IEEE} style={{width: isMobile ? '6rem' : '10rem'}} alt='IEEE Logo'/>
         </HomeSection>
         <HomeSection>
           <TypographyWhite variant='h2'>January ?, 2022</TypographyWhite>
@@ -93,4 +96,11 @@ export default function Home({isPortrait}) {
       </HomeContainer>
     </Box>
   )
+}
+
+function getTitleFontSize(isPortrait, isMobile) {
+  if (isMobile && !isPortrait) {
+    return '2.3rem';
+  }
+  return '3rem';
 }

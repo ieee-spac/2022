@@ -6,14 +6,14 @@ import Instagram from "./assets/insta.png";
 import {isMobile} from "react-device-detect";
 
 const IconImage = styled('img')(() => ({
-  width: '2rem',
-  height: '2rem',
+  width: '1.8rem',
+  height: '1.8rem',
   zIndex: 1
 }));
 
 const FooterContainer = styled(Box)(() => ({
   backgroundColor: theme.palette.primary['variant4'],
-  height: '5rem',
+  height: '4rem',
   display: 'flex',
   justifyContent: 'center'
 }));
@@ -27,13 +27,12 @@ const FooterContainerInner = styled(Box)(() => ({
 }));
 
 export default function Footer({isPortrait}) {
-  const fontSize = isMobile && isPortrait ? theme.typography.body1.fontSize : theme.typography.h6.fontSize;
   const iconMargin = isMobile && isPortrait ? '1rem' : '2rem';
 
   return (
     <FooterContainer>
       <FooterContainerInner>
-        <TypographyWhite variant='h6' sx={{zIndex: 1, fontSize: fontSize, alignSelf: 'center'}}>
+        <TypographyWhite sx={{zIndex: 1, alignSelf: 'center'}}>
           Follow us on social media:
         </TypographyWhite>
         <a href='https://www.linkedin.com/company/spacottawa/' target='_blank' rel='noreferrer' style={{marginLeft: 0}}>

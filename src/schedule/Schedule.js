@@ -39,13 +39,20 @@ export default function Schedule() {
               }
               return (
                 <TimelineElement key={index}
-                                         contentStyle={{background: 'rgb(230, 230, 230)', color: 'black', border: `solid ${event.iconColor}`, borderWidth: borderWidth, borderRadius: '3px', boxShadow: 'none'}}
-                                         contentArrowStyle={{borderRight: '7px solid  rgb(230, 230, 230)'}}
-                                         date={event.time}
-                                         position={switchingTimeline ? (index % 2 === 0 ? 'left' : 'right') : 'right'}
-                                         dateClassName={'TimelineDate'}
-                                         iconStyle={{background: event.iconColor, color: '#fff', boxShadow: 'none'}}
-                                         icon={event.icon}
+                                 contentStyle={{
+                                   background: 'rgb(230, 230, 230)',
+                                   color: 'black',
+                                   border: `solid ${event.iconColor}`,
+                                   borderWidth: borderWidth,
+                                   borderRadius: '3px',
+                                   boxShadow: 'none'
+                                 }}
+                                 contentArrowStyle={{borderRight: '7px solid  rgb(230, 230, 230)'}}
+                                 date={event.time}
+                                 position={switchingTimeline ? (index % 2 === 0 ? 'left' : 'right') : 'right'}
+                                 dateClassName='TimelineDate'
+                                 iconStyle={{background: event.iconColor, color: '#fff', boxShadow: 'none'}}
+                                 icon={event.icon}
                 >
                   <Typography variant='h6'>{event.title}</Typography>
                   {

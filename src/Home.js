@@ -24,7 +24,7 @@ const VideoOverlay = styled(Box)(() => ({
   zIndex: -1
 }));
 
-const TitleTypography = styled(TypographyWhite)(() => ({
+const TitleTypography = styled(TypographyWhite)(({theme}) => ({
   textAlign: 'center',
   fontSize: isMobile ? theme.typography.h5.fontSize : theme.typography.h1.fontSize
 }));

@@ -1,13 +1,13 @@
 import {Alert, Box, Card, CardContent, Snackbar, styled, TextField, Typography} from "@mui/material";
 import {StyledDropZone} from 'react-drop-zone'
 import 'react-drop-zone/dist/styles.css'
-import {StandardButton, theme} from "./util";
+import {StandardButton} from "./util";
 import {useState} from "react";
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import {isMobile} from "react-device-detect";
 import {ref, uploadBytes} from "firebase/storage";
 
-const DropZone = styled(StyledDropZone)(() => ({
+const DropZone = styled(StyledDropZone)(({theme}) => ({
   fontFamily: `${theme.typography.fontFamily} !important`,
   fontWeight: 'normal !important',
   fontSize: '16px !important',

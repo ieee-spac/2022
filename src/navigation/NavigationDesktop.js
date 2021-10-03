@@ -14,7 +14,20 @@ const DesktopMenuButton = styled(Link)(({theme}) => ({
   fontWeight: 450,
   //Yes, it is a class called active and not the active selector
   '&.active': {
-    color: 'cadetblue'
+    color: theme.palette.primary['variant3']
+  },
+  '&:hover': {
+    color: theme.palette.primary.light
+  }
+}));
+
+const RegisterButton = styled(DesktopMenuButton)(({theme}) => ({
+  backgroundColor: theme.palette.primary.main,
+  borderRadius: '4px',
+  border: `5px solid ${theme.palette.primary.main}`,
+  '&:hover': {
+    backgroundColor: theme.palette.primary.dark,
+    border: `5px solid ${theme.palette.primary.dark}`
   }
 }));
 
@@ -43,10 +56,10 @@ export default function DesktopNav() {
           style={{minHeight: appBarHeight, height: appBarHeight, justifyContent: 'space-evenly'}}>
           <img src={SPAC} alt='SPAC logo' style={{width: '10em', cursor: 'pointer'}} onClick={() => window.scrollTo(0, 0)}/>
           <Box>
-            <DesktopMenuButton className='Test' to='about' spy={true} smooth={true}
+            <DesktopMenuButton to='about' spy={true} smooth={true}
                                onClick={() => blockScrollTrigger()}>About</DesktopMenuButton>
-            <DesktopMenuButton to='register' spy={true} smooth={true}
-                               onClick={() => blockScrollTrigger()}>Register</DesktopMenuButton>
+            <RegisterButton to='register' spy={true} smooth={true}
+                               onClick={() => blockScrollTrigger()}>Register</RegisterButton>
             <DesktopMenuButton to='schedule' spy={true} smooth={true}
                                onClick={() => blockScrollTrigger()}>Schedule</DesktopMenuButton>
             <DesktopMenuButton to='patronage' spy={true} smooth={true}

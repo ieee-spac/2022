@@ -36,11 +36,12 @@ export default function DesktopNav() {
   const [allowScrollTrigger, setAllowScrollTrigger] = useState(true);
   const [showAppBar, setShowAppBar] = useState(true);
 
-  function blockScrollTrigger() {
+  function blockScrollTrigger(elName) {
     setAllowScrollTrigger(false);
     setTimeout(() => {
       setAllowScrollTrigger(true);
-    }, 1100)
+    }, 1100);
+    window.location.hash = elName;
   }
 
   useEffect(() => {
@@ -57,19 +58,19 @@ export default function DesktopNav() {
           <img src={SPAC} alt='SPAC logo' style={{width: '10em', cursor: 'pointer'}} onClick={() => window.scrollTo(0, 0)}/>
           <Box>
             <DesktopMenuButton to='about' spy={true} smooth={true}
-                               onClick={() => blockScrollTrigger()}>About</DesktopMenuButton>
+                               onClick={() => blockScrollTrigger('about')}>About</DesktopMenuButton>
             <RegisterButton to='register' spy={true} smooth={true}
-                               onClick={() => blockScrollTrigger()}>Register</RegisterButton>
+                               onClick={() => blockScrollTrigger('register')}>Register</RegisterButton>
             <DesktopMenuButton to='schedule' spy={true} smooth={true}
-                               onClick={() => blockScrollTrigger()}>Schedule</DesktopMenuButton>
+                               onClick={() => blockScrollTrigger('schedule')}>Schedule</DesktopMenuButton>
             <DesktopMenuButton to='patronage' spy={true} smooth={true}
-                               onClick={() => blockScrollTrigger()}>Patronage</DesktopMenuButton>
+                               onClick={() => blockScrollTrigger('patronage')}>Patronage</DesktopMenuButton>
             <DesktopMenuButton to='gallery' spy={true} smooth={true}
-                               onClick={() => blockScrollTrigger()}>Gallery</DesktopMenuButton>
+                               onClick={() => blockScrollTrigger('gallery')}>Gallery</DesktopMenuButton>
             <DesktopMenuButton to='faq' spy={true} smooth={true}
-                               onClick={() => blockScrollTrigger()}>FAQ</DesktopMenuButton>
+                               onClick={() => blockScrollTrigger('faq')}>FAQ</DesktopMenuButton>
             <DesktopMenuButton to='contact' spy={true} smooth={true}
-                               onClick={() => blockScrollTrigger()}>Contact Us</DesktopMenuButton>
+                               onClick={() => blockScrollTrigger('contact')}>Contact Us</DesktopMenuButton>
           </Box>
         </Toolbar>
       </AppBar>

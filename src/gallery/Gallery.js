@@ -19,9 +19,8 @@ export default function Gallery() {
         {galleryImages.map((item, index) => (
           <ImageListItem key={index} onClick={() => showPhoto(index)} sx={{cursor: 'pointer'}}>
             <img
-              src={`${item.image}?w=161&fit=crop&auto=format`}
+              src={item.image}
               alt={item.title}
-              loading="lazy"
             />
           </ImageListItem>
         ))}

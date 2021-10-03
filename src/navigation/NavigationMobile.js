@@ -38,6 +38,11 @@ const MenuItem = styled(ListItem)(() => ({
 export default function MobileNav() {
   const [showDrawer, setShowDrawer] = useState(false);
 
+  function hideDrawer(elName) {
+    setShowDrawer(false);
+    window.location.hash = elName;
+  }
+
   return (
     <AppBar sx={{zIndex: theme.zIndex.drawer + 1}}>
       <Toolbar /*style used for higher specificity*/ style={{minHeight: appBarHeight, height: appBarHeight}}>
@@ -54,31 +59,31 @@ export default function MobileNav() {
             <List>
               <MenuItem button>
                 <MobileMenuButton to='about' offset={scrollOffset} spy={true} smooth={true}
-                                  onClick={() => setShowDrawer(false)}>About</MobileMenuButton>
+                                  onClick={() => hideDrawer('about')}>About</MobileMenuButton>
               </MenuItem>
               <MenuItem button sx={{backgroundColor: 'rgb(180, 240, 255)'}}>
                 <MobileMenuButton to='register' offset={scrollOffset} spy={true} smooth={true}
-                                  onClick={() => setShowDrawer(false)}>Register</MobileMenuButton>
+                                  onClick={() => hideDrawer('register')}>Register</MobileMenuButton>
               </MenuItem>
               <MenuItem button>
                 <MobileMenuButton to='schedule' offset={scrollOffset} spy={true} smooth={true}
-                                  onClick={() => setShowDrawer(false)}>Schedule</MobileMenuButton>
+                                  onClick={() => hideDrawer('schedule')}>Schedule</MobileMenuButton>
               </MenuItem>
               <MenuItem button>
                 <MobileMenuButton to='patronage' offset={scrollOffset} spy={true} smooth={true}
-                                  onClick={() => setShowDrawer(false)}>Patronage</MobileMenuButton>
+                                  onClick={() => hideDrawer('patronage')}>Patronage</MobileMenuButton>
               </MenuItem>
               <MenuItem button>
                 <MobileMenuButton to='gallery' offset={scrollOffset} spy={true} smooth={true}
-                                  onClick={() => setShowDrawer(false)}>Gallery</MobileMenuButton>
+                                  onClick={() => hideDrawer('gallery')}>Gallery</MobileMenuButton>
               </MenuItem>
               <MenuItem button>
                 <MobileMenuButton to='faq' offset={scrollOffset} spy={true} smooth={true}
-                                  onClick={() => setShowDrawer(false)}>FAQ</MobileMenuButton>
+                                  onClick={() => hideDrawer('faq')}>FAQ</MobileMenuButton>
               </MenuItem>
               <MenuItem button>
                 <MobileMenuButton to='contact' offset={scrollOffset} spy={true} smooth={true}
-                                  onClick={() => setShowDrawer(false)}>Contact Us</MobileMenuButton>
+                                  onClick={() => hideDrawer('contact')}>Contact Us</MobileMenuButton>
               </MenuItem>
             </List>
           </Box>

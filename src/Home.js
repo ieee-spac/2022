@@ -50,6 +50,7 @@ export default function Home({isPortrait}) {
       smooth: true,
       offset: scrollOffset
     });
+    window.location.hash = elName;
   }
 
   return (

@@ -18,10 +18,7 @@ export default function Gallery() {
       <ImageList variant="woven" cols={3} gap={8}>
         {galleryImages.map((item, index) => (
           <ImageListItem key={index} onClick={() => showPhoto(index)} sx={{cursor: 'pointer'}}>
-            <img
-              src={item.image}
-              alt={item.title}
-            />
+            <img src={item.image} alt={item.title}/>
           </ImageListItem>
         ))}
       </ImageList>

@@ -25,9 +25,6 @@ const MobileMenuButton = styled(Link)(({theme}) => ({
   //Yes, it is a class called active and not the active selector
   '&.active': {
     color: theme.palette.primary['variant3']
-  },
-  '&:hover': {
-    color: theme.palette.primary.light
   }
 }));
 
@@ -61,8 +58,8 @@ export default function MobileNav() {
                 <MobileMenuButton to='about' offset={scrollOffset} spy={true} smooth={true}
                                   onClick={() => hideDrawer('about')}>About</MobileMenuButton>
               </MenuItem>
-              <MenuItem button sx={{backgroundColor: 'rgb(180, 240, 255)'}}>
-                <MobileMenuButton to='register' offset={scrollOffset} spy={true} smooth={true}
+              <MenuItem button>
+                <MobileMenuButton to='register' offset={scrollOffset} spy={true} smooth={true} sx={{backgroundColor: 'rgb(180, 240, 255)'}}
                                   onClick={() => hideDrawer('register')}>Register</MobileMenuButton>
               </MenuItem>
               <MenuItem button>

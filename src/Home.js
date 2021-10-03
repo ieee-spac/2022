@@ -99,8 +99,11 @@ export default function Home({isPortrait}) {
 }
 
 function getTitleFontSize(isPortrait, isMobile) {
+  if (!isMobile) {
+    return '3.5rem';
+  }
   if (isMobile && !isPortrait) {
     return '2.3rem';
   }
-  return '3rem';
+  return theme.typography.h1.fontSize;
 }

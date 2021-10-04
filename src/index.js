@@ -6,10 +6,9 @@ import 'typeface-roboto'
 import './App.css';
 //Imports styling for lightbox
 import 'react-image-lightbox/style.css';
-import { initializeApp } from "firebase/app";
-import { getStorage } from "firebase/storage";
+import {initializeApp} from "firebase/app";
+import {getStorage} from "firebase/storage";
 import {OrientationApp} from "./App";
-
 
 const firebaseConfig = {
   apiKey: "AIzaSyAdsG51usHQMVONrx9x3TzQC6gOy1Cvfj8",

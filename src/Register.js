@@ -84,7 +84,7 @@ export default function Register({isPortrait, storage}) {
     } else {
       newFormState.errorSummary = '';
 
-      const resumeName = `${newFormState.firstName} ${newFormState.lastName} Resume ${new Date().getTime()}`;
+      const resumeName = `${newFormState.firstName} ${newFormState.lastName} Resume ${new Date().getTime()}.${newFormState.file.name.split('.').pop()}`;
       const resumePath = `resumes/${resumeName}`;
       const resumeRef = ref(storage, resumePath);
 

@@ -31,6 +31,14 @@ const RegisterButton = styled(DesktopMenuButton)(({theme}) => ({
   }
 }));
 
+const NavBar = styled(Toolbar)({
+  '&.MuiToolbar-root': {
+    minHeight: appBarHeight,
+    height: appBarHeight,
+    justifyContent: 'space-evenly'
+  }
+});
+
 export default function DesktopNav() {
   let trigger = useScrollTrigger();
   const [allowScrollTrigger, setAllowScrollTrigger] = useState(true);
@@ -53,8 +61,7 @@ export default function DesktopNav() {
   return (
     <Slide disabled={isMobile} appear={false} direction="down" in={showAppBar}>
       <AppBar sx={{backgroundColor: 'rgb(20, 20, 20, 0.7)'}}>
-        <Toolbar /*style used for higher specificity*/
-          style={{minHeight: appBarHeight, height: appBarHeight, justifyContent: 'space-evenly'}}>
+        <NavBar>
           <img src={SPAC} alt='SPAC logo' style={{width: '10em', cursor: 'pointer'}} onClick={() => window.scrollTo(0, 0)}/>
           <Box>
             <DesktopMenuButton to='about' spy={true} smooth={true}
@@ -72,7 +79,7 @@ export default function DesktopNav() {
             <DesktopMenuButton to='contact' spy={true} smooth={true}
                                onClick={() => blockScrollTrigger('contact')}>Contact Us</DesktopMenuButton>
           </Box>
-        </Toolbar>
+        </NavBar>
       </AppBar>
     </Slide>
   );

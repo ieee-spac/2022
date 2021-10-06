@@ -30,7 +30,7 @@ function App({isPortrait, storage}) {
       if (window.location.hash) {
         const section = window.location.hash.substring(1);
         if (sections.includes(section)) {
-          scroller.scrollTo(window.location.hash.substring(1), {
+          scroller.scrollTo(section, {
             offset: scrollOffset
           });
         }

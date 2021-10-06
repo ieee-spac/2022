@@ -1,5 +1,5 @@
-import {Box, styled} from "@mui/material";
-import {theme, TypographyWhite} from "./util";
+import {Box, styled, Link} from "@mui/material";
+import {theme, LightText} from "./util";
 import LinkedIn from "./assets/linkedin.png";
 import Facebook from "./assets/fb.png";
 import Instagram from "./assets/insta.png";
@@ -27,23 +27,23 @@ const FooterContainerInner = styled(Box)(() => ({
 }));
 
 export default function Footer({isPortrait}) {
-  const iconMargin = isMobile && isPortrait ? '1rem' : '2rem';
+  const linkStyle = {marginLeft: isMobile && isPortrait ? '1rem' : '2rem'};
 
   return (
     <FooterContainer>
       <FooterContainerInner>
-        <TypographyWhite sx={{zIndex: 1, alignSelf: 'center'}}>
+        <LightText sx={{zIndex: 1, alignSelf: 'center'}}>
           Follow us on social media:
-        </TypographyWhite>
-        <a href='https://www.linkedin.com/company/spacottawa/' target='_blank' rel='noreferrer' style={{marginLeft: 0}}>
-          <IconImage src={LinkedIn} sx={{marginLeft: iconMargin}}/>
-        </a>
-        <a href='https://www.facebook.com/ieeespacottawa/' target='_blank' rel='noreferrer'>
-          <IconImage src={Facebook} sx={{marginLeft: iconMargin}}/>
-        </a>
-        <a href='https://www.instagram.com/ieeespac/' target='_blank' rel='noreferrer'>
-          <IconImage src={Instagram} sx={{marginLeft: iconMargin}}/>
-        </a>
+        </LightText>
+        <Link href='https://www.linkedin.com/company/spacottawa/' target='_blank' rel='noreferrer' sx={linkStyle}>
+          <IconImage src={LinkedIn}/>
+        </Link>
+        <Link href='https://www.facebook.com/ieeespacottawa/' target='_blank' rel='noreferrer' sx={linkStyle}>
+          <IconImage src={Facebook}/>
+        </Link>
+        <Link href='https://www.instagram.com/ieeespac/' target='_blank' rel='noreferrer' sx={linkStyle}>
+          <IconImage src={Instagram}/>
+        </Link>
       </FooterContainerInner>
     </FooterContainer>
   );

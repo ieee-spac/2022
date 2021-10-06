@@ -28,9 +28,16 @@ const MobileMenuButton = styled(Link)(({theme}) => ({
   }
 }));
 
-const MenuItem = styled(ListItem)(() => ({
+const MenuItem = styled(ListItem)({
   padding: 0
-}));
+});
+
+const NavBar = styled(Toolbar)({
+  '&.MuiToolbar-root': {
+    minHeight: appBarHeight,
+    height: appBarHeight
+  }
+});
 
 export default function MobileNav() {
   const [showDrawer, setShowDrawer] = useState(false);
@@ -42,7 +49,7 @@ export default function MobileNav() {
 
   return (
     <AppBar sx={{zIndex: theme.zIndex.drawer + 1}}>
-      <Toolbar /*style used for higher specificity*/ style={{minHeight: appBarHeight, height: appBarHeight}}>
+      <NavBar>
         <IconButton sx={{marginRight: '1rem'}} onClick={() => setShowDrawer(!showDrawer)} color="inherit"
                     aria-label="open drawer">
           <MenuIcon/>
@@ -87,7 +94,7 @@ export default function MobileNav() {
           </Box>
         </Drawer>
         <img src={SPAC} alt='SPAC Logo' style={{width: '7em'}} onClick={() => window.scrollTo(0, 0)}/>
-      </Toolbar>
+      </NavBar>
     </AppBar>
   );
 }

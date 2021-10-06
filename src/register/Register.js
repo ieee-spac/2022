@@ -1,11 +1,11 @@
 import {Alert, Box, Card, CardContent, Snackbar, styled, TextField, Typography} from "@mui/material";
 import {StyledDropZone} from 'react-drop-zone'
 import 'react-drop-zone/dist/styles.css'
-import {StandardButton} from "./util";
+import {StandardButton} from "../util";
 import {useState} from "react";
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import {isMobile} from "react-device-detect";
-import {ref, uploadBytes} from "firebase/storage";
+import {submitProfile} from "./SubmitProfile";
 
 const DropZone = styled(StyledDropZone)(({theme}) => ({
   fontFamily: `${theme.typography.fontFamily} !important`,
@@ -43,93 +43,11 @@ export default function Register({isPortrait, storage}) {
   });
   const [alertStatus, setAlertStatus] = useState('success');
   const [alertMessage, setAlertMessage] = useState('');
-  const [showSnackBar, setShowSnackBar] = useState(false);
+  const [showSnackBar, setSnackBar] = useState(false);
   const [submitEnabled, setSubmitEnabled] = useState(true);
 
   const nameBoxWidthStyle = isMobile && isPortrait ? {width: '100%'} : {};
   const resumeUploadName = isMobile ? 'Upload your resume here' : 'Click or drop your resume here';
-
-  async function submitRegister() {
-    const newFormState = {...formState};
-    setSubmitEnabled(false);
-
-    const missingFields = [];
-    newFormState.firstNameError = formState.firstName === '';
-    if (newFormState.firstNameError) {
-      missingFields.push("First Name");
-    }
-    newFormState.lastNameError = formState.lastName === '';
-    if (newFormState.lastNameError) {
-      missingFields.push("Last Name");
-    }
-    newFormState.emailError = formState.email === '';
-    if (newFormState.emailError) {
-      missingFields.push("Email Address");
-    }
-    newFormState.universityError = formState.university === '';
-    if (newFormState.universityError) {
-      missingFields.push("University");
-    }
-    newFormState.programError = formState.program === '';
-    if (newFormState.programError) {
-      missingFields.push("Program");
-    }
-    newFormState.fileError = newFormState.file === null;
-    if (newFormState.fileError) {
-      missingFields.push("Resume");
-    }
-    if (missingFields.length > 0) {
-      newFormState.errorSummary = 'Missing fields: ' + missingFields.join(', ');
-      setSubmitEnabled(true);
-    } else {
-      newFormState.errorSummary = '';
-
-      const resumeName = `${newFormState.firstName} ${newFormState.lastName} Resume ${new Date().getTime()}.${newFormState.file.name.split('.').pop()}`;
-      const resumePath = `resumes/${resumeName}`;
-      const resumeRef = ref(storage, resumePath);
-
-      try {
-        await uploadBytes(resumeRef, newFormState.file);
-
-        const url = `https://docs.google.com/forms/d/e/1FAIpQLScdFwEc7scZ-HbtBrcHv9MnEHeGKwEdUCumc8oZht9dydPkyA/formResponse?entry.509145449=${formState.firstName}&entry.527675740=${formState.lastName}&entry.1088293976=${formState.phone}&entry.1396694674=${formState.email}&entry.513597798=${formState.university}&entry.1760655465=${formState.program}&entry.69468430=${resumeName}`;
-        const result = await fetch(url, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/x-www-form-urlencoded'
-          }
-        });
-
-        if (result.type === 'opaque') {
-          newFormState.firstName = '';
-          newFormState.lastName = '';
-          newFormState.phone = '';
-          newFormState.email = '';
-          newFormState.university = '';
-          newFormState.program = '';
-          newFormState.file = '';
-
-          setAlertStatus('success');
-          setAlertMessage('Success!');
-          setShowSnackBar(true);
-          setSubmitEnabled(true);
-        } else {
-          setAlertStatus('error');
-          setAlertMessage('Error: Failed to upload resume');
-          setShowSnackBar(true);
-          setSubmitEnabled(true);
-        }
-      } catch (error) {
-        setAlertStatus('error');
-        setAlertMessage('Error: Failed to upload resume');
-        setShowSnackBar(true);
-        setSubmitEnabled(true);
-      }
-    }
-
-    setFormState(newFormState);
-  }
 
   function setFile(file) {
     const newFormState = {...formState};
@@ -142,6 +60,11 @@ export default function Register({isPortrait, storage}) {
     const newFormState = {...formState};
     newFormState[field] = event.target.value;
     setFormState(newFormState);
+  }
+
+  async function submit() {
+    const props = {formState, storage, setSubmitEnabled, setAlertStatus, setAlertMessage, setSnackBar, setFormState};
+    await submitProfile(props);
   }
 
   return (
@@ -187,7 +110,7 @@ export default function Register({isPortrait, storage}) {
             }
             <Box sx={{justifyContent: 'center', display: 'flex', marginTop: '1em'}}>
               <StandardButton variant='contained' sx={{width: 'fit-content'}} disabled={!submitEnabled}
-                              onClick={() => submitRegister()}>Submit</StandardButton>
+                              onClick={() => submit()}>Submit</StandardButton>
             </Box>
             <Box sx={{maxWidth: 'fit-content'}}>
               {
@@ -203,7 +126,7 @@ export default function Register({isPortrait, storage}) {
         anchorOrigin={{vertical: 'bottom', horizontal: 'center'}}
         open={showSnackBar}
         autoHideDuration={5000}
-        onClose={() => setShowSnackBar(false)}
+        onClose={() => setSnackBar(false)}
         message='Message sent!'
       >
         <Alert severity={alertStatus} variant="filled">{alertMessage}</Alert>

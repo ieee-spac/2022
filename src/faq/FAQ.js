@@ -1,5 +1,5 @@
 import {Accordion, AccordionDetails, AccordionSummary, Box, Typography, styled} from "@mui/material";
-import {questionData} from "./questions";
+import {questionData} from "./Questions";
 import {useState} from "react";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {theme} from "../util";

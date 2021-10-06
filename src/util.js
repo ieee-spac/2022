@@ -42,6 +42,7 @@ export const theme = createTheme({
     primary: {
       main: '#0165ad',
       dark: '#015b9b',
+      light: '#42a5f5',
       variant2: '#004068',
       variant3: '#00CAFF',
       variant4: '#131328'
@@ -66,7 +67,7 @@ export const StandardButton = styled(Button)(() => ({
   textTransform: 'none'
 }));
 
-export const TypographyWhite = styled(Typography)(() => ({
+export const LightText = styled(Typography)(() => ({
   color: 'white'
 }));
 

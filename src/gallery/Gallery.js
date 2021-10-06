@@ -1,5 +1,5 @@
 import {Box, ImageList, ImageListItem, Typography} from "@mui/material";
-import {galleryImages} from "./images";
+import {galleryImages} from "./Images";
 import Lightbox from 'react-image-lightbox';
 import {useState} from "react";
 

@@ -1,6 +1,6 @@
 import {Box, styled, Typography} from "@mui/material";
 import {VerticalTimeline, VerticalTimelineElement} from 'react-vertical-timeline-component';
-import {events} from "./events";
+import {events} from "./Events";
 import 'react-vertical-timeline-component/style.min.css';
 import {isMobile} from "react-device-detect";
 

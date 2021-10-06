@@ -3,10 +3,10 @@ import {StyledEngineProvider, ThemeProvider} from "@mui/material/styles";
 import {scrollOffset, theme} from "./util";
 import Navigation from "./navigation/Navigation";
 import Home from "./Home";
-import {Box} from "@mui/material";
+import {Box, styled} from "@mui/material";
 import {Element, scroller} from "react-scroll";
 import About from "./About";
-import Register from "./Register";
+import Register from "./register/Register";
 import Schedule from "./schedule/Schedule";
 import Patronage from "./Patronage";
 import Gallery from "./gallery/Gallery";
@@ -17,8 +17,13 @@ import {isMobile, withOrientationChange} from "react-device-detect";
 
 const sections = ['about', 'register', 'schedule', 'patronage', 'gallery', 'faq', 'contact'];
 
+const Section = styled(Element)(({padding}) => ({
+  padding: `0 ${padding} 0 ${padding}`
+}));
+
 function App({isPortrait, storage}) {
-  const margin = getContentMargin(isPortrait);
+  //Provides a padding prop to the styled component above
+  Section.defaultProps = {padding: getContentPadding(isPortrait)}
 
   useEffect(() => {
     setTimeout(() => {
@@ -40,28 +45,27 @@ function App({isPortrait, storage}) {
           <Navigation/>
           <Home isPortrait={isPortrait}/>
           <Box>
-            <Element name='about'
-                     style={{padding: `0 ${margin} 0 ${margin}`, backgroundColor: theme.palette.primary['variant4']}}>
+            <Section name='about' sx={{backgroundColor: theme.palette.primary['variant4']}}>
               <About isPortrait={isPortrait}/>
-            </Element>
-            <Element name='register' style={{padding: `0 ${margin} 0 ${margin}`}}>
+            </Section>
+            <Section name='register'>
               <Register isPortrait={isPortrait} storage={storage}/>
-            </Element>
-            <Element name='schedule' style={{padding: `0 ${margin} 0 ${margin}`}}>
+            </Section>
+            <Section name='schedule'>
               <Schedule/>
-            </Element>
-            <Element name='patronage' style={{padding: `0 ${margin} 0 ${margin}`}}>
+            </Section>
+            <Section name='patronage'>
               <Patronage/>
-            </Element>
-            <Element name='gallery' style={{padding: `0 ${margin} 0 ${margin}`}}>
+            </Section>
+            <Section name='gallery'>
               <Gallery/>
-            </Element>
-            <Element name='faq' style={{padding: `0 ${margin} 0 ${margin}`}}>
+            </Section>
+            <Section name='faq'>
               <FAQ/>
-            </Element>
-            <Element name='contact' style={{padding: `0 ${margin} 0 ${margin}`}}>
+            </Section>
+            <Section name='contact'>
               <Contact isPortrait={isPortrait}/>
-            </Element>
+            </Section>
             <Footer isPortrait={isPortrait}/>
           </Box>
         </ThemeProvider>
@@ -70,7 +74,7 @@ function App({isPortrait, storage}) {
   );
 }
 
-function getContentMargin(isPortrait) {
+function getContentPadding(isPortrait) {
   if (isPortrait && isMobile) {
     return '1em';
   }

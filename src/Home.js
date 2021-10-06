@@ -1,6 +1,6 @@
 import {Box, styled} from "@mui/material";
 import animatedBackground from './assets/technology.mp4';
-import {appBarHeight, GreenButton, scrollOffset, StandardButton, theme, TypographyWhite} from "./util";
+import {appBarHeight, GreenButton, scrollOffset, StandardButton, theme, LightText} from "./util";
 import IEEE from './assets/ieee.png';
 import {scroller} from "react-scroll";
 import {isMobile} from "react-device-detect";
@@ -24,7 +24,7 @@ const VideoOverlay = styled(Box)(() => ({
   zIndex: -1
 }));
 
-const TitleTypography = styled(TypographyWhite)(({theme}) => ({
+const TitleTypography = styled(LightText)(({theme}) => ({
   textAlign: 'center',
   fontSize: isMobile ? theme.typography.h5.fontSize : theme.typography.h1.fontSize
 }));
@@ -43,7 +43,7 @@ const HomeSection = styled(Box)(() => ({
 
 export default function Home({isPortrait}) {
   const rowButtons = isMobile && !isPortrait;
-  const titleFontSize = getTitleFontSize(isPortrait, isMobile);
+  const titleFontSize = getTitleFontSize(isPortrait);
 
   function scrollTo(elName) {
     scroller.scrollTo(elName, {
@@ -68,8 +68,8 @@ export default function Home({isPortrait}) {
           <img src={IEEE} style={{width: isMobile ? '6rem' : '10rem'}} alt='IEEE Logo'/>
         </HomeSection>
         <HomeSection>
-          <TypographyWhite variant='h2'>January ?, 2022</TypographyWhite>
-          <TypographyWhite>Insert detail about where event is held</TypographyWhite>
+          <LightText variant='h2'>January ?, 2022</LightText>
+          <LightText>Insert detail about where event is held</LightText>
         </HomeSection>
         <HomeSection>
           <Box sx={{display: 'flex', flexDirection: rowButtons ? 'row' : 'column'}}>
@@ -99,7 +99,7 @@ export default function Home({isPortrait}) {
   )
 }
 
-function getTitleFontSize(isPortrait, isMobile) {
+function getTitleFontSize(isPortrait) {
   if (!isMobile) {
     return '3.5rem';
   }

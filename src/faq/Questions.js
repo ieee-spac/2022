@@ -1,10 +1,10 @@
 export const questionData = [
   {
     q: 'Where is the event taking place?',
-    a: 'SPAC is going virtual this year via Hopin. The link will be sent after registration.'
+    a: 'SPAC is going virtual this year via Aventri. The link will be sent after registration.'
   },
   {
-    q: 'How do I navigate Hopin?',
+    q: 'How do I navigate Aventri?',
     a: 'A tutorial is available through our Discord server.'
   },
   {

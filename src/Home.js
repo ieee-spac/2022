@@ -24,7 +24,7 @@ const VideoOverlay = styled(Box)(() => ({
   zIndex: -1
 }));
 
-const TitleTypography = styled(LightText)(({theme}) => ({
+const TitleText = styled(LightText)(({theme}) => ({
   textAlign: 'center',
   fontSize: isMobile ? theme.typography.h5.fontSize : theme.typography.h1.fontSize
 }));
@@ -62,14 +62,14 @@ export default function Home({isPortrait}) {
       <Box sx={{paddingTop: appBarHeight}}/>
       <HomeContainer sx={{justifyContent: rowButtons ? 'space-around' : 'space-evenly'}}>
         <HomeSection>
-          <TitleTypography variant='h1' sx={{fontSize: titleFontSize}}>
+          <TitleText variant='h1' sx={{fontSize: titleFontSize}}>
             Student Professional Awareness Conference
-          </TitleTypography>
+          </TitleText>
           <img src={IEEE} style={{width: isMobile ? '6rem' : '10rem'}} alt='IEEE Logo'/>
         </HomeSection>
         <HomeSection>
-          <LightText variant='h2'>January ?, 2022</LightText>
-          <LightText>Insert detail about where event is held</LightText>
+          <LightText variant='h2'>January 20, 2022</LightText>
+          <LightText variant='h5'>Online on Aventri</LightText>
         </HomeSection>
         <HomeSection>
           <Box sx={{display: 'flex', flexDirection: rowButtons ? 'row' : 'column'}}>

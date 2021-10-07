@@ -42,7 +42,7 @@ export const theme = createTheme({
     primary: {
       main: '#0165ad',
       dark: '#015b9b',
-      light: '#42a5f5',
+      light: '#3383bd',
       variant2: '#004068',
       variant3: '#00CAFF',
       variant4: '#131328'

@@ -1,5 +1,5 @@
 import {Alert, Box, Card, CardContent, Snackbar, TextField, Typography} from "@mui/material";
-import {StandardButton} from "./util";
+import {RequiredField, StandardButton} from "./util";
 import {useState} from "react";
 import {isMobile} from "react-device-detect";
 
@@ -42,7 +42,7 @@ export default function Contact({isPortrait}) {
       missingFields.push("Message");
     }
     if (missingFields.length > 0) {
-      newFormState.errorSummary = 'Missing fields: ' + missingFields.join(', ');
+      newFormState.errorSummary = 'Missing required fields: ' + missingFields.join(', ');
       setSubmitEnabled(true);
     } else {
       newFormState.errorSummary = '';
@@ -84,17 +84,18 @@ export default function Contact({isPortrait}) {
             <Box>
               <TextField value={formState.firstName} onChange={event => setFormValue('firstName', event)}
                          error={formState.firstNameError} variant='outlined' id='contactFirstNameInput'
-                         label='First Name' sx={{marginRight: '1em', marginBottom: '1em', ...nameBoxWidthStyle}}/>
+                         label={RequiredField('First Name')}
+                         sx={{marginRight: '1em', marginBottom: '1em', ...nameBoxWidthStyle}}/>
               <TextField value={formState.lastName} onChange={event => setFormValue('lastName', event)}
-                         error={formState.lastNameError} id='contactLastNameInput' label='Last Name'
+                         error={formState.lastNameError} id='contactLastNameInput' label={RequiredField('Last Name')}
                          sx={{marginBottom: '1em', ...nameBoxWidthStyle}}/>
             </Box>
             <TextField value={formState.email} onChange={event => setFormValue('email', event)}
                        error={formState.emailError} sx={{width: '100%', marginBottom: '1em'}} id='contactEmailInput'
-                       label='Email Address'/>
+                       label={RequiredField('Email Address')}/>
             <TextField value={formState.message} onChange={event => setFormValue('message', event)}
                        error={formState.messageError} sx={{width: '100%', marginBottom: '1em'}} id='contactMessageInput'
-                       label='Message' multiline/>
+                       label={RequiredField('Message')} multiline/>
             <Box sx={{justifyContent: 'center', display: 'flex', marginTop: '1em'}}>
               <StandardButton variant='contained' sx={{width: 'fit-content'}} disabled={!submitEnabled}
                               onClick={() => submitContactForm()}>Submit</StandardButton>

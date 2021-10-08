@@ -1,6 +1,6 @@
 import {createTheme} from "@mui/material/styles";
 import {isMobile} from "react-device-detect";
-import {Button, styled, Typography} from "@mui/material";
+import {Box, Button, styled, Typography} from "@mui/material";
 
 export const theme = createTheme({
   typography: {
@@ -77,3 +77,12 @@ export const GreenButton = styled(StandardButton)(() => ({
     background: 'rgb(0, 115, 0)'
   }
 }));
+
+export function RequiredField(name) {
+  return (
+    <Box key={name} sx={{display: 'flex', flexDirection: 'row'}}>
+      {name}
+      <Box sx={{color: 'red', marginLeft: '0.2rem'}}>*</Box>
+    </Box>
+  );
+}

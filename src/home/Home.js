@@ -13,12 +13,15 @@ import Handshake from '../assets/handshake.png';
 import {scroller} from "react-scroll";
 import Countdown from "./Countdown";
 
+const minHeight = '820px';
+
 const Video = styled('video')(() => ({
   position: 'absolute',
   objectFit: 'cover',
   minWidth: '100%',
   maxWidth: '100%',
-  minHeight: '100vh',
+  minHeight: `${minHeight}`,
+  height: '100vh',
   zIndex: -2
 }));
 
@@ -27,7 +30,8 @@ const VideoOverlay = styled(Box)({
   objectFit: 'cover',
   minWidth: '100%',
   maxWidth: '100%',
-  minHeight: '100vh',
+  minHeight: `${minHeight}`,
+  height: '100vh',
   background: 'linear-gradient(90deg, rgba(30, 232, 252, 0.4) 0%, rgba(146, 170, 245, 0.4) 100%)',
   zIndex: -1
 });
@@ -60,7 +64,7 @@ const IEEELogo = styled('img')({
 
 export default function Home() {
   return (
-    <Box sx={{minHeight: '100vh', width: '100%'}}>
+    <Box sx={{minHeight: `${minHeight}`, width: '100%'}}>
       <VideoOverlay/>
       <Video autoPlay muted loop>
         <source src={animatedBackground} type="video/mp4"/>

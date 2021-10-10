@@ -11,7 +11,8 @@ const CountdownContainer = styled(Box)({
   alignSelf: 'center',
   borderRadius: '4px',
   paddingTop: '1rem',
-  paddingBottom: '1rem'
+  paddingBottom: '1rem',
+  marginBottom: '0.5rem'
 });
 
 const CountdownText = styled(Typography)({

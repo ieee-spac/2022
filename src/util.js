@@ -53,9 +53,9 @@ export const theme = createTheme({
       light: '#cc9d11'
     },
     tertiary: {
-      main: '#690b04',
+      main: '#810e05',
       dark: '#480702',
-      light: '#a41005'
+      light: '#9b0f05'
     }
   }
 });
@@ -63,20 +63,39 @@ export const theme = createTheme({
 export const appBarHeight = isMobile ? '56px' : '70px';
 export const scrollOffset = isMobile ? -56 : 0;
 
-export const StandardButton = styled(Button)(() => ({
+export const StandardButton = styled(Button)({
   textTransform: 'none'
-}));
+});
 
-export const LightText = styled(Typography)(() => ({
+export const PulseButton = styled(StandardButton)({
+  animation: 'pulse 0.7s infinite',
+  '@keyframes pulse': {
+    '0%': {
+      transform: 'scale(1)'
+    },
+    '100%': {
+      transform: 'scale(1.1)'
+    }
+  }
+});
+
+export const LightText = styled(Typography)({
   color: 'white'
-}));
+});
 
-export const GreenButton = styled(StandardButton)(() => ({
+export const GreenButton = styled(StandardButton)({
   background: 'green',
   '&:hover': {
     background: 'rgb(0, 115, 0)'
   }
-}));
+});
+
+export const RedButton = styled(StandardButton)({
+  background: theme.palette['tertiary'].light,
+  '&:hover': {
+    background: theme.palette['tertiary'].main
+  }
+});
 
 export function RequiredField(name) {
   return (

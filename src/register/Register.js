@@ -132,8 +132,9 @@ export default function Register({isPortrait, storage}) {
             </Box>
             <Box sx={{maxWidth: 'fit-content'}}>
               {
-                formState.errorSummary.length > 0 &&
-                <Typography sx={{marginTop: '1em', color: 'red', width: '100%'}}>{formState.errorSummary}</Typography>
+                formState.errorSummary.length > 0 && (
+                  <Typography sx={{marginTop: '1em', color: 'red', width: '100%'}}>{formState.errorSummary}</Typography>
+                )
               }
             </Box>
           </CardContent>

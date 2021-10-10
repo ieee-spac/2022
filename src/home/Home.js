@@ -22,7 +22,7 @@ const Video = styled('video')(() => ({
   zIndex: -2
 }));
 
-const VideoOverlay = styled(Box)(() => ({
+const VideoOverlay = styled(Box)({
   position: 'absolute',
   objectFit: 'cover',
   minWidth: '100%',
@@ -30,7 +30,7 @@ const VideoOverlay = styled(Box)(() => ({
   minHeight: '100vh',
   background: 'linear-gradient(90deg, rgba(30, 232, 252, 0.4) 0%, rgba(146, 170, 245, 0.4) 100%)',
   zIndex: -1
-}));
+});
 
 const HomeContainer = styled(Box)({
   display: 'flex',

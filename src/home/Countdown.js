@@ -23,10 +23,11 @@ export default function Countdown() {
   const [seconds, setSeconds] = useState(Math.round((spacStart.getTime() - Date.now()) / 1000));
 
   useEffect(() => {
-    setTimeout(() => {
-      setSeconds(seconds - 1);
-    }, 1000)
-  }, [seconds]);
+    const intervalId = setInterval(() => {
+      setSeconds(s => s - 1);
+    }, 1000);
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
     <CountdownContainer>

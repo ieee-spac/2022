@@ -2,7 +2,7 @@ import {Accordion, AccordionDetails, AccordionSummary, Box, Typography, styled} 
 import {questionData} from "./Questions";
 import {useState} from "react";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import {theme} from "../util";
+import {theme} from "../Util";
 
 const QuestionAccordion = styled(Accordion)(() => ({
   marginBottom: '1em',

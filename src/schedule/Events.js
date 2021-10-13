@@ -1,6 +1,6 @@
 import DeveloperBoardIcon from '@mui/icons-material/DeveloperBoard';
 import GroupIcon from '@mui/icons-material/Group';
-import {theme} from "../util";
+import {theme} from "../Util";
 import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import FreeBreakfastIcon from '@mui/icons-material/FreeBreakfast';

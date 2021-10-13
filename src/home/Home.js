@@ -7,15 +7,13 @@ import {
   LightText,
   PulseButton,
   RedButton
-} from "../util";
-import IEEE from '../assets/ieee.png';
+} from "../Util";
 import Handshake from '../assets/handshake.png';
 import {scroller} from "react-scroll";
-import Countdown from "./Countdown";
 
 const minHeight = '820px';
 
-const Video = styled('video')(() => ({
+const Video = styled('video')({
   position: 'absolute',
   objectFit: 'cover',
   minWidth: '100%',
@@ -23,7 +21,7 @@ const Video = styled('video')(() => ({
   minHeight: `${minHeight}`,
   height: '100vh',
   zIndex: -2
-}));
+});
 
 const VideoOverlay = styled(Box)({
   position: 'absolute',
@@ -58,34 +56,31 @@ const ButtonContainer = styled(Box)({
   justifyContent: 'center'
 });
 
-const IEEELogo = styled('img')({
-  width: '10rem'
+const SPACLogo = styled('img')({
+  maxWidth: '12rem',
+  height: 'fit-content',
 });
 
-export default function Home() {
+export default function Home({isPortrait}) {
   return (
     <Box sx={{minHeight: `${minHeight}`, width: '100%'}}>
       <VideoOverlay/>
       <Video autoPlay muted loop>
         <source src={animatedBackground} type="video/mp4"/>
       </Video>
-      <Box sx={{paddingTop: appBarHeight}}/>
-      <HomeContainer>
-        <Box sx={{justifyContent: 'space-evenly', paddingTop: appBarHeight, display: 'flex'}}>
-          <img src={Handshake} alt='SPAC Logo'/>
-          <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-evenly'}}>
-            <LightText variant='h1' sx={{fontSize: '5rem'}}>SPAC 2022</LightText>
-            <LightText variant='h2' sx={{width: '40rem', textAlign: 'center'}}>
-              Student Professional Awareness Conference
-            </LightText>
-            <IEEELogo src={IEEE} alt='IEEE Logo'/>
-          </Box>
+      <HomeContainer sx={{paddingTop: appBarHeight}}>
+        <Box sx={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
+          <LightText variant='h1' sx={{fontSize: '6rem', marginTop: '2rem'}}>SPAC 2022</LightText>
+          <LightText variant='h2' sx={{marginBottom: '1rem'}}>
+            Student Professional Awareness Conference
+          </LightText>
+          <SPACLogo src={Handshake} alt='SPAC Logo'/>
         </Box>
-        <LightText variant='h3' sx={{alignSelf: 'center', marginTop: '3rem'}}>
-          January 20, 2022&nbsp;&nbsp;|&nbsp;&nbsp;Online on Aventri
-        </LightText>
-        <LightText sx={{textAlign: 'center', marginTop: '4rem'}}>SPAC begins in</LightText>
-        <Countdown/>
+        <Box sx={{display: 'flex', alignItems: 'center', flexDirection: 'column', marginTop: 'auto'}}>
+          <LightText variant='h3' sx={{marginTop: '5rem'}}>
+            January 20, 2022&nbsp;&nbsp;|&nbsp;&nbsp;Online on Aventri
+          </LightText>
+        </Box>
         <ButtonsContainer>
           <ButtonContainer>
             <RedButton variant='contained' onClick={() => scrollTo('about')}>

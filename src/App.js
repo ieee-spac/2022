@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import {StyledEngineProvider, ThemeProvider} from "@mui/material/styles";
-import {scrollOffset, theme} from "./util";
+import {scrollOffset, theme} from "./Util";
 import Navigation from "./navigation/Navigation";
 import Home from "./home/Home";
 import {Box, styled} from "@mui/material";
@@ -43,7 +43,7 @@ function App({isPortrait, storage}) {
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={theme}>
           <Navigation/>
-          <Home/>
+          <Home isPortrait={isPortrait}/>
           <Box>
             <Section name='about' sx={{backgroundColor: theme.palette.primary['variant4']}}>
               <About isPortrait={isPortrait}/>

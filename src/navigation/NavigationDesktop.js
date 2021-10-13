@@ -2,7 +2,7 @@ import {Link} from "react-scroll";
 import {AppBar, Box, Slide, Toolbar, useScrollTrigger, styled} from "@mui/material";
 import {isMobile} from "react-device-detect";
 import {useEffect, useState} from "react";
-import {appBarHeight} from "../util";
+import {appBarHeight} from "../Util";
 import SPAC from "../assets/spaclogo.png";
 
 const DesktopMenuButton = styled(Link)(({theme}) => ({
@@ -35,8 +35,15 @@ const NavBar = styled(Toolbar)({
   '&.MuiToolbar-root': {
     minHeight: appBarHeight,
     height: appBarHeight,
-    justifyContent: 'space-evenly'
+    paddingLeft: '2rem',
+    paddingRight: '1rem'
   }
+});
+
+const SPACLogo = styled('img')({
+  width: '10em',
+  cursor: 'pointer',
+  marginRight: 'auto'
 });
 
 export default function DesktopNav() {
@@ -62,7 +69,7 @@ export default function DesktopNav() {
     <Slide disabled={isMobile} appear={false} direction="down" in={showAppBar}>
       <AppBar sx={{backgroundColor: 'rgb(20, 20, 20, 0.7)'}}>
         <NavBar>
-          <img src={SPAC} alt='SPAC logo' style={{width: '10em', cursor: 'pointer'}} onClick={() => window.scrollTo(0, 0)}/>
+          <SPACLogo src={SPAC} alt='SPAC logo' onClick={() => window.scrollTo(0, 0)}/>
           <Box>
             <DesktopMenuButton to='about' spy={true} smooth={true}
                                onClick={() => blockScrollTrigger('about')}>About</DesktopMenuButton>

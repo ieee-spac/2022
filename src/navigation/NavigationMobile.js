@@ -9,7 +9,7 @@ import {
   Toolbar
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import {appBarHeight, scrollOffset, theme} from "../util";
+import {appBarHeight, scrollOffset, theme} from "../Util";
 import List from "@mui/material/List";
 import {Link} from "react-scroll";
 import SPAC from "../assets/spaclogo.png";

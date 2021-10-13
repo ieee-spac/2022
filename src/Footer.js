@@ -1,5 +1,5 @@
 import {Box, styled, Link} from "@mui/material";
-import {theme, LightText} from "./util";
+import {theme, LightText} from "./Util";
 import LinkedIn from "./assets/linkedin.png";
 import Facebook from "./assets/fb.png";
 import Instagram from "./assets/insta.png";

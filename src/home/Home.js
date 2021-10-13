@@ -74,6 +74,8 @@ export default function Home({isPortrait}) {
           <LightText variant='h2' sx={{marginBottom: '1rem'}}>
             Student Professional Awareness Conference
           </LightText>
+        </Box>
+        <Box sx={{display: 'flex', alignItems: 'center', flexDirection: 'column', marginTop: 'auto'}}>
           <SPACLogo src={Handshake} alt='SPAC Logo'/>
         </Box>
         <Box sx={{display: 'flex', alignItems: 'center', flexDirection: 'column', marginTop: 'auto'}}>

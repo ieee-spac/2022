@@ -2,6 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 //Imports the font
 import "@fontsource/roboto";
+import "@fontsource/roboto/900.css";
+import "@fontsource/roboto/700.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/300.css";
 //Contains any styles that could not be done via MUI or inline
 import './App.css';
 //Imports styling for lightbox

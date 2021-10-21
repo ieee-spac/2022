@@ -11,9 +11,13 @@ export default function Patronage() {
           <BlueButton variant='contained'>Download the Patron Package</BlueButton>
         </Link>
       </Box>
-      <Typography variant='h4' sx={{color: theme.palette.primary['variant3'], fontWeight: 'bold', marginTop: '2rem'}}>Partner Patron</Typography>
+      <Typography variant='h4' sx={{color: theme.palette.primary['variant3'], fontWeight: 'bold', marginTop: '2rem'}}>
+        Partner Patron
+      </Typography>
       <Divider sx={{width: '100%'}}/>
-      <Typography variant='h4' sx={{color: theme.palette.secondary.main, fontWeight: 'bold', marginTop: '2rem'}}>Gold Patrons</Typography>
+      <Typography variant='h4' sx={{color: theme.palette.secondary.main, fontWeight: 'bold', marginTop: '2rem'}}>
+        Gold Patrons
+      </Typography>
       <Divider sx={{width: '100%'}}/>
       <Typography variant='h4' sx={{color: 'silver', fontWeight: 'bold', marginTop: '2rem'}}>Silver Patrons</Typography>
       <Divider sx={{width: '100%', mb: '4rem'}}/>

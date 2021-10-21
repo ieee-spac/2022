@@ -32,7 +32,7 @@ export default function Footer({isPortrait}) {
   return (
     <FooterContainer>
       <FooterContainerInner>
-        <LightText sx={{zIndex: 1, alignSelf: 'center'}}>
+        <LightText sx={{zIndex: 1, alignSelf: 'center', fontSize: '1.2rem'}}>
           Follow us on social media:
         </LightText>
         <Link href='https://www.linkedin.com/company/spacottawa/' target='_blank' rel='noreferrer' sx={linkStyle}>

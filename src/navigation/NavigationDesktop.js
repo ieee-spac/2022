@@ -1,8 +1,6 @@
 import {Link} from "react-scroll";
-import {AppBar, Box, Slide, Toolbar, useScrollTrigger, styled} from "@mui/material";
-import {isMobile} from "react-device-detect";
-import {useEffect, useState} from "react";
-import {appBarHeight} from "../Util";
+import {AppBar, Box, Toolbar, styled} from "@mui/material";
+import {appBarHeight, scrollOffset} from "../Util";
 import SPAC from "../assets/spaclogo.png";
 
 const DesktopMenuButton = styled(Link)(({theme}) => ({
@@ -22,12 +20,12 @@ const DesktopMenuButton = styled(Link)(({theme}) => ({
 }));
 
 const RegisterButton = styled(DesktopMenuButton)(({theme}) => ({
-  backgroundColor: theme.palette.primary.main,
   borderRadius: '4px',
-  border: `5px solid ${theme.palette.primary.main}`,
+  border: `4px solid ${theme.palette.primary.main}`,
+  outline: '2px solid white',
   '&:hover': {
     backgroundColor: theme.palette.primary.dark,
-    border: `5px solid ${theme.palette.primary.dark}`
+    border: `4px solid ${theme.palette.primary.dark}`
   }
 }));
 
@@ -47,47 +45,36 @@ const SPACLogo = styled('img')({
 });
 
 export default function DesktopNav() {
-  let trigger = useScrollTrigger();
-  const [allowScrollTrigger, setAllowScrollTrigger] = useState(true);
-  const [showAppBar, setShowAppBar] = useState(true);
-
-  function blockScrollTrigger(elName) {
-    setAllowScrollTrigger(false);
-    setTimeout(() => {
-      setAllowScrollTrigger(true);
-    }, 1100);
-    window.location.hash = elName;
+  function setHash(name) {
+    window.location.hash = name;
   }
 
-  useEffect(() => {
-    if (allowScrollTrigger) {
-      setShowAppBar(!trigger);
-    }
-  }, [allowScrollTrigger, trigger]);
+  const scrollToHome = () => {
+    window.scrollTo(0, 0);
+    window.location.hash = '';
+  }
 
   return (
-    <Slide disabled={isMobile} appear={false} direction="down" in={showAppBar}>
-      <AppBar sx={{backgroundColor: 'rgb(20, 20, 20, 0.7)'}}>
-        <NavBar>
-          <SPACLogo src={SPAC} alt='SPAC logo' onClick={() => window.scrollTo(0, 0)}/>
-          <Box>
-            <DesktopMenuButton to='about' spy={true} smooth={true}
-                               onClick={() => blockScrollTrigger('about')}>About</DesktopMenuButton>
-            <RegisterButton to='register' spy={true} smooth={true}
-                               onClick={() => blockScrollTrigger('register')}>Register</RegisterButton>
-            <DesktopMenuButton to='schedule' spy={true} smooth={true}
-                               onClick={() => blockScrollTrigger('schedule')}>Schedule</DesktopMenuButton>
-            <DesktopMenuButton to='patronage' spy={true} smooth={true}
-                               onClick={() => blockScrollTrigger('patronage')}>Patronage</DesktopMenuButton>
-            <DesktopMenuButton to='gallery' spy={true} smooth={true}
-                               onClick={() => blockScrollTrigger('gallery')}>Gallery</DesktopMenuButton>
-            <DesktopMenuButton to='faq' spy={true} smooth={true}
-                               onClick={() => blockScrollTrigger('faq')}>FAQ</DesktopMenuButton>
-            <DesktopMenuButton to='contact' spy={true} smooth={true}
-                               onClick={() => blockScrollTrigger('contact')}>Contact Us</DesktopMenuButton>
-          </Box>
-        </NavBar>
-      </AppBar>
-    </Slide>
+    <AppBar>
+      <NavBar>
+        <SPACLogo src={SPAC} alt='SPAC logo' onClick={scrollToHome}/>
+        <Box>
+          <DesktopMenuButton to='about' spy={true} smooth={true} offset={scrollOffset}
+                             onClick={() => setHash('about')}>About</DesktopMenuButton>
+          <RegisterButton to='register' spy={true} smooth={true} offset={scrollOffset}
+                          onClick={() => setHash('register')}>Register</RegisterButton>
+          <DesktopMenuButton to='schedule' spy={true} smooth={true} offset={scrollOffset}
+                             onClick={() => setHash('schedule')}>Schedule</DesktopMenuButton>
+          <DesktopMenuButton to='patronage' spy={true} smooth={true} offset={scrollOffset}
+                             onClick={() => setHash('patronage')}>Patronage</DesktopMenuButton>
+          <DesktopMenuButton to='gallery' spy={true} smooth={true} offset={scrollOffset}
+                             onClick={() => setHash('gallery')}>Gallery</DesktopMenuButton>
+          <DesktopMenuButton to='faq' spy={true} smooth={true} offset={scrollOffset}
+                             onClick={() => setHash('faq')}>FAQ</DesktopMenuButton>
+          <DesktopMenuButton to='contact' spy={true} smooth={true} offset={scrollOffset}
+                             onClick={() => setHash('contact')}>Contact Us</DesktopMenuButton>
+        </Box>
+      </NavBar>
+    </AppBar>
   );
 }

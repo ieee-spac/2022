@@ -5,7 +5,6 @@ import event2 from './assets/events/event2.png';
 import event3 from './assets/events/event3.png';
 import event4 from './assets/events/event4.png';
 import event5 from './assets/events/event5.png';
-import event6 from './assets/events/event6.png';
 import {isMobile} from "react-device-detect";
 
 const EventContainer = styled(Box)(() => ({
@@ -45,18 +44,18 @@ const BubbleHeader = styled(LightText)(() => ({
   fontWeight: 'bold'
 }));
 
-const BubbleWord = styled(LightText)(() => ({
+const BubbleWord = styled(LightText)({
   textAlign: 'center',
   fontSize: '11px',
   marginTop: '-0.3rem'
-}));
+});
 
 export default function About({isPortrait}) {
   const baseScale = getBubbleScale(isMobile, isPortrait)
   const increment = 14;
 
   return (
-    <Box sx={{backgroundColor: theme.palette.primary['variant4'], paddingBottom: '2em'}}>
+    <Box sx={{backgroundColor: theme.palette.primary['variant4'], paddingBottom: '3em'}}>
       <Box sx={{display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', paddingTop: '5rem'}}>
         <Bubble sx={{backgroundColor: theme.palette['tertiary'].main, transform: `scale(${baseScale}%)`}}>
           <BubbleHeader>300</BubbleHeader>
@@ -76,9 +75,9 @@ export default function About({isPortrait}) {
         </Bubble>
       </Box>
       <Card raised sx={{boxShadow: 'none', marginTop: '5em'}}>
-        <CardContent sx={{background: theme.palette.primary['variant2']}}>
+        <CardContent sx={{background: theme.palette.primary.dark}}>
           <LightText variant='h4'>About Us</LightText>
-          <LightText>
+          <LightText sx={{fontSize: '1.2rem', marginTop: '0.5rem'}}>
             The IEEE Student Professional Awareness Conference (SPAC) is an annual formal dinner event which serves
             respected professionals to get engaged with engineering and computer science students within their fields.
             SPAC provides students, academics, and industry professionals, a chance to network and bridge the gap
@@ -88,20 +87,19 @@ export default function About({isPortrait}) {
           </LightText>
         </CardContent>
       </Card>
-
       <LightText variant='h2' sx={{textAlign: 'center', marginTop: '2em'}}>A typical SPAC...</LightText>
       <EventContainer>
         <EventDescriptionContainer>
-          <LightText variant='h4'>Main Stage</LightText>
+          <LightText variant='h4'>Presentation Section</LightText>
           <LightText>Spot for speakers and event kickoff.</LightText>
         </EventDescriptionContainer>
-        <EventImage src={event4} alt='Main Stage'/>
+        <EventImage src={event4} alt='Presentation Section'/>
       </EventContainer>
       <EventContainer>
-        <EventImage src={event1} alt='Speed Dating'/>
+        <EventImage src={event1} alt='Professional 1:1'/>
         <EventDescriptionContainer>
-          <LightText variant='h4'>Speed Dating</LightText>
-          <LightText>Quick private one to one convos with students in your discipline.</LightText>
+          <LightText variant='h4'>Professional 1:1</LightText>
+          <LightText>Quick one-on-one conversations with students in your discipline</LightText>
         </EventDescriptionContainer>
       </EventContainer>
       <EventContainer>
@@ -109,10 +107,10 @@ export default function About({isPortrait}) {
           <LightText variant='h4'>Exclusive Masterclass</LightText>
           <LightText>Stand alone event to reach out, showcase and finesse.</LightText>
         </EventDescriptionContainer>
-        <EventImage src={event3} alt='Main Stage'/>
+        <EventImage src={event3} alt='Exclusive Masterclass'/>
       </EventContainer>
       <EventContainer>
-        <EventImage src={event6} alt='Speed Dating'/>
+        <EventImage src={event5} alt='Workshops'/>
         <EventDescriptionContainer>
           <LightText variant='h4'>Workshops</LightText>
           <LightText>Concurrently run, where you show students what you're all about.</LightText>
@@ -120,17 +118,12 @@ export default function About({isPortrait}) {
       </EventContainer>
       <EventContainer>
         <EventDescriptionContainer>
-          <LightText variant='h4'>Panel</LightText>
-          <LightText>Where you can give insight on the industry and inspire.</LightText>
+          <LightText variant='h4'>Virtual Booths</LightText>
+          <LightText>
+            Private concurrent session where students can drop in for a chit chat with companies
+          </LightText>
         </EventDescriptionContainer>
-        <EventImage src={event2} alt='Main Stage'/>
-      </EventContainer>
-      <EventContainer>
-        <EventImage src={event5} alt='Speed Dating'/>
-        <EventDescriptionContainer>
-          <LightText variant='h4'>Booths</LightText>
-          <LightText>Where students can drop in for a chitchat with your company.</LightText>
-        </EventDescriptionContainer>
+        <EventImage src={event2} alt='Virtual Booths'/>
       </EventContainer>
     </Box>
   )

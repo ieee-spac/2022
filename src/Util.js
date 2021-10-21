@@ -40,12 +40,11 @@ export const theme = createTheme({
   },
   palette: {
     primary: {
-      main: '#0165ad',
-      dark: '#015b9b',
+      main: '#16639D',
+      dark: '#005187',
       light: '#3383bd',
-      variant2: '#004068',
       variant3: '#00CAFF',
-      variant4: '#131328'
+      variant4: '#002233'
     },
     secondary: {
       main: '#af8812',
@@ -61,14 +60,15 @@ export const theme = createTheme({
 });
 
 export const appBarHeight = isMobile ? '56px' : '70px';
-export const scrollOffset = isMobile ? -56 : 0;
+export const scrollOffset = isMobile ? -56 : -70;
 
-export const StandardButton = styled(Button)({
-  textTransform: 'none'
+const StandardButton = styled(Button)({
+  textTransform: 'none',
 });
 
 export const PulseButton = styled(StandardButton)({
   animation: 'pulse 0.7s infinite',
+  backgroundColor: theme.palette.secondary.main,
   '@keyframes pulse': {
     '0%': {
       transform: 'scale(1)'
@@ -94,6 +94,13 @@ export const RedButton = styled(StandardButton)({
   background: theme.palette['tertiary'].light,
   '&:hover': {
     background: theme.palette['tertiary'].main
+  }
+});
+
+export const BlueButton = styled(StandardButton)({
+  background: theme.palette.primary.main,
+  '&:hover': {
+    background: theme.palette.primary.dark,
   }
 });
 

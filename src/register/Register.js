@@ -1,7 +1,7 @@
 import {Alert, Box, Card, CardContent, CircularProgress, Snackbar, styled, TextField, Typography} from "@mui/material";
 import {StyledDropZone} from 'react-drop-zone'
 import 'react-drop-zone/dist/styles.css'
-import {RequiredField, StandardButton} from "../Util";
+import {BlueButton, RequiredField} from "../Util";
 import {useState} from "react";
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import {isMobile} from "react-device-detect";
@@ -118,8 +118,8 @@ export default function Register({isPortrait, storage}) {
               )
             }
             <Box sx={{justifyContent: 'center', display: 'flex', marginTop: '1em', position: 'relative'}}>
-              <StandardButton variant='contained' sx={{width: 'fit-content'}} disabled={!submitEnabled}
-                              onClick={() => submitProfile(data)}>Submit</StandardButton>
+              <BlueButton variant='contained' sx={{width: 'fit-content'}} disabled={!submitEnabled}
+                              onClick={() => submitProfile(data)}>Submit</BlueButton>
               {
                 (!submitEnabled && !resumeWarning) && (
                   <Spinner size={24}/>

@@ -1,5 +1,5 @@
 import {Alert, Box, Card, CardContent, Snackbar, TextField, Typography} from "@mui/material";
-import {RequiredField, StandardButton} from "./Util";
+import {BlueButton, RequiredField} from "./Util";
 import {useState} from "react";
 import {isMobile} from "react-device-detect";
 
@@ -97,8 +97,8 @@ export default function Contact({isPortrait}) {
                        error={formState.messageError} sx={{width: '100%', marginBottom: '1em'}} id='contactMessageInput'
                        label={RequiredField('Message')} multiline/>
             <Box sx={{justifyContent: 'center', display: 'flex', marginTop: '1em'}}>
-              <StandardButton variant='contained' sx={{width: 'fit-content'}} disabled={!submitEnabled}
-                              onClick={() => submitContactForm()}>Submit</StandardButton>
+              <BlueButton variant='contained' sx={{width: 'fit-content'}} disabled={!submitEnabled}
+                              onClick={() => submitContactForm()}>Submit</BlueButton>
             </Box>
             <Box sx={{maxWidth: 'fit-content'}}>
               {

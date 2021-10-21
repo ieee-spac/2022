@@ -49,7 +49,7 @@ export default function Register({isPortrait, storage}) {
   const [submitEnabled, setSubmitEnabled] = useState(true);
   const [resumeWarning, setResumeWarning] = useState(false);
 
-  const nameBoxWidthStyle = isMobile && isPortrait ? {width: '100%'} : {};
+  const nameBoxWidthStyle = isMobile && isPortrait ? {width: '100%'} : {width: '210px'};
   const resumeUploadName = isMobile ? 'Upload your resume here' : 'Click or drop your resume here';
 
   const data = {
@@ -83,7 +83,7 @@ export default function Register({isPortrait, storage}) {
         <Typography variant='h5'>Tickets are free!</Typography>
       </Box>
       <Box sx={{display: 'flex', width: '100%', justifyContent: 'center', paddingBottom: '2em'}}>
-        <Card sx={{width: 'fit-content', transform: window.innerWidth >= 1200 ? 'translateY(-81px)' : ''}}>
+        <Card sx={{width: '29.25rem', transform: window.innerWidth >= 1200 ? 'translateY(-81px)' : ''}}>
           <CardContent sx={{marginTop: '0.5em', display: 'flex', flexDirection: 'column'}}>
             <Typography variant='h6' sx={{textAlign: 'center', marginBottom: '1em'}}>
               Please fill out your profile:
@@ -119,7 +119,7 @@ export default function Register({isPortrait, storage}) {
             }
             <Box sx={{justifyContent: 'center', display: 'flex', marginTop: '1em', position: 'relative'}}>
               <BlueButton variant='contained' sx={{width: 'fit-content'}} disabled={!submitEnabled}
-                              onClick={() => submitProfile(data)}>Submit</BlueButton>
+                          onClick={() => submitProfile(data)}>Submit</BlueButton>
               {
                 (!submitEnabled && !resumeWarning) && (
                   <Spinner size={24}/>

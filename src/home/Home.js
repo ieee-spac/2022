@@ -1,5 +1,5 @@
-import {Box, styled} from "@mui/material";
-import animatedBackground from '../assets/technology.mp4';
+import {Box, styled, Typography} from "@mui/material";
+import background from '../assets/bg_website_4.png';
 import {
   appBarHeight,
   GreenButton,
@@ -12,23 +12,13 @@ import Handshake from '../assets/handshake.png';
 import {scroller} from "react-scroll";
 import {isMobile} from "react-device-detect";
 
-const Video = styled('video')({
+const Background = styled('img')({
   position: 'absolute',
   objectFit: 'cover',
   minWidth: '100%',
   maxWidth: '100%',
   height: '100vh',
   zIndex: -2
-});
-
-const VideoOverlay = styled(Box)({
-  position: 'absolute',
-  objectFit: 'cover',
-  minWidth: '100%',
-  maxWidth: '100%',
-  height: '100vh',
-  background: 'linear-gradient(90deg, rgba(30, 232, 252, 0.2) 0%, rgba(146, 170, 245, 0.2) 100%)',
-  zIndex: -1
 });
 
 const HomeContainer = styled(Box)({
@@ -57,32 +47,33 @@ const SPACLogo = styled('img')({
   height: 'auto'
 });
 
+const BlueText = styled(Typography)(({theme}) => ({
+  color: theme.palette.primary.main
+}));
+
 export default function Home({isPortrait}) {
   const titleStyle = getTitleStyle(isPortrait);
   const spacSize = getSpacSize();
 
   return (
     <Box sx={{width: '100%'}}>
-      <VideoOverlay/>
-      <Video autoPlay muted loop>
-        <source src={animatedBackground} type="video/mp4"/>
-      </Video>
+      <Background src={background} alt='background'/>
       <HomeContainer sx={{paddingTop: appBarHeight}}>
         <Box sx={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
-          <LightText variant='h1' sx={titleStyle}>
+          <BlueText variant='h1' sx={titleStyle}>
             SPAC 2022
-          </LightText>
-          <LightText variant='h2' sx={{marginBottom: '1rem', textAlign: 'center', ...spacSize}}>
+          </BlueText>
+          <Typography variant='h2' sx={{marginBottom: '1rem', textAlign: 'center', ...spacSize}}>
             Student Professional Awareness Conference
-          </LightText>
+          </Typography>
         </Box>
         <Box sx={{display: 'flex', alignItems: 'center', flexDirection: 'column', marginTop: 'auto'}}>
           <SPACLogo src={Handshake} alt='SPAC Logo' style={{maxWidth: getLogoSize(isPortrait)}}/>
         </Box>
         <Box sx={{display: 'flex', alignItems: 'center', flexDirection: 'column', marginTop: 'auto'}}>
-          <LightText variant='h3' sx={getDateStyle(isPortrait)}>
+          <Typography variant='h3' sx={getDateStyle(isPortrait)}>
             January 20, 2022&nbsp;&nbsp;|&nbsp;&nbsp;Online on Aventri
-          </LightText>
+          </Typography>
         </Box>
         <ButtonsContainer>
           <ButtonContainer>

@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import {StyledEngineProvider, ThemeProvider} from "@mui/material/styles";
 import {scrollOffset, theme} from "./Util";
 import Navigation from "./navigation/Navigation";
-import Home from "./home/Home";
+import Home from "./Home";
 import {Box, styled} from "@mui/material";
 import {Element, scroller} from "react-scroll";
 import About from "./About";

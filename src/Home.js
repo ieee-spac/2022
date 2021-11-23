@@ -1,5 +1,5 @@
 import {Box, styled, Typography} from "@mui/material";
-import background from '../assets/bg_website_4.png';
+import background from './assets/bg_website_4.png';
 import {
   appBarHeight,
   GreenButton,
@@ -7,8 +7,8 @@ import {
   LightText,
   PulseButton,
   RedButton
-} from "../Util";
-import Handshake from '../assets/handshake.png';
+} from "./Util";
+import Handshake from './assets/handshake.png';
 import {scroller} from "react-scroll";
 import {isMobile} from "react-device-detect";
 
@@ -72,7 +72,7 @@ export default function Home({isPortrait}) {
         </Box>
         <Box sx={{display: 'flex', alignItems: 'center', flexDirection: 'column', marginTop: 'auto'}}>
           <Typography variant='h3' sx={getDateStyle(isPortrait)}>
-            January 20, 2022&nbsp;&nbsp;|&nbsp;&nbsp;Online on Aventri
+            January 20, 2022&nbsp;&nbsp;|&nbsp;&nbsp;Online on Hopin
           </Typography>
         </Box>
         <ButtonsContainer>

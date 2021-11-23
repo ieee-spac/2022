@@ -1,10 +1,10 @@
 export const questionData = [
   {
     q: 'Where is the event taking place?',
-    a: 'SPAC is going virtual this year via Aventri. The link will be sent after registration.'
+    a: 'SPAC is going virtual this year via Hopin. The link will be sent after registration.'
   },
   {
-    q: 'How do I navigate Aventri?',
+    q: 'How do I navigate Hopin?',
     a: 'A tutorial is available through our Discord server.'
   },
   {
@@ -13,7 +13,7 @@ export const questionData = [
   },
   {
     q: 'Should I have my camera and mic on?',
-    a: 'It’s always a good idea to have your mic and camera on when Speed Dating, or networking. During Panels and Masterclasses, we ask that you mute your mic and turn off your camera.'
+    a: 'It’s always a good idea to have your mic and camera on during a Professional 1:1, or networking. During Panels and Masterclasses, we ask that you mute your mic and turn off your camera.'
   },
   {
     q: 'Should I dress up?',

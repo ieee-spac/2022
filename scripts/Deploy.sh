@@ -8,6 +8,6 @@ git fetch;
 git checkout gh-pages;
 echo 'ieeespac.ca' > ../CNAME;
 git checkout -b prod;
-git add -A;
+git add ../CNAME;
 git commit -m "Production build $(date)";
 git push origin prod --force;

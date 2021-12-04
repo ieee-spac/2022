@@ -12,7 +12,7 @@ const EventContainer = styled(Box)(() => ({
   alignItems: 'center',
   justifyContent: 'space-around',
   height: '150px',
-  marginTop: '4em',
+  marginTop: '2.5em',
   '& > *': {
     marginLeft: '1em',
     marginRight: '1em'
@@ -50,43 +50,45 @@ const BubbleWord = styled(LightText)({
   marginTop: '-0.3rem'
 });
 
+const AboutContainer = styled(Box)(({theme}) => ({
+  marginTop: '5em',
+  borderStyle: 'solid',
+  borderColor: theme.palette.primary.light,
+  borderRadius: '3px',
+  borderWidth: '2px 2px 2px 10px',
+  padding: '1rem 1rem 1rem 0.7rem'
+}))
+
 export default function About({isPortrait}) {
   const baseScale = getBubbleScale(isMobile, isPortrait)
   const increment = 14;
 
   return (
-    <Box sx={{backgroundColor: theme.palette.primary['variant4'], paddingBottom: '3em'}}>
+    <Box sx={{paddingBottom: '3em'}}>
       <Box sx={{display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', paddingTop: '5rem'}}>
-        <Bubble sx={{backgroundColor: theme.palette['tertiary'].main, transform: `scale(${baseScale}%)`}}>
+        <Bubble sx={{backgroundColor: theme.palette['primary'].light, transform: `scale(${baseScale}%)`}}>
           <BubbleHeader>300</BubbleHeader>
           <BubbleWord sx={{textAlign: 'center'}}>Attendees</BubbleWord>
         </Bubble>
-        <Bubble sx={{backgroundColor: theme.palette.secondary.main, transform: `scale(${baseScale + increment}%)`}}>
+        <Bubble sx={{backgroundColor: theme.palette['orange'].light, transform: `scale(${baseScale + increment}%)`}}>
           <BubbleHeader>9</BubbleHeader>
           <BubbleWord>Years</BubbleWord>
         </Bubble>
-        <Bubble sx={{backgroundColor: 'green', transform: `scale(${baseScale + increment * 2}%)`}}>
+        <Bubble sx={{backgroundColor: theme.palette['green'].light, transform: `scale(${baseScale + increment * 2}%)`}}>
           <BubbleHeader>200</BubbleHeader>
           <BubbleWord>Students</BubbleWord>
         </Bubble>
-        <Bubble sx={{backgroundColor: theme.palette.primary.main, transform: `scale(${baseScale + increment * 3}%)`}}>
+        <Bubble sx={{backgroundColor: theme.palette['secondary'].light, transform: `scale(${baseScale + increment * 3}%)`}}>
           <BubbleHeader>100</BubbleHeader>
           <BubbleWord>Companies</BubbleWord>
         </Bubble>
       </Box>
-      <Card raised sx={{boxShadow: 'none', marginTop: '5em'}}>
-        <CardContent sx={{background: theme.palette.primary.dark}}>
+      <AboutContainer>
           <LightText variant='h4'>About Us</LightText>
           <LightText sx={{fontSize: '1.2rem', marginTop: '0.5rem'}}>
-            The IEEE Student Professional Awareness Conference (SPAC) is an annual formal dinner event which serves
-            respected professionals to get engaged with engineering and computer science students within their fields.
-            SPAC provides students, academics, and industry professionals, a chance to network and bridge the gap
-            between classrooms and boardrooms, empowering its attendees to build professional connections. Hosted in
-            1979 for the first time, SPAC has manifested itself as an event where future professionals get exposure to
-            the world of professionalism which complements their vocational education.
+            The IEEE Student Professional Awareness Conference (SPAC) is an annual formal dinner event that serves esteemed professionals and allows them to engage with engineering and computer science students within their fields. This year the conference will be held online to maintain health and safety regulations as due to the current circumstances regarding Covid-19. SPAC provides students, academics, and industry professionals a chance to network and bridge the gap between classrooms and boardrooms, thereby empowering its attendees to build professional connections and form a bond. Present conditions will allow SPAC to expand its reach across communities to give new students and partners opportunities in building strong foundations. First hosted in 1979, SPAC has manifested itself as an event where future professionals receive exposure to the world of employment which complements their ongoing studies.
           </LightText>
-        </CardContent>
-      </Card>
+      </AboutContainer>
       <LightText variant='h2' sx={{textAlign: 'center', marginTop: '2em'}}>A typical SPAC...</LightText>
       <EventContainer>
         <EventDescriptionContainer>

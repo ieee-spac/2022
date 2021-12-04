@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {
   AppBar,
   Box,
@@ -41,6 +41,16 @@ const NavBar = styled(Toolbar)({
 
 export default function MobileNav() {
   const [showDrawer, setShowDrawer] = useState(false);
+  const [background, setBackground] = useState(theme.palette.primary['variant4']);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const active = document.querySelectorAll('.aboutCheck.active');
+      setBackground(active.length === 0 ? theme.palette.primary['variant4'] : theme.palette.primary.main);
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   function hideDrawer(elName) {
     setShowDrawer(false);
@@ -48,12 +58,13 @@ export default function MobileNav() {
   }
 
   return (
-    <AppBar sx={{zIndex: theme.zIndex.drawer + 1}}>
+    <AppBar sx={{zIndex: theme.zIndex.drawer + 1, backgroundColor: background}}>
       <NavBar>
         <IconButton sx={{marginRight: '1rem'}} onClick={() => setShowDrawer(!showDrawer)} color="inherit"
                     aria-label="open drawer">
           <MenuIcon/>
         </IconButton>
+        <Link className='aboutCheck' to='about' spy={true}/>
         <Drawer
           open={showDrawer}
           anchor={'top'}

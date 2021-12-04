@@ -55,6 +55,14 @@ export const theme = createTheme({
       main: '#810e05',
       dark: '#480702',
       light: '#9b0f05'
+    },
+    orange: {
+      light: '#FF8A3D',
+      main: '#FF8132'
+    },
+    green: {
+      light: '#70AF70',
+      main: 'rgb(20, 145, 20)'
     }
   }
 });
@@ -66,9 +74,46 @@ const StandardButton = styled(Button)({
   textTransform: 'none',
 });
 
-export const PulseButton = styled(StandardButton)({
+export const BlueButton = styled(StandardButton)({
+  background: theme.palette.primary.light,
+  '&:hover': {
+    background: theme.palette.primary.main,
+  }
+});
+
+
+
+export const GreenButton = styled(StandardButton)({
+  background: theme.palette['green'].light,
+  '&:hover': {
+    background: theme.palette['green'].main
+  }
+});
+
+export const RedButton = styled(StandardButton)({
+  background: theme.palette['tertiary'].light,
+  '&:hover': {
+    background: theme.palette['tertiary'].main
+  }
+});
+
+export const YellowButton = styled(StandardButton)({
+  background: theme.palette['secondary'].light,
+  '&:hover': {
+    background: theme.palette['secondary'].main
+  }
+});
+
+
+export const OrangeButton = styled(StandardButton)({
+  background: theme.palette['orange'].light,
+  '&:hover': {
+    background: theme.palette['orange'].main
+  }
+});
+
+export const PulseButton = styled(RedButton)({
   animation: 'pulse 0.7s infinite',
-  backgroundColor: theme.palette.secondary.main,
   '@keyframes pulse': {
     '0%': {
       transform: 'scale(1)'
@@ -81,27 +126,6 @@ export const PulseButton = styled(StandardButton)({
 
 export const LightText = styled(Typography)({
   color: 'white'
-});
-
-export const GreenButton = styled(StandardButton)({
-  background: 'green',
-  '&:hover': {
-    background: 'rgb(0, 115, 0)'
-  }
-});
-
-export const RedButton = styled(StandardButton)({
-  background: theme.palette['tertiary'].light,
-  '&:hover': {
-    background: theme.palette['tertiary'].main
-  }
-});
-
-export const BlueButton = styled(StandardButton)({
-  background: theme.palette.primary.main,
-  '&:hover': {
-    background: theme.palette.primary.dark,
-  }
 });
 
 export function RequiredField(name) {

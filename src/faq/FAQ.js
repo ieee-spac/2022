@@ -18,8 +18,8 @@ const QuestionAccordion = styled(Accordion)(() => ({
 function QuestionAnswer({questionData, id, expanded, handleChange}) {
   return (
     <QuestionAccordion expanded={expanded === id} onChange={handleChange(id)}>
-      <AccordionSummary sx={{borderLeft: `6px solid ${theme.palette.secondary.main}`, borderTopLeftRadius: '3px', borderBottomLeftRadius: expanded === id ? '0px' : '3px'}}
-                        expandIcon={<ExpandMoreIcon color='secondary'/>}
+      <AccordionSummary sx={{borderLeft: `6px solid ${theme.palette['green'].light}`, borderTopLeftRadius: '3px', borderBottomLeftRadius: expanded === id ? '0px' : '3px'}}
+                        expandIcon={<ExpandMoreIcon color='green'/>}
                         aria-controls={"question " + id}
                         id={id}
       >
@@ -27,7 +27,7 @@ function QuestionAnswer({questionData, id, expanded, handleChange}) {
           {questionData.q}
         </Typography>
       </AccordionSummary>
-      <AccordionDetails sx={{borderLeft: `6px solid ${theme.palette['tertiary'].main}`, borderBottomLeftRadius: '3px'}}>
+      <AccordionDetails sx={{borderLeft: `6px solid ${theme.palette['orange'].main}`, borderBottomLeftRadius: '3px'}}>
         <Typography>
           {questionData.a}
         </Typography>

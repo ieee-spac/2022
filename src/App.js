@@ -45,7 +45,7 @@ function App({isPortrait, storage}) {
           <Navigation/>
           <Home isPortrait={isPortrait}/>
           <Box>
-            <Section name='about' sx={{backgroundColor: theme.palette.primary['variant4']}}>
+            <Section name='about' sx={{backgroundColor: 'rgb(0, 15, 33)'}}>
               <About isPortrait={isPortrait}/>
             </Section>
             <Section name='register'>

@@ -1,12 +1,11 @@
-import {Box, styled, Typography} from "@mui/material";
-import background from './assets/bg_website_4.png';
+import {Box, Button, styled, Typography} from "@mui/material";
+import background from './assets/bg_website.png';
 import {
   appBarHeight,
   GreenButton,
   scrollOffset,
-  LightText,
   PulseButton,
-  RedButton
+  RedButton, BlueButton, OrangeButton, YellowButton
 } from "./Util";
 import Handshake from './assets/handshake.png';
 import {scroller} from "react-scroll";
@@ -33,6 +32,7 @@ const ButtonsContainer = styled(Box)({
   height: '3em',
   alignItems: 'center',
   marginTop: 'auto',
+  paddingTop: '1rem',
   marginBottom: '4rem'
 });
 
@@ -77,18 +77,18 @@ export default function Home({isPortrait}) {
         </Box>
         <ButtonsContainer>
           <ButtonContainer>
-            <RedButton variant='contained' onClick={() => scrollTo('about')}>
+            <Button variant='outlined' onClick={() => scrollTo('about')}>
               Read More
-            </RedButton>
+            </Button>
           </ButtonContainer>
           <ButtonContainer>
-            <PulseButton variant='contained' sx={{height: 'min-content'}} color='secondary'
+            <Button variant='outlined' sx={{height: 'min-content'}}
                          onClick={() => scrollTo('register')}>
               Register Now
-            </PulseButton>
+            </Button>
           </ButtonContainer>
           <ButtonContainer>
-            <GreenButton variant='contained' onClick={() => scrollTo('patronage')}>Sponsor Us</GreenButton>
+            <Button variant='outlined' onClick={() => scrollTo('patronage')}>Sponsor Us</Button>
           </ButtonContainer>
         </ButtonsContainer>
       </HomeContainer>

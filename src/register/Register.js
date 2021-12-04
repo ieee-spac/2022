@@ -26,7 +26,7 @@ const Spinner = styled(CircularProgress)({
   marginLeft: '-12px'
 });
 
-/*export default function Register({isPortrait, storage}) {
+export default function Register({isPortrait, storage}) {
   const [formState, setFormState] = useState({
     firstName: '',
     firstNameError: false,
@@ -149,16 +149,4 @@ const Spinner = styled(CircularProgress)({
       <ResumeWarning data={data}/>
     </Box>
   )
-}*/
-
-export default function Register() {
-  return (
-    <Box sx={{paddingTop: '2em', display: 'flex', flexDirection: 'column'}}>
-      <Box sx={{marginBottom: '1em'}}>
-        <Typography variant='h4'>Register</Typography>
-        <Typography variant='h5'>Tickets are free!</Typography>
-        <Typography>Registration info will be posted here as soon as it's available.</Typography>
-      </Box>
-    </Box>
-  );
 }

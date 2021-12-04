@@ -50,8 +50,8 @@ export async function sendRequests(props) {
 
   const fileExists = formState.file !== null;
   const resumeName = fileExists ? `${formState.firstName} ${formState.lastName} Resume ${new Date().getTime()}.${formState.file.name.split('.').pop()}` : '';
-  const resumeUrlExtension = fileExists ? `&entry.69468430=${resumeName}` : '';
-  const url = `https://docs.google.com/forms/d/e/1FAIpQLScdFwEc7scZ-HbtBrcHv9MnEHeGKwEdUCumc8oZht9dydPkyA/formResponse?entry.509145449=${formState.firstName}&entry.527675740=${formState.lastName}&entry.1088293976=${formState.phone}&entry.1396694674=${formState.email}&entry.513597798=${formState.university}&entry.1760655465=${formState.program}${resumeUrlExtension}`;
+  const resumeUrlExtension = fileExists ? `&entry.313681289=${resumeName}` : '';
+  const url = `https://docs.google.com/forms/d/e/1FAIpQLSeC1S4P6502-owLUSa9GdFe8kvgO57JgoI3FIu0Nse5oiLkBw/formResponse?entry.2044201966=${formState.firstName}&entry.2002091112=${formState.lastName}&entry.1852925179=${formState.phone}&entry.730036042=${formState.email}&entry.1023303213=${formState.university}&entry.1138066475=${formState.program}${resumeUrlExtension}`;
 
   try {
     const results = fileExists ? await Promise.all([

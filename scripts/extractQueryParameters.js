@@ -1,5 +1,5 @@
 /**
- * In google forms, on the preview page, run this script in the developer console to get query parameters
+ * In google forms, on the preview page, copy this script into the developer console to get query parameters
  * that can be used to POST to the form
  */
 function loop(e) {

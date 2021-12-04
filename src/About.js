@@ -1,4 +1,4 @@
-import {Box, Card, CardContent, styled} from "@mui/material";
+import {Box, styled} from "@mui/material";
 import {theme, LightText} from "./Util";
 import event1 from './assets/events/event1.png';
 import event2 from './assets/events/event2.png';

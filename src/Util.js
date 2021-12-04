@@ -90,30 +90,11 @@ export const GreenButton = styled(StandardButton)({
   }
 });
 
-export const RedButton = styled(StandardButton)({
-  background: theme.palette['tertiary'].light,
-  '&:hover': {
-    background: theme.palette['tertiary'].main
-  }
-});
-
-export const YellowButton = styled(StandardButton)({
-  background: theme.palette['secondary'].light,
-  '&:hover': {
-    background: theme.palette['secondary'].main
-  }
-});
-
-
-export const OrangeButton = styled(StandardButton)({
-  background: theme.palette['orange'].light,
-  '&:hover': {
-    background: theme.palette['orange'].main
-  }
-});
-
-export const PulseButton = styled(RedButton)({
-  animation: 'pulse 0.7s infinite',
+export const PulseButton = styled(Button)({
+  animation: 'pulse 0.3s infinite alternate',
+  backfaceVisibility: 'hidden',
+  transform: 'translateZ(0)',
+  '-webkit-font-smoothing': 'subpixel-antialiased',
   '@keyframes pulse': {
     '0%': {
       transform: 'scale(1)'

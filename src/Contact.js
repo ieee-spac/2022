@@ -46,7 +46,7 @@ export default function Contact({isPortrait}) {
       setSubmitEnabled(true);
     } else {
       newFormState.errorSummary = '';
-      const url = `https://docs.google.com/forms/u/0/d/e/1FAIpQLSeLxd7QRsBkv3pZrNpiXIjLCRyF_T2duSwT7AcQiaMNqnvS9g/formResponse?entry.410070190=${formState.firstName}&entry.1246663423=${formState.lastName}&entry.1530865124=${formState.email}&entry.129369525=${formState.message}`;
+      const url = `https://docs.google.com/forms/u/0/d/e/1FAIpQLSdunnORx9sBYAHgfYXNLvFuL1k4rxV32wqbllfy0-W0EUDVuw/formResponse?entry.432686960=${formState.firstName}&entry.1682272929=${formState.lastName}&entry.1321437761=${formState.email}&entry.1447003292=${formState.message}`;
       const result = await fetch(url, {
         method: 'POST',
         mode: 'no-cors',

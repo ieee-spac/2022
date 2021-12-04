@@ -1,11 +1,8 @@
 import {Box, Button, styled, Typography} from "@mui/material";
 import background from './assets/bg_website.png';
 import {
-  appBarHeight,
-  GreenButton,
+  appBarHeight, PulseButton,
   scrollOffset,
-  PulseButton,
-  RedButton, BlueButton, OrangeButton, YellowButton
 } from "./Util";
 import Handshake from './assets/handshake.png';
 import {scroller} from "react-scroll";
@@ -82,10 +79,10 @@ export default function Home({isPortrait}) {
             </Button>
           </ButtonContainer>
           <ButtonContainer>
-            <Button variant='outlined' sx={{height: 'min-content'}}
+            <PulseButton variant='outlined' sx={{height: 'min-content'}}
                          onClick={() => scrollTo('register')}>
               Register Now
-            </Button>
+            </PulseButton>
           </ButtonContainer>
           <ButtonContainer>
             <Button variant='outlined' onClick={() => scrollTo('patronage')}>Sponsor Us</Button>

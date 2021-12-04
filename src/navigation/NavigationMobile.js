@@ -57,6 +57,11 @@ export default function MobileNav() {
     window.location.hash = elName;
   }
 
+  function scrollToTop() {
+    window.scrollTo(0, 0);
+    window.location.hash = '';
+  }
+
   return (
     <AppBar sx={{zIndex: theme.zIndex.drawer + 1, backgroundColor: background}}>
       <NavBar>
@@ -64,7 +69,7 @@ export default function MobileNav() {
                     aria-label="open drawer">
           <MenuIcon/>
         </IconButton>
-        <Link className='aboutCheck' to='about' spy={true}/>
+        <Link className='aboutCheck' to='about' spy={true} offset={scrollOffset}/>
         <Drawer
           open={showDrawer}
           anchor={'top'}
@@ -104,7 +109,7 @@ export default function MobileNav() {
             </List>
           </Box>
         </Drawer>
-        <img src={SPAC} alt='SPAC Logo' style={{width: '7em'}} onClick={() => window.scrollTo(0, 0)}/>
+        <img src={SPAC} alt='SPAC Logo' style={{width: '7em'}} onClick={() => scrollToTop()}/>
       </NavBar>
     </AppBar>
   );

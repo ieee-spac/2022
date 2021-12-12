@@ -51,6 +51,7 @@ export const theme = createTheme({
       dark: '#9b7c0c',
       light: '#cc9d11'
     },
+    //obsolete
     tertiary: {
       main: '#810e05',
       dark: '#480702',

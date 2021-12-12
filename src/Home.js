@@ -4,7 +4,7 @@ import {
   appBarHeight, PulseButton,
   scrollOffset,
 } from "./Util";
-import Handshake from './assets/handshake.png';
+import Handshake from './assets/handshake3.png';
 import {scroller} from "react-scroll";
 import {isMobile} from "react-device-detect";
 
@@ -134,5 +134,5 @@ function getLogoSize(isPortrait) {
   if (isMobile && !isPortrait) {
     return '4rem'
   }
-  return '12rem';
+  return '16rem';
 }

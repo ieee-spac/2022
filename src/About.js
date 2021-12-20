@@ -61,11 +61,11 @@ const AboutContainer = styled(Box)(({theme}) => ({
 
 export default function About({isPortrait}) {
   const baseScale = getBubbleScale(isMobile, isPortrait)
-  const increment = 14;
+  const increment = isMobile ? 14 : 20;
 
-  return (
-    <Box sx={{paddingBottom: '3em'}}>
-      <Box sx={{display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', paddingTop: '5rem'}}>
+  function BubblesMobile() {
+    return (
+      <Box sx={{display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', pt: '5rem'}}>
         <Bubble sx={{backgroundColor: theme.palette['primary'].light, transform: `scale(${baseScale}%)`}}>
           <BubbleHeader>300</BubbleHeader>
           <BubbleWord sx={{textAlign: 'center'}}>Attendees</BubbleWord>
@@ -78,17 +78,96 @@ export default function About({isPortrait}) {
           <BubbleHeader>200</BubbleHeader>
           <BubbleWord>Students</BubbleWord>
         </Bubble>
-        <Bubble sx={{backgroundColor: theme.palette['secondary'].light, transform: `scale(${baseScale + increment * 3}%)`}}>
+        <Bubble
+          sx={{backgroundColor: theme.palette['secondary'].light, transform: `scale(${baseScale + increment * 3}%)`}}>
           <BubbleHeader>100</BubbleHeader>
           <BubbleWord>Companies</BubbleWord>
         </Bubble>
       </Box>
-      <AboutContainer>
-          <LightText variant='h4'>About Us</LightText>
-          <LightText sx={{fontSize: '1.2rem', marginTop: '0.5rem'}}>
-            The IEEE Student Professional Awareness Conference (SPAC) is an annual formal dinner event that serves esteemed professionals and allows them to engage with engineering and computer science students within their fields. This year the conference will be held online to maintain health and safety regulations as due to the current circumstances regarding Covid-19. SPAC provides students, academics, and industry professionals a chance to network and bridge the gap between classrooms and boardrooms, thereby empowering its attendees to build professional connections and form a bond. Present conditions will allow SPAC to expand its reach across communities to give new students and partners opportunities in building strong foundations. First hosted in 1979, SPAC has manifested itself as an event where future professionals receive exposure to the world of employment which complements their ongoing studies.
-          </LightText>
+    );
+  }
+
+  function BubblesDesktop() {
+    return (
+      <Box sx={{pt: '5rem', ml: '5rem'}}>
+        <Box sx={{display: 'flex', mb: '2rem'}}>
+          <Bubble sx={{
+            backgroundColor: theme.palette['primary'].light,
+            transform: `scale(${baseScale}%)`,
+            mr: '5rem',
+            ml: '1rem'
+          }}>
+            <BubbleHeader>300</BubbleHeader>
+            <BubbleWord sx={{textAlign: 'center'}}>Attendees</BubbleWord>
+          </Bubble>
+          <Bubble sx={{
+            backgroundColor: theme.palette['orange'].light,
+            transform: `scale(${baseScale + increment * 3}%)`,
+            mt: '6rem'
+          }}>
+            <BubbleHeader>9</BubbleHeader>
+            <BubbleWord>Years</BubbleWord>
+          </Bubble>
+        </Box>
+        <Box sx={{display: 'flex'}}>
+          <Bubble sx={{
+            backgroundColor: theme.palette['green'].light,
+            transform: `scale(${baseScale + increment}%)`,
+            mr: '3rem'
+          }}>
+            <BubbleHeader>200</BubbleHeader>
+            <BubbleWord>Students</BubbleWord>
+          </Bubble>
+          <Bubble sx={{
+            backgroundColor: theme.palette['secondary'].light,
+            transform: `scale(${baseScale + increment * 4}%)`,
+            mt: '7rem'
+          }}>
+            <BubbleHeader>100</BubbleHeader>
+            <BubbleWord>Companies</BubbleWord>
+          </Bubble>
+        </Box>
+      </Box>
+    );
+  }
+
+  function Description() {
+    return (
+      <AboutContainer sx={{height: 'max-content'}}>
+        <LightText variant='h4'>About Us</LightText>
+        <LightText sx={{fontSize: '1.2rem', marginTop: '0.5rem'}}>
+          The IEEE Student Professional Awareness Conference (SPAC) is an annual formal dinner event that serves
+          esteemed professionals and allows them to engage with engineering and computer science students within their
+          fields. This year the conference will be held online to maintain health and safety regulations as due to the
+          current circumstances regarding Covid-19. SPAC provides students, academics, and industry professionals a
+          chance to network and bridge the gap between classrooms and boardrooms, thereby empowering its attendees to
+          build professional connections and form a bond. Present conditions will allow SPAC to expand its reach across
+          communities to give new students and partners opportunities in building strong foundations. First hosted in
+          1979, SPAC has manifested itself as an event where future professionals receive exposure to the world of
+          employment which complements their ongoing studies.
+        </LightText>
       </AboutContainer>
+    );
+  }
+
+  return (
+    <Box sx={{paddingBottom: '3em'}}>
+      {
+        isMobile && (
+          <Box>
+            <BubblesMobile/>
+            <Description/>
+          </Box>
+        )
+      }
+      {
+        !isMobile && (
+          <Box sx={{display: 'flex'}}>
+            <Description/>
+            <BubblesDesktop/>
+          </Box>
+        )
+      }
       <LightText variant='h2' sx={{textAlign: 'center', marginTop: '2em'}}>A typical SPAC...</LightText>
       <EventContainer>
         <EventDescriptionContainer>
@@ -137,6 +216,6 @@ function getBubbleScale(isMobile, isPortrait) {
   } else if (isMobile) {
     return 110;
   } else {
-    return 150;
+    return 110;
   }
 }

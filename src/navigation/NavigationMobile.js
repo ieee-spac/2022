@@ -22,7 +22,7 @@ const MobileMenuButton = styled(Link)(({theme}) => ({
   width: '100%',
   height: '100%',
   padding: '14px 16px 14px 16px',
-  //Yes, it is a class called active and not the active selector
+  //it is a class called active and not the active selector
   '&.active': {
     color: theme.palette.primary['variant3']
   }

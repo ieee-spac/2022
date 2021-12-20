@@ -46,7 +46,7 @@ export default function MobileNav() {
   useEffect(() => {
     const onScroll = () => {
       const active = document.querySelectorAll('.aboutCheck.active');
-        setBackground(active.length === 0 ? theme.palette.primary['variant4'] : theme.palette.primary.main);
+      setBackground(active.length === 0 ? theme.palette.primary['variant4'] : theme.palette.primary.main);
     };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);

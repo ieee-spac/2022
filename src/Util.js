@@ -51,17 +51,12 @@ export const theme = createTheme({
       dark: '#9b7c0c',
       light: '#cc9d11'
     },
-    //obsolete
-    tertiary: {
-      main: '#810e05',
-      dark: '#480702',
-      light: '#9b0f05'
-    },
     orange: {
       light: '#FF8A3D',
       main: '#FF8132'
     },
     green: {
+      veryLight: '#A5D3A5',
       light: '#70AF70',
       main: 'rgb(20, 145, 20)'
     }

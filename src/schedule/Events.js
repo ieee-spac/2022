@@ -23,49 +23,49 @@ export const events = [
   {
     title: 'Tech Panel',
     icon: <DeveloperBoardIcon/>,
-    iconColor: theme.palette['tertiary'].light,
+    iconColor: theme.palette['orange'].light,
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
     time: '6:45 PM'
   },
   {
     title: 'Speed Dating',
     icon: <GroupIcon/>,
-    iconColor: theme.palette.primary.light,
+    iconColor: theme.palette['green'].light,
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
     time: '6:50 PM'
   },
   {
     title: 'Nokia Masterclass',
     icon: <BorderColorIcon/>,
-    iconColor: theme.palette.secondary.light,
+    iconColor: theme.palette.primary.light,
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
     time: '7:20 PM'
   },
   {
     title: 'Speed Dating',
     icon: <GroupIcon/>,
-    iconColor: theme.palette['tertiary'].light,
+    iconColor: theme.palette.secondary.light,
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
     time: '7:25 PM'
   },
   {
     title: 'Ciena Masterclass',
     icon: <BorderColorIcon/>,
-    iconColor: theme.palette.primary.light,
+    iconColor: theme.palette['orange'].light,
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
     time: '7:30 PM'
   },
   {
     title: 'FDM Masterclass',
     icon: <BorderColorIcon/>,
-    iconColor: theme.palette.secondary.light,
+    iconColor: theme.palette['green'].light,
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
     time: '7:40 PM'
   },
   {
     title: 'Closing Remarks',
     icon: <EmojiPeopleIcon/>,
-    iconColor: theme.palette['tertiary'].light,
+    iconColor: theme.palette.primary.light,
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
     time: '7:50 PM'
   }

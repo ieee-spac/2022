@@ -22,7 +22,7 @@ const MobileMenuButton = styled(Link)(({theme}) => ({
   width: '100%',
   height: '100%',
   padding: '14px 16px 14px 16px',
-  //Yes, it is a class called active and not the active selector
+  //it is a class called active and not the active selector
   '&.active': {
     color: theme.palette.primary['variant3']
   }
@@ -46,7 +46,7 @@ export default function MobileNav() {
   useEffect(() => {
     const onScroll = () => {
       const active = document.querySelectorAll('.aboutCheck.active');
-      setBackground(active.length === 0 ? theme.palette.primary['variant4'] : theme.palette.primary.main);
+        setBackground(active.length === 0 ? theme.palette.primary['variant4'] : theme.palette.primary.main);
     };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);

@@ -69,7 +69,8 @@ export const theme = createTheme({
 });
 
 export const appBarHeight = isMobile ? '56px' : '70px';
-export const scrollOffset = isMobile ? -56 : -70;
+//appBarHeight - 1 to avoid bug with 1px gap
+export const scrollOffset = isMobile ? -55 : -69;
 
 const StandardButton = styled(Button)({
   textTransform: 'none',

@@ -15,27 +15,33 @@ import Uber from './assets/logos/Uber/Uber_Logo_Black_CMYK.png';
 import GeneralDynamics from './assets/logos/General_Dynamics/Mission-Systems-Canada-logo-2col.jpg';
 
 const PartnerLogo = styled('img')({
-  height: '7rem',
-  width: 'max-content'
+  height: 'max-content',
+  width: '667px',
+  maxWidth: '90%',
+  marginTop: '1.5rem'
 });
 
 const GoldLogo = styled('img')({
   height: '6rem',
   width: 'max-content',
   marginLeft: '1rem',
-  marginRight: '1rem'
+  marginRight: '1rem',
+  marginTop: '1.5rem',
+  maxWidth: '95%'
 });
 
 const SilverLogo = styled('img')({
   height: '4rem',
   width: 'max-content',
   marginLeft: '0.5rem',
-  marginRight: '0.5rem'
+  marginRight: '0.5rem',
+  marginTop: '1.5rem',
+  maxWidth: '95%'
 });
 
 function PartnerPatron() {
   return (
-    <Box sx={{display: 'flex', justifyContent: 'center', pt: '1rem'}}>
+    <Box sx={{display: 'flex', justifyContent: 'center'}}>
       <PartnerLogo src={Nokia} alt='Nokia'/>
     </Box>
   );
@@ -43,10 +49,10 @@ function PartnerPatron() {
 
 function GoldPatrons() {
   return (
-    <Box sx={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly', pt: '1rem', alignItems: 'center'}}>
+    <Box sx={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly', alignItems: 'center'}}>
       <GoldLogo src={FDMGroup} alt='FDM Group'/>
       <GoldLogo src={Ciena} alt='Ciena'/>
-      <GoldLogo sx={{height: '2rem', mt: '1rem'}} src={PSCC} alt='Public Service Commission of Canada'/>
+      <GoldLogo sx={{height: '2rem'}} src={PSCC} alt='Public Service Commission of Canada'/>
     </Box>
   );
 }
@@ -71,8 +77,7 @@ export default function Patronage() {
           <BlueButton variant='contained'>Download the Patron Package</BlueButton>
         </Link>
       </Box>
-      <Typography variant='h4'
-                  sx={{color: theme.palette.primary['variant3'], fontWeight: 'bold', marginTop: '2rem'}}>
+      <Typography variant='h4' sx={{color: theme.palette.primary['variant3'], fontWeight: 'bold', marginTop: '2rem'}}>
         Partner Patron
       </Typography>
       <Divider sx={{width: '100%'}}/>
@@ -86,7 +91,7 @@ export default function Patronage() {
 
       <Typography variant='h4' sx={{color: 'silver', fontWeight: 'bold', marginTop: '2rem'}}>Silver
         Patrons</Typography>
-      <Divider sx={{width: '100%', mb: '4rem'}}/>
+      <Divider sx={{width: '100%'}}/>
       <SilverPatrons/>
     </Box>
   )

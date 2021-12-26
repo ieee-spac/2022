@@ -1,15 +1,15 @@
 export const questionData = [
   {
     q: 'Where is the event taking place?',
-    a: 'SPAC is going virtual this year via Hopin. The link will be sent after registration.'
+    a: 'SPAC 2022 will be held online on Hopin. The registration link can be accessed on the front page of the website, and through the Resume Follow Up email. '
   },
   {
     q: 'How do I navigate Hopin?',
     a: 'A tutorial is available through our Discord server.'
   },
   {
-    q: 'Where do I go for technical difficulties?',
-    a: 'Send your question on the Tech Support channel on Discord.'
+    q: 'Where do I go for assistance with technical difficulties?',
+    a: 'Send your concern on the Tech Support channel on Discord, or directly message a SPAC organizer through the Hopin chat.'
   },
   {
     q: 'Should I have my camera and mic on?',
@@ -17,10 +17,10 @@ export const questionData = [
   },
   {
     q: 'Should I dress up?',
-    a: 'Up to you!'
+    a: 'We encourage students who will be turning their cameras on, to converse with Panelists and Professionals, to be dressed professionally and present themselves appropriately.'
   },
   {
     q: 'How can I ask the Panel or Masterclass presenter questions?',
-    a: 'Send your question on the Q&A channel on Discord, we’ll ask them for you!'
+    a: 'Send your questions through the Hopin chat or on the Q&A channel on Discord, and SPAC representatives will ask them for you.'
   }
 ];

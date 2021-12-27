@@ -7,7 +7,7 @@ import Nokia from './assets/logos/Nokia/NOKIA_LOGO_RGB_HR.jpg';
 //Gold patrons
 import FDMGroup from './assets/logos/FDM_Group/Fdm Group-logo-black.png';
 import Ciena from './assets/logos/Ciena/ciena-logo.png';
-import PSCC from './assets/logos/PSCC/PSC-Logo-EN.svg';
+import PSCC from './assets/logos/PSCC/PSC-Logo-EN_1.svg';
 //Silver patrons
 import DRDC from './assets/logos/DRDC/image.jpg';
 import RossVideo from './assets/logos/Ross_Video/Ross_Logo_Red_Living_Live_Black_R.png';
@@ -52,7 +52,7 @@ function GoldPatrons() {
     <Box sx={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly', alignItems: 'center'}}>
       <GoldLogo src={FDMGroup} alt='FDM Group'/>
       <GoldLogo src={Ciena} alt='Ciena'/>
-      <GoldLogo sx={{height: '2rem'}} src={PSCC} alt='Public Service Commission of Canada'/>
+      <GoldLogo src={PSCC} alt='Public Service Commission of Canada'/>
     </Box>
   );
 }
@@ -74,7 +74,7 @@ export default function Patronage() {
       <Typography variant='h4' sx={{mb: '1rem'}}>Patronage</Typography>
       <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
         <Link download='Patron Package.pdf' href={PatronPackage} sx={{textDecoration: 'none'}}>
-          <BlueButton variant='contained'>Download the Patron Package</BlueButton>
+          <BlueButton variant='contained'>Download the Patronage Package</BlueButton>
         </Link>
       </Box>
       <Typography variant='h4' sx={{color: theme.palette.primary['variant3'], fontWeight: 'bold', marginTop: '2rem'}}>
@@ -83,13 +83,13 @@ export default function Patronage() {
       <Divider sx={{width: '100%'}}/>
       <PartnerPatron/>
 
-      <Typography variant='h4' sx={{color: theme.palette.secondary.main, fontWeight: 'bold', marginTop: '2rem'}}>
+      <Typography variant='h4' sx={{color: theme.palette.secondary.main, fontWeight: 'bold', marginTop: '4rem'}}>
         Gold Patrons
       </Typography>
       <Divider sx={{width: '100%'}}/>
       <GoldPatrons/>
 
-      <Typography variant='h4' sx={{color: 'silver', fontWeight: 'bold', marginTop: '2rem'}}>Silver
+      <Typography variant='h4' sx={{color: 'rgb(170,170,170)', fontWeight: 'bold', marginTop: '4rem'}}>Silver
         Patrons</Typography>
       <Divider sx={{width: '100%'}}/>
       <SilverPatrons/>

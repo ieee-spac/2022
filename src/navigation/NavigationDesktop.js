@@ -23,7 +23,7 @@ const DesktopMenuButton = styled(Link)(({theme}) => ({
 const RegisterButton = styled(DesktopMenuButton)(({theme}) => ({
   borderRadius: '4px',
   border: '4px solid rgba(0, 0, 0, 0)',
-  outline: `2px solid ${theme.palette.green.light}`,
+  outline: `2px solid ${theme.palette.primary['veryLight']}`,
   '&:hover': {
     backgroundColor: '4px solid rgba(0, 0, 0, 0)',
   },

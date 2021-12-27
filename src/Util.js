@@ -43,6 +43,7 @@ export const theme = createTheme({
       main: '#16639D',
       dark: '#005187',
       light: '#3383bd',
+      veryLight: 'rgb(92, 198, 255)',
       variant3: '#00CAFF',
       variant4: '#002233'
     },
@@ -56,7 +57,6 @@ export const theme = createTheme({
       main: '#FF8132'
     },
     green: {
-      veryLight: '#A5D3A5',
       light: '#70AF70',
       main: 'rgb(20, 145, 20)'
     }

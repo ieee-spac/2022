@@ -1,9 +1,8 @@
 import React, {useEffect} from "react";
-import {StyledEngineProvider, ThemeProvider} from "@mui/material/styles";
 import {scrollOffset, theme} from "./Util";
 import Navigation from "./navigation/Navigation";
 import Home from "./Home";
-import {Box, styled} from "@mui/material";
+import {Box, styled, StyledEngineProvider, ThemeProvider, Divider} from "@mui/material";
 import {Element, scroller} from "react-scroll";
 import About from "./About";
 import Register from "./register/Register";
@@ -19,6 +18,13 @@ const sections = ['about', 'register', 'schedule', 'patronage', 'gallery', 'faq'
 
 const Section = styled(Element)(({padding}) => ({
   padding: `0 ${padding} 0 ${padding}`
+}));
+
+const Divide = styled(Divider)(({theme}) => ({
+  background: theme.palette.primary.dark,
+  width: '100%',
+  marginBottom: '1rem',
+  height: '1px'
 }));
 
 function App({isPortrait, storage}) {
@@ -51,18 +57,23 @@ function App({isPortrait, storage}) {
             <Section name='register'>
               <Register isPortrait={isPortrait} storage={storage}/>
             </Section>
+            <Divide/>
             <Section name='schedule'>
               <Schedule/>
             </Section>
+            <Divide/>
             <Section name='patronage'>
               <Patronage/>
             </Section>
+            <Divide/>
             <Section name='gallery'>
               <Gallery/>
             </Section>
+            <Divide/>
             <Section name='faq'>
               <FAQ/>
             </Section>
+            <Divide/>
             <Section name='contact'>
               <Contact isPortrait={isPortrait}/>
             </Section>

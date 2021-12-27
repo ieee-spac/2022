@@ -71,7 +71,7 @@ function SilverPatrons() {
 export default function Patronage() {
   return (
     <Box sx={{pb: '3rem'}}>
-      <Typography variant='h4' sx={{mb: '1rem'}}>Patronage</Typography>
+      <Typography variant='h1' sx={{mb: '1rem'}}>Patronage</Typography>
       <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
         <Link download='Patron Package.pdf' href={PatronPackage} sx={{textDecoration: 'none'}}>
           <BlueButton variant='contained'>Download the Patronage Package</BlueButton>

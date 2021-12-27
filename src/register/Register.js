@@ -79,7 +79,7 @@ export default function Register({isPortrait, storage}) {
   return (
     <Box sx={{paddingTop: '2em', display: 'flex', flexDirection: 'column'}}>
       <Box sx={{marginBottom: '1em'}}>
-        <Typography variant='h4'>Register</Typography>
+        <Typography variant='h1'>Register</Typography>
         <Typography variant='h5'>Tickets are free!</Typography>
       </Box>
       <Box sx={{display: 'flex', width: '100%', justifyContent: 'center', paddingBottom: '2em'}}>

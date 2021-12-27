@@ -134,7 +134,7 @@ export default function About({isPortrait}) {
   function Description() {
     return (
       <AboutContainer sx={{height: 'max-content'}}>
-        <LightText variant='h4'>About Us</LightText>
+        <LightText variant='h1'>About Us</LightText>
         <LightText sx={{fontSize: '1.2rem', marginTop: '0.5rem'}}>
           The IEEE Student Professional Awareness Conference (SPAC) is an annual formal dinner event that serves
           esteemed professionals and allows them to engage with engineering and computer science students within their

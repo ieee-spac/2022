@@ -14,7 +14,7 @@ export default function Gallery() {
 
   return (
     <Box sx={{paddingBottom: '4em'}}>
-      <Typography variant='h4'>Gallery</Typography>
+      <Typography variant='h1'>Gallery</Typography>
       <ImageList variant="woven" cols={3} gap={8}>
         {galleryImages.map((item, index) => (
           <ImageListItem key={index} onClick={() => showPhoto(index)} sx={{cursor: 'pointer'}}>

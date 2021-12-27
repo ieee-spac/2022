@@ -43,8 +43,8 @@ export default function FAQ() {
   };
 
   return (
-    <Box>
-      <Typography variant='h4' sx={{marginBottom: '0.5rem'}}>FAQ</Typography>
+    <Box sx={{pb: '1rem'}}>
+      <Typography variant='h1' sx={{marginBottom: '0.5rem'}}>FAQ</Typography>
       {
         questionData.map((question, index) => {
           return <QuestionAnswer key={index} questionData={question} id={index} expanded={expanded}

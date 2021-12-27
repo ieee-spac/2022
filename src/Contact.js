@@ -75,8 +75,9 @@ export default function Contact({isPortrait}) {
   }
 
   return (
-    <Box sx={{paddingTop: '2em'}}>
-      <Typography variant='h4'>How can we help you?</Typography>
+    <Box>
+      <Typography variant='h1'>Contact Us</Typography>
+      <Typography>How can we help you?</Typography>
       <Box sx={{display: 'flex', justifyContent: 'center', marginTop: '2em', marginBottom: '2em'}}>
         <Card sx={{width: 'fit-content'}}>
           <CardContent sx={{marginTop: '0.5em', display: 'flex', flexDirection: 'column'}}>

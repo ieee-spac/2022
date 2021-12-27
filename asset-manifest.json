@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.b4f109c8.chunk.css",
-    "main.js": "/static/js/main.6cdd406d.chunk.js",
-    "main.js.map": "/static/js/main.6cdd406d.chunk.js.map",
+    "main.js": "/static/js/main.e7d29726.chunk.js",
+    "main.js.map": "/static/js/main.e7d29726.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.966d0791.js",
     "runtime-main.js.map": "/static/js/runtime-main.966d0791.js.map",
     "static/css/2.84533861.chunk.css": "/static/css/2.84533861.chunk.css",
-    "static/js/2.8736bd1a.chunk.js": "/static/js/2.8736bd1a.chunk.js",
-    "static/js/2.8736bd1a.chunk.js.map": "/static/js/2.8736bd1a.chunk.js.map",
+    "static/js/2.5983cc60.chunk.js": "/static/js/2.5983cc60.chunk.js",
+    "static/js/2.5983cc60.chunk.js.map": "/static/js/2.5983cc60.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.84533861.chunk.css.map": "/static/css/2.84533861.chunk.css.map",
     "static/css/main.b4f109c8.chunk.css.map": "/static/css/main.b4f109c8.chunk.css.map",
-    "static/js/2.8736bd1a.chunk.js.LICENSE.txt": "/static/js/2.8736bd1a.chunk.js.LICENSE.txt",
+    "static/js/2.5983cc60.chunk.js.LICENSE.txt": "/static/js/2.5983cc60.chunk.js.LICENSE.txt",
     "static/media/1.9f699774.jpg": "/static/media/1.9f699774.jpg",
     "static/media/10.b4b29438.jpg": "/static/media/10.b4b29438.jpg",
     "static/media/11.dae6834f.jpg": "/static/media/11.dae6834f.jpg",
@@ -36,7 +36,7 @@
     "static/media/PSC-Logo-EN_1.9d79966d.svg": "/static/media/PSC-Logo-EN_1.9d79966d.svg",
     "static/media/Ross_Logo_Red_Living_Live_Black_R.ab601752.png": "/static/media/Ross_Logo_Red_Living_Live_Black_R.ab601752.png",
     "static/media/Uber_Logo_Black_CMYK.12b2c72a.png": "/static/media/Uber_Logo_Black_CMYK.12b2c72a.png",
-    "static/media/bg_website.3e973833.png": "/static/media/bg_website.3e973833.png",
+    "static/media/bg_website.c584ec80.png": "/static/media/bg_website.c584ec80.png",
     "static/media/ciena-logo.c65e1043.png": "/static/media/ciena-logo.c65e1043.png",
     "static/media/event1.b21a1605.png": "/static/media/event1.b21a1605.png",
     "static/media/event2.317984e0.png": "/static/media/event2.317984e0.png",
@@ -57,8 +57,8 @@
   "entrypoints": [
     "static/js/runtime-main.966d0791.js",
     "static/css/2.84533861.chunk.css",
-    "static/js/2.8736bd1a.chunk.js",
+    "static/js/2.5983cc60.chunk.js",
     "static/css/main.b4f109c8.chunk.css",
-    "static/js/main.6cdd406d.chunk.js"
+    "static/js/main.e7d29726.chunk.js"
   ]
 }

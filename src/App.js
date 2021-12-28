@@ -24,7 +24,8 @@ const HoverSection = styled(Section)({
   '&:hover': {
     backgroundImage: `linear-gradient(to right, ${theme.palette.primary['veryLight']}, white 100%)`,
     backgroundSize: '15%',
-    backgroundRepeat: 'no-repeat'
+    backgroundRepeat: 'no-repeat',
+    backgroundPositionY: '1px'
   }
 });
 

@@ -53,8 +53,8 @@ export default function Home({isPortrait}) {
   const spacSize = getSpacSize();
 
   return (
-    <Box sx={{width: '100%'}}>
-      <Background src={background} alt='background'/>
+    <Box sx={{width: '100%', minHeight: !isMobile ? '711px' : ''}}>
+      <Background src={background} alt='background' sx={{minHeight: !isMobile ? '750px' : ''}}/>
       <HomeContainer sx={{paddingTop: appBarHeight}}>
         <Box sx={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
           <BlueText variant='h1' sx={titleStyle}>

@@ -22,7 +22,9 @@ const Section = styled(Element)(({padding}) => ({
 
 const HoverSection = styled(Section)({
   '&:hover': {
-    background: `linear-gradient(to right, ${theme.palette.primary['veryLight']}, white 15%)`,
+    backgroundImage: `linear-gradient(to right, ${theme.palette.primary['veryLight']}, white 100%)`,
+    backgroundSize: '15%',
+    backgroundRepeat: 'no-repeat'
   }
 });
 
@@ -61,6 +63,7 @@ function App({isPortrait, storage}) {
             <Section name='about' sx={{backgroundColor: 'rgb(0, 15, 33)'}}>
               <About isPortrait={isPortrait}/>
             </Section>
+            <Divide sx={{backgroundColor: 'rgb(0, 15, 33)'}}/>
             <HoverSection name='register'>
               <Register isPortrait={isPortrait} storage={storage}/>
             </HoverSection>

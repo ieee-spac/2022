@@ -28,9 +28,7 @@ function QuestionAnswer({questionData, id, expanded, handleChange}) {
         </Typography>
       </AccordionSummary>
       <AccordionDetails sx={{borderLeft: `6px solid ${theme.palette['green'].light}`, borderBottomLeftRadius: '3px'}}>
-        <Typography>
           {questionData.a}
-        </Typography>
       </AccordionDetails>
     </QuestionAccordion>
   );

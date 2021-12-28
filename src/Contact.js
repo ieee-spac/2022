@@ -1,5 +1,5 @@
 import {Alert, Box, Card, CardContent, Snackbar, TextField, Typography} from "@mui/material";
-import {BlueButton, RequiredField} from "./Util";
+import {BlueButton, Discord, RequiredField} from "./Util";
 import {useState} from "react";
 import {isMobile} from "react-device-detect";
 
@@ -99,7 +99,7 @@ export default function Contact({isPortrait}) {
                        label={RequiredField('Message')} multiline/>
             <Box sx={{justifyContent: 'center', display: 'flex', marginTop: '1em'}}>
               <BlueButton variant='contained' sx={{width: 'fit-content'}} disabled={!submitEnabled}
-                              onClick={() => submitContactForm()}>Submit</BlueButton>
+                          onClick={() => submitContactForm()}>Submit</BlueButton>
             </Box>
             <Box sx={{maxWidth: 'fit-content'}}>
               {
@@ -110,6 +110,7 @@ export default function Contact({isPortrait}) {
           </CardContent>
         </Card>
       </Box>
+      <Typography sx={{pt: '1rem'}}>You can also ask questions on our&nbsp;<Discord/>.</Typography>
       <Snackbar
         anchorOrigin={{vertical: 'bottom', horizontal: 'center'}}
         open={showSnackBar}

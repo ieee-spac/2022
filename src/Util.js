@@ -1,6 +1,7 @@
 import {createTheme} from "@mui/material/styles";
 import {isMobile} from "react-device-detect";
 import {Box, Button, styled, Typography} from "@mui/material";
+import Link from "@mui/material/Link";
 
 export const theme = createTheme({
   typography: {
@@ -79,7 +80,6 @@ export const BlueButton = styled(StandardButton)({
 });
 
 
-
 export const GreenButton = styled(StandardButton)({
   background: theme.palette['green'].light,
   '&:hover': {
@@ -114,3 +114,9 @@ export function RequiredField(name) {
     </Box>
   );
 }
+
+export const Discord = () => (
+  <Link href='https://discord.gg/nTzgsAXr' target='_blank'>
+    Discord
+  </Link>
+)

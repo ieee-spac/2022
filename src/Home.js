@@ -4,7 +4,7 @@ import {
   appBarHeight, PulseButton,
   scrollOffset,
 } from "./Util";
-import Handshake from './assets/handshake4.png';
+import Handshake from './assets/handshake3.png';
 import {scroller} from "react-scroll";
 import {isMobile} from "react-device-detect";
 

@@ -1,7 +1,7 @@
 import {Alert, Box, Card, CardContent, CircularProgress, Snackbar, styled, TextField, Typography} from "@mui/material";
 import {StyledDropZone} from 'react-drop-zone'
 import 'react-drop-zone/dist/styles.css'
-import {BlueButton, RequiredField} from "../Util";
+import {BlueButton, Discord, RequiredField} from "../Util";
 import {useState} from "react";
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import {isMobile} from "react-device-detect";
@@ -82,7 +82,7 @@ export default function Register({isPortrait, storage}) {
         <Typography variant='h1'>Register</Typography>
         <Typography variant='h5'>Tickets are free!</Typography>
       </Box>
-      <Box sx={{display: 'flex', width: '100%', justifyContent: 'center', paddingBottom: '2em'}}>
+      <Box sx={{display: 'flex', width: '100%', justifyContent: 'center'}}>
         <Card sx={{width: '29.25rem', transform: window.innerWidth >= 1200 ? 'translateY(-81px)' : ''}}>
           <CardContent sx={{marginTop: '0.5em', display: 'flex', flexDirection: 'column'}}>
             <Typography variant='h6' sx={{textAlign: 'center', marginBottom: '1em'}}>
@@ -129,14 +129,14 @@ export default function Register({isPortrait, storage}) {
             <Box sx={{maxWidth: 'fit-content'}}>
               {
                 formState.errorSummary.length > 0 && (
-                  <Typography sx={{marginTop: '1em', color: 'red', width: '100%'}}>{formState.errorSummary}</Typography>
+                  <Typography sx={{marginTop: '1rem', color: 'red', width: '100%'}}>{formState.errorSummary}</Typography>
                 )
               }
             </Box>
           </CardContent>
         </Card>
       </Box>
-      <Box/>
+      <Typography sx={{pb: '2rem', pt: '1rem'}}>Join our&nbsp;<Discord/>!</Typography>
       <Snackbar
         anchorOrigin={{vertical: 'bottom', horizontal: 'center'}}
         open={showSnackBar}

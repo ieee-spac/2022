@@ -23,7 +23,7 @@ const TimelineElement = styled(VerticalTimelineElement)(() => ({
 
 /*export default function Schedule() {
   return (
-    <Box sx={{paddingBottom: '4em'}}>
+    <Box sx={{pb: '4rem', pt: '1rem'}}>
       <Typography variant='h4'>Schedule</Typography>
       <Box sx={{display: 'flex', justifyContent: 'center'}}>
         <Timeline animate={!isMobile}>
@@ -70,7 +70,7 @@ const TimelineElement = styled(VerticalTimelineElement)(() => ({
 
 export default function Schedule() {
   return (
-    <Box sx={{paddingBottom: '4em'}}>
+    <Box sx={{pb: '4rem', pt: '1rem'}}>
       <Typography variant='h1'>Schedule</Typography>
         <Typography>Check back here for the schedule.</Typography>
     </Box>

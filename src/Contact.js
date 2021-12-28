@@ -75,10 +75,10 @@ export default function Contact({isPortrait}) {
   }
 
   return (
-    <Box>
+    <Box sx={{pt: '1rem', pb: '2rem'}}>
       <Typography variant='h1'>Contact Us</Typography>
       <Typography>How can we help you?</Typography>
-      <Box sx={{display: 'flex', justifyContent: 'center', marginTop: '2em', marginBottom: '2em'}}>
+      <Box sx={{display: 'flex', justifyContent: 'center', mt: '2em'}}>
         <Card sx={{width: 'fit-content'}}>
           <CardContent sx={{marginTop: '0.5em', display: 'flex', flexDirection: 'column'}}>
             <Typography variant='h6' sx={{textAlign: 'center', marginBottom: '1em'}}>Contact Us</Typography>

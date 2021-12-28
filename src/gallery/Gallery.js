@@ -13,7 +13,7 @@ export default function Gallery() {
   }
 
   return (
-    <Box sx={{paddingBottom: '4em'}}>
+    <Box sx={{pb: '4em', pt: '1rem'}}>
       <Typography variant='h1'>Gallery</Typography>
       <ImageList variant="woven" cols={3} gap={8}>
         {galleryImages.map((item, index) => (

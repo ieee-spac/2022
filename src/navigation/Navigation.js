@@ -3,7 +3,6 @@ import MobileNav from "./NavigationMobile";
 import DesktopNav from "./NavigationDesktop";
 
 export default function Navigation() {
-
   return (
     <>
       {

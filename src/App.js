@@ -20,16 +20,23 @@ const Section = styled(Element)(({padding}) => ({
   padding: `0 ${padding} 0 ${padding}`
 }));
 
+const HoverSection = styled(Section)({
+  '&:hover': {
+    background: `linear-gradient(to right, ${theme.palette.primary['veryLight']}, white 15%)`,
+  }
+});
+
 const Divide = styled(Divider)(({theme}) => ({
   background: theme.palette.primary.dark,
   width: '100%',
-  marginBottom: '1rem',
+  marginBottom: '-1px',
   height: '1px'
 }));
 
 function App({isPortrait, storage}) {
-  //Provides a padding prop to the styled component above
+  //Provides a padding prop to the styled Section component above
   Section.defaultProps = {padding: getContentPadding(isPortrait)}
+  HoverSection.defaultProps = {padding: getContentPadding(isPortrait)}
 
   useEffect(() => {
     setTimeout(() => {
@@ -54,29 +61,29 @@ function App({isPortrait, storage}) {
             <Section name='about' sx={{backgroundColor: 'rgb(0, 15, 33)'}}>
               <About isPortrait={isPortrait}/>
             </Section>
-            <Section name='register'>
+            <HoverSection name='register'>
               <Register isPortrait={isPortrait} storage={storage}/>
-            </Section>
+            </HoverSection>
             <Divide/>
-            <Section name='schedule'>
+            <HoverSection name='schedule'>
               <Schedule/>
-            </Section>
+            </HoverSection>
             <Divide/>
-            <Section name='patronage'>
+            <HoverSection name='patronage'>
               <Patronage/>
-            </Section>
+            </HoverSection>
             <Divide/>
-            <Section name='gallery'>
+            <HoverSection name='gallery'>
               <Gallery/>
-            </Section>
+            </HoverSection>
             <Divide/>
-            <Section name='faq'>
+            <HoverSection name='faq'>
               <FAQ/>
-            </Section>
+            </HoverSection>
             <Divide/>
-            <Section name='contact'>
+            <HoverSection name='contact'>
               <Contact isPortrait={isPortrait}/>
-            </Section>
+            </HoverSection>
             <Footer isPortrait={isPortrait}/>
           </Box>
         </ThemeProvider>

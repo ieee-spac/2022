@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.b4f109c8.chunk.css",
-    "main.js": "/static/js/main.3a765a6b.chunk.js",
-    "main.js.map": "/static/js/main.3a765a6b.chunk.js.map",
+    "main.js": "/static/js/main.6baaaf83.chunk.js",
+    "main.js.map": "/static/js/main.6baaaf83.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.966d0791.js",
     "runtime-main.js.map": "/static/js/runtime-main.966d0791.js.map",
     "static/css/2.84533861.chunk.css": "/static/css/2.84533861.chunk.css",
@@ -44,6 +44,7 @@
     "static/media/event4.1ce68789.png": "/static/media/event4.1ce68789.png",
     "static/media/event5.96c98505.png": "/static/media/event5.96c98505.png",
     "static/media/fb.47b6a07e.png": "/static/media/fb.47b6a07e.png",
+    "static/media/handshake4.0e140045.png": "/static/media/handshake4.0e140045.png",
     "static/media/image.665e4ca8.jpg": "/static/media/image.665e4ca8.jpg",
     "static/media/insta.e2016f01.png": "/static/media/insta.e2016f01.png",
     "static/media/patron_package.08cbbdcf.pdf": "/static/media/patron_package.08cbbdcf.pdf",
@@ -59,6 +60,6 @@
     "static/css/2.84533861.chunk.css",
     "static/js/2.73532b5f.chunk.js",
     "static/css/main.b4f109c8.chunk.css",
-    "static/js/main.3a765a6b.chunk.js"
+    "static/js/main.6baaaf83.chunk.js"
   ]
 }

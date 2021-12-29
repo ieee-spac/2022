@@ -45,6 +45,7 @@ export const theme = createTheme({
       dark: '#005187',
       light: '#3383bd',
       veryLight: 'rgb(92, 198, 255)',
+      gradient: '#addcff',
       variant3: '#00CAFF',
       variant4: '#002233'
     },
@@ -115,8 +116,10 @@ export function RequiredField(name) {
   );
 }
 
+export const DiscordLink = 'https://discord.gg/nTzgsAXr';
+
 export const Discord = () => (
-  <Link href='https://discord.gg/nTzgsAXr' target='_blank'>
+  <Link href={DiscordLink} target='_blank'>
     Discord
   </Link>
 )

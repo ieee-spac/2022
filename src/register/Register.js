@@ -1,7 +1,18 @@
-import {Alert, Box, Card, CardContent, CircularProgress, Snackbar, styled, TextField, Typography} from "@mui/material";
+import {
+  Alert,
+  Box,
+  Card,
+  CardContent,
+  CircularProgress,
+  Snackbar,
+  styled,
+  TextField,
+  Typography,
+  Link
+} from "@mui/material";
 import {StyledDropZone} from 'react-drop-zone'
 import 'react-drop-zone/dist/styles.css'
-import {BlueButton, Discord, RequiredField} from "../Util";
+import {BlueButton, DiscordLink, GreenButton, RequiredField} from "../Util";
 import {useState} from "react";
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import {isMobile} from "react-device-detect";
@@ -77,66 +88,82 @@ export default function Register({isPortrait, storage}) {
   }
 
   return (
-    <Box sx={{paddingTop: '2em', display: 'flex', flexDirection: 'column'}}>
-      <Box sx={{marginBottom: '1em'}}>
-        <Typography variant='h1'>Register</Typography>
+    <Box sx={{paddingTop: '2em', display: 'flex', flexDirection: 'column', pb: '2rem'}}>
+      <Box sx={{mb: '1rem'}}>
+        <Typography variant='h1'>Upload Your Resume</Typography>
         <Typography variant='h5'>Tickets are free!</Typography>
       </Box>
-      <Box sx={{display: 'flex', width: '100%', justifyContent: 'center'}}>
-        <Card sx={{width: '29.25rem', transform: window.innerWidth >= 1200 ? 'translateY(-81px)' : ''}}>
-          <CardContent sx={{marginTop: '0.5em', display: 'flex', flexDirection: 'column'}}>
-            <Typography variant='h6' sx={{textAlign: 'center', marginBottom: '1em'}}>
-              Please fill out your profile:
-            </Typography>
-            <Box>
-              <TextField value={formState.firstName} error={formState.firstNameError} id='registerFirstNameInput'
-                         label={RequiredField('First Name')} onChange={event => setFormValue('firstName', event)}
-                         sx={{marginBottom: '1em', marginRight: '1em', ...nameBoxWidthStyle}}/>
-              <TextField value={formState.lastName} error={formState.lastNameError} id='registerLastNameInput'
-                         label={RequiredField('Last Name')} onChange={event => setFormValue('lastName', event)}
-                         sx={{marginBottom: '1em', ...nameBoxWidthStyle}}/>
-            </Box>
-            <TextField value={formState.phone} sx={{width: '100%', marginBottom: '1em'}}
-                       id='registerPhoneNumberInput' type='tel' label='Phone Number'
-                       onChange={event => setFormValue('phone', event)}/>
-            <TextField value={formState.email} error={formState.emailError} sx={{width: '100%', marginBottom: '1em'}}
-                       id='registerEmailInput' label={RequiredField('Email Address')}
-                       onChange={event => setFormValue('email', event)}/>
-            <TextField value={formState.university} error={formState.universityError}
-                       sx={{width: '100%', marginBottom: '1em'}} id='registerUniversityInput'
-                       label={RequiredField('University')} onChange={event => setFormValue('university', event)}/>
-            <TextField value={formState.program} error={formState.programError}
-                       sx={{width: '100%', marginBottom: '1em'}} id='registerProgramInput'
-                       label={RequiredField('Program')} onChange={event => setFormValue('program', event)}/>
-            <DropZone children={resumeUploadName} onDrop={(file) => setFile(file)}/>
-            {
-              formState.file && (
-                <Box sx={{display: 'flex', marginTop: '1em'}}>
-                  <UploadFileIcon/>
-                  <Typography>{formState.file.name}</Typography>
-                </Box>
-              )
-            }
-            <Box sx={{justifyContent: 'center', display: 'flex', marginTop: '1em', position: 'relative'}}>
-              <BlueButton variant='contained' sx={{width: 'fit-content'}} disabled={!submitEnabled}
-                          onClick={() => submitProfile(data)}>Submit</BlueButton>
+      <Box sx={{
+        display: 'flex',
+        width: '100%',
+        justifyContent: 'space-evenly',
+        flexDirection: isMobile ? 'column' : 'row'
+      }}>
+        <Box sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          justifySelf: 'center'
+        }}>
+          <Card sx={{width: '29.25rem'}}>
+            <CardContent sx={{marginTop: '0.5em', display: 'flex', flexDirection: 'column'}}>
+              <Typography variant='h6' sx={{textAlign: 'center', marginBottom: '1em'}}>
+                Please fill out your profile:
+              </Typography>
+              <Box>
+                <TextField value={formState.firstName} error={formState.firstNameError} id='registerFirstNameInput'
+                           label={RequiredField('First Name')} onChange={event => setFormValue('firstName', event)}
+                           sx={{marginBottom: '1em', marginRight: '1em', ...nameBoxWidthStyle}}/>
+                <TextField value={formState.lastName} error={formState.lastNameError} id='registerLastNameInput'
+                           label={RequiredField('Last Name')} onChange={event => setFormValue('lastName', event)}
+                           sx={{marginBottom: '1em', ...nameBoxWidthStyle}}/>
+              </Box>
+              <TextField value={formState.phone} sx={{width: '100%', marginBottom: '1em'}}
+                         id='registerPhoneNumberInput' type='tel' label='Phone Number'
+                         onChange={event => setFormValue('phone', event)}/>
+              <TextField value={formState.email} error={formState.emailError} sx={{width: '100%', marginBottom: '1em'}}
+                         id='registerEmailInput' label={RequiredField('Email Address')}
+                         onChange={event => setFormValue('email', event)}/>
+              <TextField value={formState.university} error={formState.universityError}
+                         sx={{width: '100%', marginBottom: '1em'}} id='registerUniversityInput'
+                         label={RequiredField('University')} onChange={event => setFormValue('university', event)}/>
+              <TextField value={formState.program} error={formState.programError}
+                         sx={{width: '100%', marginBottom: '1em'}} id='registerProgramInput'
+                         label={RequiredField('Program')} onChange={event => setFormValue('program', event)}/>
+              <DropZone children={resumeUploadName} onDrop={(file) => setFile(file)}/>
               {
-                (!submitEnabled && !resumeWarning) && (
-                  <Spinner size={24}/>
+                formState.file && (
+                  <Box sx={{display: 'flex', marginTop: '1em'}}>
+                    <UploadFileIcon/>
+                    <Typography>{formState.file.name}</Typography>
+                  </Box>
                 )
               }
-            </Box>
-            <Box sx={{maxWidth: 'fit-content'}}>
-              {
-                formState.errorSummary.length > 0 && (
-                  <Typography sx={{marginTop: '1rem', color: 'red', width: '100%'}}>{formState.errorSummary}</Typography>
-                )
-              }
-            </Box>
-          </CardContent>
-        </Card>
+              <Box sx={{justifyContent: 'center', display: 'flex', marginTop: '1em', position: 'relative'}}>
+                <BlueButton variant='contained' sx={{width: 'fit-content'}} disabled={!submitEnabled}
+                            onClick={() => submitProfile(data)}>Submit</BlueButton>
+                {
+                  (!submitEnabled && !resumeWarning) && (
+                    <Spinner size={24}/>
+                  )
+                }
+              </Box>
+              <Box sx={{maxWidth: 'fit-content'}}>
+                {
+                  formState.errorSummary.length > 0 && (
+                    <Typography
+                      sx={{marginTop: '1rem', color: 'red', width: '100%'}}>{formState.errorSummary}</Typography>
+                  )
+                }
+              </Box>
+            </CardContent>
+          </Card>
+        </Box>
+        <Box display='flex' sx={{alignSelf: 'center', mt: '1rem', mb: '1rem'}}>
+          <Link href={DiscordLink} target='_blank' sx={{textDecoration: 'none'}}>
+            <GreenButton variant='contained' sx={{height: 'max-content'}}>Join our Discord</GreenButton>
+          </Link>
+        </Box>
       </Box>
-      <Typography sx={{pb: '2rem', pt: '1rem'}}>Join our&nbsp;<Discord/>!</Typography>
       <Snackbar
         anchorOrigin={{vertical: 'bottom', horizontal: 'center'}}
         open={showSnackBar}

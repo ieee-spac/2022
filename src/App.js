@@ -20,14 +20,14 @@ const Section = styled(Element)(({padding}) => ({
   padding: `0 ${padding} 0 ${padding}`
 }));
 
-const HoverSection = styled(Section)({
+const HoverSection = styled(Section)(({theme, size}) => ({
   '&:hover': {
-    backgroundImage: `linear-gradient(to right, ${theme.palette.primary['veryLight']}, white 100%)`,
-    backgroundSize: '15%',
+    backgroundImage: `linear-gradient(to right, ${theme.palette.primary['gradient']}, white 100%)`,
+    backgroundSize: size,
     backgroundRepeat: 'no-repeat',
     backgroundPositionY: '1px'
   }
-});
+}));
 
 const Divide = styled(Divider)(({theme}) => ({
   background: theme.palette.primary.dark,
@@ -39,7 +39,7 @@ const Divide = styled(Divider)(({theme}) => ({
 function App({isPortrait, storage}) {
   //Provides a padding prop to the styled Section component above
   Section.defaultProps = {padding: getContentPadding(isPortrait)}
-  HoverSection.defaultProps = {padding: getContentPadding(isPortrait)}
+  HoverSection.defaultProps = {padding: getContentPadding(isPortrait), size: isPortrait ? '5%' : '13%'}
 
   useEffect(() => {
     setTimeout(() => {

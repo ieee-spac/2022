@@ -83,8 +83,8 @@ export default function MobileNav() {
               </MenuItem>
               <MenuItem button>
                 <MobileMenuButton to='register' offset={scrollOffset} spy={true} smooth={true}
-                                  sx={{backgroundColor: theme.palette['green'].veryLight}}
-                                  onClick={() => hideDrawer('register')}>Register</MobileMenuButton>
+                                  sx={{backgroundColor: theme.palette.primary['gradient']}}
+                                  onClick={() => hideDrawer('register')}>Tickets</MobileMenuButton>
               </MenuItem>
               <MenuItem button>
                 <MobileMenuButton to='schedule' offset={scrollOffset} spy={true} smooth={true}

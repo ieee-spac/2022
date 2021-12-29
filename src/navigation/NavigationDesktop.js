@@ -84,7 +84,7 @@ export default function DesktopNav() {
           <DesktopMenuButton to='about' spy={true} smooth={true} offset={scrollOffset} className='aboutButton'
                              onClick={() => setHash('about')}>About</DesktopMenuButton>
           <RegisterButton to='register' spy={true} smooth={true} offset={scrollOffset}
-                          onClick={() => setHash('register')}>Register</RegisterButton>
+                          onClick={() => setHash('register')}>Tickets</RegisterButton>
           <DesktopMenuButton to='schedule' spy={true} smooth={true} offset={scrollOffset}
                              onClick={() => setHash('schedule')}>Schedule</DesktopMenuButton>
           <DesktopMenuButton to='patronage' spy={true} smooth={true} offset={scrollOffset}

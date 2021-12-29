@@ -4,7 +4,7 @@ import {
   appBarHeight, PulseButton,
   scrollOffset,
 } from "./Util";
-import Handshake from './assets/handshake3.png';
+import Handshake from './assets/handshake4.png';
 import {scroller} from "react-scroll";
 import {isMobile} from "react-device-detect";
 
@@ -50,24 +50,25 @@ const BlueText = styled(Typography)(({theme}) => ({
 
 export default function Home({isPortrait}) {
   const titleStyle = getTitleStyle(isPortrait);
-  const spacSize = getSpacSize();
+  const spacSize = getSpacSize(isPortrait);
 
   return (
-    <Box sx={{width: '100%', minHeight: !isMobile ? '711px' : ''}}>
-      <Background src={background} alt='background' sx={{minHeight: !isMobile ? '750px' : ''}}/>
+    <Box sx={{width: '100%', minHeight: !isMobile ? '751px' : ''}}>
+      <Background src={background} alt='background' sx={{minHeight: !isMobile ? '780px' : ''}}/>
       <HomeContainer sx={{paddingTop: appBarHeight}}>
         <Box sx={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
           <BlueText variant='h1' sx={titleStyle}>
             SPAC 2022
           </BlueText>
-          <Typography variant='h2' sx={{marginBottom: '1rem', textAlign: 'center', ...spacSize}}>
+          <Typography variant='h2' sx={{textAlign: 'center', ...spacSize}}>
             Student Professional Awareness Conference
           </Typography>
         </Box>
         <Box sx={{display: 'flex', alignItems: 'center', flexDirection: 'column', marginTop: 'auto'}}>
-          <SPACLogo src={Handshake} alt='SPAC Logo' style={{maxWidth: getLogoSize(isPortrait)}}/>
+          <SPACLogo src={Handshake} alt='SPAC Logo' sx={{maxWidth: getLogoSize(isPortrait)}}/>
         </Box>
-        <Box sx={{display: 'flex', alignItems: 'center', flexDirection: 'column', marginTop: 'auto'}}>
+        <Box sx={{maxWidth: '1rem', mt: 'auto'}}/>
+        <Box sx={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
           <Typography variant='h3' sx={getDateStyle(isPortrait)}>
             January 20, 2022&nbsp;&nbsp;|&nbsp;&nbsp;Online on Hopin
           </Typography>
@@ -112,11 +113,14 @@ function getTitleStyle(isPortrait) {
   return {fontSize: '6rem', marginTop: '1rem', textAlign: 'center'};
 }
 
-function getSpacSize() {
+function getSpacSize(isPortrait) {
   if (isMobile) {
-    return {fontSize: '2rem'};
+    if (!isPortrait) {
+      return {fontSize: '2rem', mb: '0.3rem'};
+    }
+    return {fontSize: '2rem', mb: '1rem'};
   }
-  return '';
+  return {mb: '1rem'};
 }
 
 function getDateStyle(isPortrait) {
@@ -127,7 +131,7 @@ function getDateStyle(isPortrait) {
       return {marginTop: '0.5rem', textAlign: 'center', fontSize: '1.6rem'};
     }
   }
-  return {marginTop: '5rem', textAlign: 'center'};
+  return {marginTop: '2rem', textAlign: 'center'};
 }
 
 function getLogoSize(isPortrait) {

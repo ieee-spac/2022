@@ -1,72 +1,95 @@
-import DeveloperBoardIcon from '@mui/icons-material/DeveloperBoard';
-import GroupIcon from '@mui/icons-material/Group';
 import {theme} from "../Util";
+
 import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
-import BorderColorIcon from '@mui/icons-material/BorderColor';
 import FreeBreakfastIcon from '@mui/icons-material/FreeBreakfast';
+import LightbulbIcon from '@mui/icons-material/Lightbulb';
+import GroupIcon from '@mui/icons-material/Group';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import CallEndIcon from '@mui/icons-material/CallEnd';
 
 export const events = [
-  {
-    title: 'Happy Hour',
-    icon: <FreeBreakfastIcon/>,
-    iconColor: theme.palette.primary.light,
-    description: '',
-    time: '6:00 PM'
-  },
-  {
-    title: 'Welcome Address',
-    icon: <EmojiPeopleIcon/>,
-    iconColor: theme.palette.secondary.light,
-    description: '',
-    time: '6:15 PM'
-  },
-  {
-    title: 'Tech Panel',
-    icon: <DeveloperBoardIcon/>,
-    iconColor: theme.palette['orange'].light,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-    time: '6:45 PM'
-  },
-  {
-    title: 'Speed Dating',
-    icon: <GroupIcon/>,
-    iconColor: theme.palette['green'].light,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-    time: '6:50 PM'
-  },
-  {
-    title: 'Nokia Masterclass',
-    icon: <BorderColorIcon/>,
-    iconColor: theme.palette.primary.light,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-    time: '7:20 PM'
-  },
-  {
-    title: 'Speed Dating',
-    icon: <GroupIcon/>,
-    iconColor: theme.palette.secondary.light,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-    time: '7:25 PM'
-  },
-  {
-    title: 'Ciena Masterclass',
-    icon: <BorderColorIcon/>,
-    iconColor: theme.palette['orange'].light,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-    time: '7:30 PM'
-  },
-  {
-    title: 'FDM Masterclass',
-    icon: <BorderColorIcon/>,
-    iconColor: theme.palette['green'].light,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-    time: '7:40 PM'
-  },
-  {
-    title: 'Closing Remarks',
-    icon: <EmojiPeopleIcon/>,
-    iconColor: theme.palette.primary.light,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-    time: '7:50 PM'
-  }
+    {
+        title: 'Networking with Nokia',
+        icon: <FreeBreakfastIcon/>,
+        iconColor: theme.palette.primary.light,
+        description: '',
+        time: '5:30 p.m. - 5:55 p.m.'
+    },
+    {
+        title: 'Introduction',
+        icon: <EmojiPeopleIcon/>,
+        iconColor: theme.palette.secondary.light,
+        description: '',
+        time: '6:00 p.m. - 6:20 p.m.'
+    },
+    {
+        title: 'Nokia MasterClass',
+        icon: <LightbulbIcon/>,
+        iconColor: theme.palette['orange'].light,
+        description: '',
+        time: '6:25 p.m. - 6:45 p.m.'
+    },
+    {
+        title: 'Speed Dating',
+        icon: <GroupIcon/>,
+        iconColor: theme.palette['green'].light,
+        description: '',
+        time: '6:50 p.m. - 7:10 p.m.'
+    },
+    {
+        title: 'Ciena MasterClass',
+        icon: <LightbulbIcon/>,
+        iconColor: theme.palette.primary.light,
+        description: '',
+        time: '7:15 p.m. - 7:30 p.m.'
+    },
+    {
+        title: 'Raffle Winner Announcement',
+        icon: <EmojiEventsIcon/>,
+        iconColor: theme.palette.secondary.light,
+        description: '',
+        time: '7:35 p.m. - 7:45 p.m.'
+    },
+    {
+        title: 'FDM MasterClass',
+        icon: <LightbulbIcon/>,
+        iconColor: theme.palette['orange'].light,
+        description: '',
+        time: '7:50 p.m. - 8:05 p.m.'
+    },
+    {
+        title: 'Speed Dating',
+        icon: <GroupIcon/>,
+        iconColor: theme.palette['green'].light,
+        description: '',
+        time: '8:10 p.m. - 8:30 p.m.'
+    },
+    {
+        title: 'PSC MasterClass',
+        icon: <LightbulbIcon/>,
+        iconColor: theme.palette.primary.light,
+        description: '',
+        time: '8:35 p.m. - 8:50 p.m.'
+    },
+    {
+        title: 'Nokia Workshop',
+        icon: <GroupIcon/>,
+        iconColor: theme.palette.secondary.light,
+        description: '',
+        time: '8:55 p.m. - 9:05 p.m.'
+    },
+    {
+        title: 'Closing',
+        icon: <CallEndIcon/>,
+        iconColor: theme.palette['orange'].light,
+        description: '',
+        time: '9:10 p.m. - 9:25 p.m.'
+    },
+    {
+        title: 'Open Networking',
+        icon: <FreeBreakfastIcon/>,
+        iconColor: theme.palette['green'].light,
+        description: '',
+        time: '9:30 p.m. - 10:00 p.m.'
+    }
 ];

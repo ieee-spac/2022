@@ -21,7 +21,7 @@ const TimelineElement = styled(VerticalTimelineElement)(() => ({
   }
 }));
 
-/*export default function Schedule() {
+export default function Schedule() {
   return (
     <Box sx={{pb: '4rem', pt: '1rem'}}>
       <Typography variant='h4'>Schedule</Typography>
@@ -66,13 +66,4 @@ const TimelineElement = styled(VerticalTimelineElement)(() => ({
       </Box>
     </Box>
   )
-}*/
-
-export default function Schedule() {
-  return (
-    <Box sx={{pb: '4rem', pt: '1rem'}}>
-      <Typography variant='h1'>Schedule</Typography>
-        <Typography>Check back here for the schedule.</Typography>
-    </Box>
-  );
 }

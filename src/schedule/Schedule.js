@@ -19,7 +19,7 @@ export default function Schedule() {
     return (
         <Box sx={{pb: '4rem', pt: '1rem'}}>
             <Typography variant='h1'>Schedule</Typography>
-            <Typography variant='h5'>6:30 p.m. - 9:30 p.m. EST</Typography>
+            <Typography variant='h5'>6:00 p.m. - 9:30 p.m. EST</Typography>
             <Box sx={{display: 'flex', justifyContent: 'center', mt: '1rem'}}>
                 <Timeline animate={!isMobile}>
                     {

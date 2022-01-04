@@ -91,7 +91,7 @@ export default function Register({isPortrait, storage}) {
     <Box sx={{paddingTop: '2em', display: 'flex', flexDirection: 'column', pb: '2rem'}}>
       <Box sx={{mb: '1rem'}}>
         <Typography variant='h1'>Upload Your Resume</Typography>
-        <Typography variant='h5'>Tickets are free!</Typography>
+        <Typography variant='h5'>Share your resume with the patrons joining us</Typography>
       </Box>
       <Box sx={{
         display: 'flex',

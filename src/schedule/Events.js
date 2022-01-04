@@ -11,7 +11,7 @@ export const events = [
     {
         title: 'Networking with Nokia',
         icon: <FreeBreakfastIcon/>,
-        iconColor: theme.palette.primary.light,
+        iconColor: 'grey',
         description: '',
         time: '5:30 p.m. - 5:55 p.m.'
     },
@@ -88,7 +88,7 @@ export const events = [
     {
         title: 'Open Networking',
         icon: <FreeBreakfastIcon/>,
-        iconColor: theme.palette['green'].light,
+        iconColor: 'grey',
         description: '',
         time: '9:30 p.m. - 10:00 p.m.'
     }

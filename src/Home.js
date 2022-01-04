@@ -80,8 +80,7 @@ export default function Home({isPortrait}) {
             </Button>
           </ButtonContainer>
           <ButtonContainer>
-            <PulseButton variant='outlined' sx={{height: 'min-content'}}
-                         onClick={() => scrollTo('register')}>
+            <PulseButton variant='contained' sx={{height: 'min-content'}} onClick={() => scrollTo('register')}>
               Tickets
             </PulseButton>
           </ButtonContainer>

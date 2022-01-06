@@ -88,7 +88,7 @@ export const GreenButton = styled(StandardButton)({
   }
 });
 
-export const PulseButton = styled(BlueButton)({
+export const PulseButton = styled(GreenButton)({
   animation: 'pulse 0.3s infinite alternate',
   backfaceVisibility: 'hidden',
   transform: 'translateZ(0)',

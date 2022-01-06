@@ -73,7 +73,7 @@ export default function Patronage() {
     <Box sx={{pb: '3rem', pt: '1rem'}}>
       <Typography variant='h1' sx={{mb: '1rem'}}>Patronage</Typography>
       <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-        <Link download='Patron Package.pdf' href={PatronPackage} sx={{textDecoration: 'none'}}>
+        <Link download='Patronage Package.pdf' href={PatronPackage} sx={{textDecoration: 'none'}}>
           <BlueButton variant='contained'>Download the Patronage Package</BlueButton>
         </Link>
       </Box>

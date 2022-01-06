@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.b4f109c8.chunk.css",
-    "main.js": "/static/js/main.47800712.chunk.js",
-    "main.js.map": "/static/js/main.47800712.chunk.js.map",
+    "main.js": "/static/js/main.ef4242ed.chunk.js",
+    "main.js.map": "/static/js/main.ef4242ed.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.966d0791.js",
     "runtime-main.js.map": "/static/js/runtime-main.966d0791.js.map",
     "static/css/2.84533861.chunk.css": "/static/css/2.84533861.chunk.css",
@@ -47,7 +47,7 @@
     "static/media/handshake4.0e140045.png": "/static/media/handshake4.0e140045.png",
     "static/media/image.665e4ca8.jpg": "/static/media/image.665e4ca8.jpg",
     "static/media/insta.e2016f01.png": "/static/media/insta.e2016f01.png",
-    "static/media/patron_package.08cbbdcf.pdf": "/static/media/patron_package.08cbbdcf.pdf",
+    "static/media/patron_package.9e8383aa.pdf": "/static/media/patron_package.9e8383aa.pdf",
     "static/media/300.css": "/static/media/roboto-vietnamese-300-normal.af9afdc1.woff2",
     "static/media/index.css": "/static/media/roboto-vietnamese-400-normal.c0bec65d.woff2",
     "static/media/500.css": "/static/media/roboto-vietnamese-500-normal.b8e494da.woff2",
@@ -60,6 +60,6 @@
     "static/css/2.84533861.chunk.css",
     "static/js/2.4a021726.chunk.js",
     "static/css/main.b4f109c8.chunk.css",
-    "static/js/main.47800712.chunk.js"
+    "static/js/main.ef4242ed.chunk.js"
   ]
 }

@@ -3,6 +3,7 @@ import {AppBar, Box, Toolbar, styled} from "@mui/material";
 import {appBarHeight, scrollOffset, theme} from "../Util";
 import SPAC from "../assets/spaclogo.png";
 import {useEffect, useState} from "react";
+import IEEE from '../assets/IEEE.png';
 
 const DesktopMenuButton = styled(Link)(({theme}) => ({
   backgroundColor: 'rgb(0, 0, 0, 0)',
@@ -43,9 +44,15 @@ const NavBar = styled(Toolbar)({
 });
 
 const SPACLogo = styled('img')({
-  width: '10em',
+  width: '10rem',
   cursor: 'pointer',
-  marginRight: 'auto'
+  marginRight: '2rem'
+});
+
+const IEEELogo = styled('img')({
+  width: '4rem',
+  marginRight: 'auto',
+  marginBottom: '1.5rem'
 });
 
 export default function DesktopNav() {
@@ -80,6 +87,7 @@ export default function DesktopNav() {
     <AppBar sx={{backgroundColor: background}}>
       <NavBar>
         <SPACLogo src={SPAC} alt='SPAC logo' onClick={scrollToHome}/>
+        <IEEELogo src={IEEE} alt='IEEE logo'/>
         <Box>
           <DesktopMenuButton to='about' spy={true} smooth={true} offset={scrollOffset} className='aboutButton'
                              onClick={() => setHash('about')}>About</DesktopMenuButton>

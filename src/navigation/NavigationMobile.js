@@ -13,6 +13,7 @@ import {appBarHeight, scrollOffset, theme} from "../Util";
 import List from "@mui/material/List";
 import {Link} from "react-scroll";
 import SPAC from "../assets/spaclogo.png";
+import IEEE from '../assets/IEEE.png';
 
 const MobileMenuButton = styled(Link)(({theme}) => ({
   color: 'rgba(0, 0, 0, 0.6)',
@@ -37,6 +38,16 @@ const NavBar = styled(Toolbar)({
     minHeight: appBarHeight,
     height: appBarHeight
   }
+});
+
+const SPACLogo = styled('img')({
+  width: '7rem',
+  marginRight: '1.5rem'
+});
+
+const IEEELogo = styled('img')({
+  width: '3rem',
+  marginBottom: '1.2rem'
 });
 
 export default function MobileNav() {
@@ -109,7 +120,8 @@ export default function MobileNav() {
             </List>
           </Box>
         </Drawer>
-        <img src={SPAC} alt='SPAC Logo' style={{width: '7em'}} onClick={() => scrollToTop()}/>
+        <SPACLogo src={SPAC} alt='SPAC logo' onClick={() => scrollToTop()}/>
+        <IEEELogo src={IEEE} alt='IEEE logo'/>
       </NavBar>
     </AppBar>
   );

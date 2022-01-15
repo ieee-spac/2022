@@ -25,17 +25,18 @@ const HomeContainer = styled(Box)({
 
 const ButtonsContainer = styled(Box)({
   display: 'flex',
-  justifyContent: 'center',
+  justifyContent: 'space-evenly',
   height: '3em',
   alignItems: 'center',
   marginTop: 'auto',
   paddingTop: '1rem',
-  marginBottom: '4rem'
+  marginBottom: '4rem',
+  minWidth: '45%',
+  marginLeft: 'auto',
+  marginRight: 'auto'
 });
 
 const ButtonContainer = styled(Box)({
-  mx: '2rem',
-  width: '10rem',
   display: 'flex',
   justifyContent: 'center'
 });

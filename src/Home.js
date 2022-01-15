@@ -23,7 +23,7 @@ const HomeContainer = styled(Box)({
   height: `calc(100vh - ${appBarHeight})`,
 });
 
-const ButtonsContainer = styled(Box)({
+const ButtonsContainer = styled(Box)(({isPortrait}) => ({
   display: 'flex',
   justifyContent: 'space-evenly',
   height: '3em',
@@ -31,10 +31,10 @@ const ButtonsContainer = styled(Box)({
   marginTop: 'auto',
   paddingTop: '1rem',
   marginBottom: '4rem',
-  minWidth: '45%',
+  minWidth: (isMobile && isPortrait) ? '97%' : '45%',
   marginLeft: 'auto',
   marginRight: 'auto'
-});
+}));
 
 const ButtonContainer = styled(Box)({
   display: 'flex',
@@ -52,6 +52,7 @@ const BlueText = styled(Typography)(({theme}) => ({
 export default function Home({isPortrait}) {
   const titleStyle = getTitleStyle(isPortrait);
   const spacSize = getSpacSize(isPortrait);
+  ButtonsContainer.defaultProps = {isPortrait: isPortrait}
 
   return (
     <Box sx={{width: '100%', minHeight: !isMobile ? '751px' : ''}}>

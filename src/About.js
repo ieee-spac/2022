@@ -1,4 +1,4 @@
-import {Box, styled} from "@mui/material";
+import {Box, Link, styled} from "@mui/material";
 import {theme, LightText} from "./Util";
 import event1 from './assets/events/event1.png';
 import event2 from './assets/events/event2.png';
@@ -151,7 +151,11 @@ export default function About({isPortrait}) {
   }
 
   return (
-    <Box sx={{paddingBottom: '3em'}}>
+    <Box sx={{pb: '3rem'}}>
+      <LightText variant='h5' sx={{pt: '2rem', textAlign: 'center'}}>Join our 2023 SPAC team!
+        <Link href='https://forms.gle/jARehFHXHxyU3S8p6' target='_blank'
+              sx={{ml: '0.5rem', color: theme.palette.primary['veryLight']}}>Click here</Link>
+      </LightText>
       {
         isMobile && (
           <Box>

@@ -76,7 +76,7 @@ export default function Home({isPortrait}) {
         <ButtonsContainer>
           <ButtonContainer>
             <Button variant='outlined' onClick={() => scrollTo('about')}>
-              Read More
+              Join 2023 Team
             </Button>
           </ButtonContainer>
           <ButtonContainer>

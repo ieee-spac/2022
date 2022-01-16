@@ -116,7 +116,7 @@ export function RequiredField(name) {
   );
 }
 
-export const DiscordLink = 'https://discord.gg/nTzgsAXr';
+export const DiscordLink = 'https://discord.com/invite/cVd4Vngmmr';
 
 export const Discord = () => (
   <Link href={DiscordLink} target='_blank'>

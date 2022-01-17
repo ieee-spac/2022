@@ -90,8 +90,14 @@ export default function Register({isPortrait, storage}) {
   return (
     <Box sx={{paddingTop: '2em', display: 'flex', flexDirection: 'column', pb: '2rem'}}>
       <Box sx={{mb: '1rem'}}>
-        <Typography variant='h1'>Upload Your Resume</Typography>
-        <Typography variant='h5'>Share your resume with the patrons joining us</Typography>
+        <Typography variant='h1'>Register on Hopin</Typography>
+        <Typography variant='h5'>1. Get your ticket
+          <Link href='https://hopin.com/events/student-professional-awareness-conference-ieee-spac/registration'
+                target='_blank' sx={{ml: '0.5rem'}}>here
+          </Link>.
+        </Typography>
+        <Typography variant='h5' sx={{mb: '0.5rem'}}>2. Upload Your Resume</Typography>
+        <Typography>Share your resume with the patrons joining us</Typography>
       </Box>
       <Box sx={{
         display: 'flex',
